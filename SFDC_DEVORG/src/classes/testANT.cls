@@ -1,5 +1,5 @@
 public class testANT{
     static{
-        system.debug('Hello AJ');
+        system.debug('DEVELOPER COPY');
     }
 }
