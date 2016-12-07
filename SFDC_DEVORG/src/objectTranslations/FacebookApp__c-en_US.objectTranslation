@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>FacebookApp</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>FacebookApps</value>
+    </caseValues>
+    <fields>
+        <label><!-- AccessToken --></label>
+        <name>AccessToken__c</name>
+    </fields>
+    <fields>
+        <label><!-- Code --></label>
+        <name>Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- Also know as the Application ID --></help>
+        <label><!-- clientID --></label>
+        <name>clientID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Also known as Application Secret --></help>
+        <label><!-- clientSecret --></label>
+        <name>clientSecret__c</name>
+    </fields>
+    <fields>
+        <help><!-- When a Facebook user authorizes your application, your application gets access to the user. By default, your application can access all public data in a user&apos;s profile. If you need to access other parts of the profile you must request extended permissions --></help>
+        <label><!-- Extended Permissions --></label>
+        <name>extendedPermissions__c</name>
+    </fields>
+    <layouts>
+        <layout>FacebookApp Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <webLinks>
+        <label><!-- Authorize --></label>
+        <name>Authorize</name>
+    </webLinks>
+</CustomObjectTranslation>

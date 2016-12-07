@@ -1,0 +1,11 @@
+<apex:page Controller="customListController" sidebar="false" tabstyle="Opportunity">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockTable value="{!opties}" var="op">
+                <apex:column value="{!op.Id}" headerValue="ID" />
+                <apex:column value="{!op.Name}" headerValue="NAME" />
+                
+            </apex:pageBlockTable>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

@@ -1,0 +1,33 @@
+<apex:page >
+<script>
+jQuery(document).ready(function(){
+    jQuery(function() {
+        jQuery("#myModal").dialog({
+            resizable: true,
+            autoOpen: false,
+            height:150,
+            width: 400,
+            modal: true,
+            buttons: {
+                "Save": function() {
+                    // Call here your actionFunction
+                },
+                Cancel: function() {
+                    jQuery( this ).dialog( "close" );
+                }
+            }
+        });
+    });
+});
+</script>
+    <apex:form >
+<apex:commandButton id="opener" 
+            onclick="jQuery('#myModal').dialog('open'); return false;" 
+            value="Open modal window"
+            reRender="none"/>
+                    
+<div id="myModal">
+    <p>Hi, i am a modal window :) Your content comes here.</p>
+</div>
+</apex:form>
+</apex:page>

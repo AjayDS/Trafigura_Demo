@@ -1,0 +1,21 @@
+<apex:component >
+    
+    <apex:attribute type="object" description="The record we are viewing..." required="true" name="record" /> 
+    
+    <apex:pageBlock title="Welcome to VF Components">
+        <apex:detail />
+         <apex:pageBlockSection >
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem />            
+        </apex:pageBlockSection>
+
+    </apex:pageBlock>
+    <apex:pageBlock title="the Second VF Components">
+        <apex:detail />
+         <apex:pageBlockSection >
+            <apex:pageBlockSectionItem />
+            <apex:pageBlockSectionItem />            
+        </apex:pageBlockSection>
+
+    </apex:pageBlock>
+</apex:component>

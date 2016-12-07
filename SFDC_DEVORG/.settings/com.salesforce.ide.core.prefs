@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+endpointApiVersion=37.0
+endpointEnvironment=Production/Developer Edition
+endpointServer=login.salesforce.com
+httpsProtocol=true
+ideVersion=37.0
+keependpoint=false
+metadataFormatVersion=37.0
+namespacePrefix=dslighting
+packageName=unpackaged
+preferToolingDeployment=true
+projectIdentifier=IDE-260623773111008023
+readTimeout=600
+username=ajayds@devtrial.com
