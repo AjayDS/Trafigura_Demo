@@ -1,0 +1,44 @@
+<apex:component controller="eCommerce_SearchProductsDisplay">
+        <apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery.easing.min.js')}"/>
+        <apex:form >
+        <apex:pageBlock id="details">
+         <!-- Container Start -->  
+        <div class="container">
+        {!choices}
+        <apex:selectCheckboxes value="{!selectedValue}" layout="pageDirection" onclick="filterProducts(this.value);">  
+            <apex:selectOptions value="{!list}"/><br/>  
+        </apex:selectCheckboxes>      
+         <apex:actionFunction name="filterProducts" action="{!RefinedProducts}" reRender="details" immediate="true">
+            <apex:param value="" name="param1" assignTo="{!selectedValue}"/>
+        </apex:actionFunction>                              
+            <div class="row ">
+                 <apex:repeat value="{!SearchedProducts}" var="prod" id="products">
+                <div class="men-pro-item col-md-3 col-sm-6 col-xs-12">
+                    <div class="image-details">
+                        <a  href="">
+                            <img src="{!mapLabels['Domain_URL'].Value__c}{!prod.Image__c}"  thumb="{!prod}" alt="image 1" />
+                        </a>
+    
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="full-details simpleCart_shelfItem item-info-product">
+                        <h5>{!prod.Name}</h5>                           
+                        <apex:repeat value="{!prod.PriceBookEntries}" var="price">
+                            <span class="item_price"><p class="price-info">Rs.{!price.unitPrice}</p></span>                            
+                        </apex:repeat> 
+                        <a href="#" style="background-color:lightgrey;" class="item_add" onclick="updateCartDetails('{!prod.Id}','{!prod.PriceBookEntries[0].unitprice}','1')">Add to cart</a>                                                 
+                    </div>                  
+                </div><br />
+                 </apex:repeat>
+                 <apex:pageblockButtons >               
+                    <!--apex:commandButton value="First Page" rerender="details" action="{!FirstPage}" disabled="{!prev}"/-->
+                    <apex:commandLink value="Previous" rerender="details" action="{!previous}" style="{!IF(prev= false,'display:block','display:none')}"/>
+                    <apex:commandLink value="Next" rerender="details" action="{!next}" style="{!IF(nxt = false,'display:block','display:none')}"/>
+                    <!--apex:commandButton value="Last Page" rerender="details" action="{!LastPage}" disabled="{!nxt}"/-->
+                </apex:pageblockButtons>                 
+            </div>
+        </div>
+        <!--Container-->
+    </apex:pageBlock>
+            </apex:form>
+</apex:component>

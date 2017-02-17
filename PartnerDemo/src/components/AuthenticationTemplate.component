@@ -1,0 +1,14 @@
+<apex:component controller="eCommerceHomePage" >
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>   
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+<apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+<script type="text/javascript">var __sfdcSessionId = '{!GETSESSIONID()}';</script>     
+<script src="/soap/ajax/28.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/28.0/apex.js" type="text/javascript"></script>      
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" >    
+    <body style="background-image:url('{!$Resource.background}');width:100%;background-repeat:no-repeat;background-size: cover;background-attachment:fixed;background-position:center;">    
+        
+       <p align="center"><font size="6" color="white"> {!$Label.Login_Heading}</font></p>
+    </body>
+    </html>
+</apex:component>

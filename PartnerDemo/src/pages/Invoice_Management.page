@@ -1,0 +1,18 @@
+<apex:page sidebar="false" docType="html-5.0"  controller="Sampleinvoice" >
+<apex:form >
+<apex:panelGrid columns="2" width="100%" cellpadding="5" cellspacing="5" >
+<apex:pageblock >
+            <apex:pageblocksection >
+            <apex:pageBlockSectionItem >
+                Date: <apex:input type="date" value="{!invoiceDate}"/>
+            </apex:pageBlockSectionItem>
+             <apex:pageBlockSectionItem >
+    <apex:outputtext value="Tax"/><apex:inputtext />
+             </apex:pageBlockSectionItem>
+        
+    <apex:commandbutton value="save"/>
+    </apex:pageblocksection>
+ </apex:pageblock>
+</apex:panelGrid>
+</apex:form>
+</apex:page>

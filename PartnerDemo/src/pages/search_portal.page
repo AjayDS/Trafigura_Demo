@@ -1,0 +1,68 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="prosearchcontroller2" id="pageId">
+    <apex:composition template="portal_masterPage">
+        <apex:define name="header"/>
+        <apex:define name="mainContent">
+            <section>
+                <div class="container" id="contId">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <c:portal_leftsideBarComp ></c:portal_leftsideBarComp>
+                        </div>
+                           
+                            <!--<c:searchcompp ></c:searchcompp> --> 
+                            <script type='text/javascript'> 
+                                function runOnEnter(ev,text) { 
+                                if (window.event && window.event.keyCode == 13 || ev.which == 13) { 
+                                //searchAccRecs(); 
+                                //alert('aaaa'+text.value);  
+                                
+                                var urlString = window.location.href;
+                                
+                                urlString = urlString.split("?")[0];
+                                
+                                //alert('======'+urlString); 
+                                                            
+                                window.location.href=urlString+'?searchText='+text.value;
+                                
+                                return false; 
+                                } else { 
+                                return true; 
+                                } 
+                                } 
+                            </script> 
+                            <apex:form > 
+                                <!--<apex:inputText value="{!searchText}"  id="param1"  onkeypress="return runOnEnter(event,this);" />-->
+                                <apex:actionFunction name="searchAccRecs" action="{!getSearchResults}" reRender="pageId,searchForm,details"> 
+                                </apex:actionFunction> 
+                            </apex:form>                                                           
+                           
+                        <!--START Main Content --> 
+                        <!--<C:portal_topmenucomp1></C:portal_topmenucomp1>-->
+                        <apex:form id="searchForm">                            
+                            <div class="col-sm-9 padding-right">                                               
+                                <apex:outputpanel styleclass="features_items" id="details"><!--features_items-->
+                                    <h2 class="title text-center">Search Result</h2>
+                                    <apex:repeat value="{!pro}" var="prods" >
+                                         <div class="col-sm-4">                                             
+                                             <c:portal_smProductCmp img="{!prods.Image__c}" price="{!prods.Price__c}" Name="{!prods.name}" prodId="{!prods.Id}"></c:portal_smProductCmp>                                           
+                                        </div>
+                                      </apex:repeat>                                     
+                                </apex:outputpanel> 
+                                <apex:pageBlock >
+                                    <apex:pageMessages ></apex:pageMessages>
+                                </apex:pageBlock>                                                     
+                            </div>   
+                        </apex:form>                     
+                        <!-- END main Content-->
+                    </div>
+                </div>
+            </section>
+        </apex:define>
+        <apex:define name="footer"/>
+    </apex:composition>
+    <apex:form id="formId">
+        <apex:actionFunction name="insertToCart" id="insertToCart" action="{!insertQuantity}" rerender="formId">
+            <apex:param name="selectedPrdId" assignTo="{!selectedPrdId}" value="" />
+        </apex:actionFunction>
+    </apex:form>
+</apex:page>

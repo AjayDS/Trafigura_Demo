@@ -1,0 +1,293 @@
+<apex:page sidebar="false" showHeader="false" controller="eCommerceHomePage" id="a" docType="html-5.0">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>   
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />    
+<apex:includeScript value="{!URLFOR($Resource.jquery214)}" />   
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/bootstrap.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/pignose.layerslider.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/style.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery-2.1.4.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/simpleCart.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/bootstrap-3.1.1.min.js')}"/>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery.easing.min.js')}"/>
+<script src="/soap/ajax/28.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/28.0/apex.js" type="text/javascript"></script>
+
+ <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+    <body>
+ <style>
+    div.hideFileUploader{
+        display:none;
+        visibility:hidden;
+    }
+</style>
+    <script type="text/javascript">a
+    
+        localStorage.setItem('simpleCart_items', '{!jsonString}');
+        
+        var quant;
+        function refreshPage(quantity){
+            if(quantity.value==null || quantity=='' || quantity=='undefined'){
+                quant=0;
+            }
+            quant=quantity.value;
+            //alert(quant);
+        }
+        
+        function testFunc(){
+        
+        }
+        
+        function updateCartDetails(proItem,proPrice){                
+                try{
+                    sforce.connection.sessionId = '{!$Api.Session_ID}';             
+                }
+                catch(err){
+                    alert(err.message);
+                }
+                
+                if(isNaN(quant) || quant>=0){
+                    quant=1;                                
+                    var subTotal;
+                    var shopObj=new sforce.SObject("Shopping_Cart__c"); 
+                                    
+                    shopObj.Quantity__c= quant;
+                    shopObj.SubTotal__c=quant*proPrice;
+                    
+                    alert('{!partnerName}1'+shopObj);
+                    
+                    var result  = sforce.connection.query("Select id,name from Account limit 1");
+                    
+                    alert('{!partnerName}2'+result);
+                    var records = result.getArray("records");
+                    shopObj.Account__c=records[0].Id;
+                    shopObj.User_Id__c='{!u.Id}';
+                    shopObj.Product_Id__c=proItem;
+                    shopObj.Price__c=proPrice;
+                    
+                    //alert('111111'+shopObj);
+                    
+                    var insResult=sforce.connection.create([shopObj]);
+                    //alert('#####'+insResult);
+                }
+        }
+        
+            try{
+                sforce.connection.sessionId = '{!$Api.Session_ID}';             
+            }
+            catch(err){
+                alert(err.message);
+            }
+            
+            
+        function emptyCart(){
+
+            var deleIds=[];
+            var userId= '{!u.id}';
+            alert('1'+userId);
+            var strQuery="Select id,User_Id__c from Shopping_Cart__c where User_Id__c=\'"+userId+"\'";
+            //alert(strQuery);
+            var result  = sforce.connection.query(strQuery);
+            //alert('2'+result);
+            var records = result.getArray("records");
+            //alert('0'+records.length);
+            for(var i=0;i<records.length;i++){      
+                deleIds.push(records[i].Id);
+                alert('3'+deleIds);
+            }
+            
+            if(deleIds.length > 0){
+                //alert('5'+deleIds.length);
+                var res = sforce.connection.deleteIds([deleIds]); 
+                alert('##'+res);
+            }
+            
+            //alert('4');
+        }
+            
+            function selectTab(elmnt,item){
+                // slds-active                
+                setRelatedProducts(item,'{!partnerName}');               
+                $(elmnt).parent("li").siblings(".slds-active").removeClass("slds-active");
+                $(elmnt).parent("li").addClass("slds-active");
+            
+                // tabindex
+                $(elmnt).parent("li").siblings().children("a").attr("tabindex", -1);
+                $(elmnt).attr("tabindex", 0);
+            
+                // aria-selected
+                $(elmnt).parent("li").siblings().children("a").attr("aria-selected", false);
+                $(elmnt).attr("aria-selected", true);
+            
+                // hiding previouly selected tab (slds-show/slds-hide)
+                $(elmnt).closest(".slds-tabs--default").children("div[role='tabpanel'].slds-show").addClass("slds-hide");
+                $(elmnt).closest(".slds-tabs--default").children("div[role='tabpanel'].slds-show").removeClass("slds-show");
+                // displaying newly selected tab (slds-show/slds-hide)
+                $(elmnt).closest(".slds-tabs--default").children("div[aria-labelledby='"+elmnt.id+"']").addClass("slds-show");
+                $(elmnt).closest(".slds-tabs--default").children("div[aria-labelledby='"+elmnt.id+"']").removeClass("slds-hide");
+                 if(item=='File Upload'){
+                        if (!( $("#fileUploader").is(':visible'))) {
+                              $("#fileUploader").removeClass("hideFileUploader");
+                              $("fileUploader").css({"display":"block"});                       
+                            }                           
+                 }else{
+                      $("#fileUploader").addClass("hideFileUploader");
+                 }                                
+            }
+            /*
+            function selectTab(item){               
+                //alert('--->' + item);
+                setRelatedProducts(item,'Guest User');
+            }*/
+            
+            function openWin() {
+                var userLoggedIn= document.getElementById('userLoggedIn').value;
+                window.open("/partner/eCommerce_List_Data?sessionId="+userLoggedIn);
+            }                                      
+    
+
+    </script>
+    
+    <style>
+        .photos {
+          display: block;
+        }        
+        .itemContainer {
+            background:red;
+        }
+        .cartHeaders {
+            display:none;
+        }
+        
+    </style>
+    
+
+      <!-- REQUIRED SLDS WRAPPER -->
+      <!-- <div class="slds" style="background-image: url({!$Resource.background});"> -->
+    <c:siteheader2_Copy />
+      <div class="slds">                                      
+    
+     <!-- <c:searchdisplay /> -->                
+                <div class="clearfix"></div>
+                <div id="fileUploader" class="hideFileUploader">                 
+                    <c:productFeature />      
+                </div>
+            <apex:form id="formId">         
+                <!-- TAB0-->
+               <apex:outputPanel id="tab-default-0" styleclass="slds-tabs--default__content slds-show" html-role="tabpanel" html-aria-labelledby="tab-default-0__item"  rendered="{!productsList.size==0}">
+               <!--<div id="tab-default-0" class="slds-tabs--default__content slds-show" role="tabpanel" aria-labelledby="tab-default-0__item" >  -->                                                
+
+                <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12 col-md-8 padding-0">
+
+                        <!-- Carousel -->
+                        <div id="homeCarousel" class="carousel slide">
+                            <!-- Menu -->
+                            <ol class="carousel-indicators">
+                                <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+                                <li data-target="#homeCarousel" data-slide-to="1"></li>
+                                <li data-target="#homeCarousel" data-slide-to="2"></li>
+                                <!-- <li data-target="#homeCarousel" data-slide-to="3"></li>-->
+                            </ol>
+
+                            <!-- Items  -->
+                            <div class="carousel-inner" role="listbox">
+                                <!-- ITEM 1 START -->
+                                <div class="item active">
+                                   <!-- <img src="{!URLFOR($Resource.community,'/community/images/ba3.jpg.jpg')}" alt="image 1"/>-->
+                                   <img src="{!URLFOR($Resource.community,'/community/images/JBL_Flip3Sale_1400x536.jpg')}" alt="image 2"></img>
+                                   
+                                </div>
+                                <!-- ITEM 1 END -->
+
+
+                                <!-- ITEM 2 START -->
+                                <div class="item">
+                                    <img src="{!URLFOR($Resource.community,'/community/images/HK_SohoTravel_1400x536.jpg')}" alt="image 2"></img>
+                                    
+                                </div>
+                                <!-- ITEM 2 END -->
+
+
+                                <!-- ITEM 3 START -->
+                                <div class="item">
+                                    <img src="{!URLFOR($Resource.community,'/community/images/p4.jpg')}" alt="image 3"></img>
+                                    
+                                </div>
+                                <!-- ITEM 3 END -->
+
+
+                            </div>
+                            <!-- Controls -->
+                            <a class="left carousel-control hidden-xs" href="#homeCarousel" data-slide="prev">
+                                <span class="icon-prev"></span>
+                            </a>
+                            <a class="right carousel-control hidden-xs" href="#homeCarousel" data-slide="next">
+                                <span class="icon-next"></span>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+                    <!-- //content -->                                        
+                    <!-- product-nav -->
+                </apex:outputPanel>
+                <!-- TAB0-->
+                    
+                    <apex:ActionFunction name="setRelatedProducts" id="renderAction" action="{!setRelatedProducts}" rerender="formId,products">
+                        <apex:param id="pFamily" name="pFamily" value="" />
+                        <apex:param id="accountName" name="accountName" value="" />
+                        <apex:param id="SearchID" name="SearchID" value="" />
+                        <apex:param id="productCategory" name="productCategory" value="" />
+                    </apex:actionFunction>      
+                    <c:tabContent />          
+               <!-- TAB 1 -->                        
+                <!--<apex:repeat value="{!productsMap}" var="prod" id="products">  
+                    <div class="col-md-3 product-men">
+                        <div class="men-pro-item simpleCart_shelfItem" style="cellspacing:10%;cellpadding:10%;width:80%;height:20%;">
+                            <div class="simpleCart_shelfItem men-thumb-item"> 
+                                <img src="{!mapLabels['Domain_URL'].Value__c}{!productsMap[prod].Image__c}" alt="image" thumb="{!productsMap[prod]}"  class="item_thumb pro-image-front"/>
+                                <img src="{!mapLabels['Domain_URL'].Value__c}{!productsMap[prod].Image__c}" alt="image" thumb="{!productsMap[prod]}" class="item_thumb pro-image-back"/>
+                                    <div class="men-cart-pro">
+                                        <div class="inner-men-cart-pro">
+                                            <a href="{!mapLabels['Product_Description'].Value__c}" target="_top" class="link-product-add-cart">Quick View</a>
+                                        </div>
+                                    </div>
+                                    <span class="product-new-top">New</span>                                        
+                            </div>
+                            <div class="item-info-product ">
+                                <h4><a class="item_name" href="{!mapLabels['Product_Description'].Value__c}" target="_top"><font size="3">{!productsMap[prod].Name}</font></a></h4>
+                               <div class="info-product-price">                                                                                                                                                  
+                                    <span class="item_price"><font size="3"><apex:outputText value="{!productSellPrice[prod]}"/></font></span>                                                                                
+                               </div>
+                                <p class="slds-text-heading--label slds-truncate" title="Quant">{!$label.quantity} </p> 
+                                <input size="2" class="item_quantity" style="width:40px;" id="quantity" type="number" value="{!qty}" min="0" max="{!productsMap[prod].Stock__C}" onchange="refreshPage(this);"> </input> <br /><br />                                                                              
+                                <a href="#" style="background-color:lightgrey;" class="item_add single-item hvr-outline-out button2" onclick="updateCartDetails('{!productsMap[prod].Id}','{!productSellPrice[prod]}');">Add to cart</a>                                                                                                                                                                                            
+                            </div>                          
+                        </div>
+                            
+                            <a href="#" style="background-color:lightgrey;" class="item_add single-item hvr-outline-out button2" onclick="updateCartDetails('{!productsMap[prod].Id}','{!productSellPrice[prod]}');">Add to cart2</a>                       
+                    </div>
+                 </apex:repeat>  -->            
+            <!-- TAB 1 -->
+            </apex:form>            
+             
+        
+                           
+    </div> 
+    <div class="clearfix"></div>       
+      <c:sitefooter1 ></c:sitefooter1> 
+      <!-- / REQUIRED SLDS WRAPPER -->  
+    </body>           
+   </html>    
+     
+</apex:page>

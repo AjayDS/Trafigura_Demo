@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Product_Orders</letterhead>
+    <name>Harman Product Ready</name>
+    <style>newsletter</style>
+    <subject>{!User.Name} Order is ready to deliver</subject>
+    <textOnly>HI {!User.Name}
+Your order is ready to be shipped and you should have it soon.
+Order Details:
+Order Number:{!Order.OrderNumber}
+Date:{!Order.EffectiveDate}
+Shipping Details:
+{!01I36000001ppMS.00N3600000GNEWE}</textOnly>
+    <type>html</type>
+</EmailTemplate>

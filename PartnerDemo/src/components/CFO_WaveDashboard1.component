@@ -1,0 +1,3 @@
+<apex:component >
+      <wave:dashboard width="100%" height="1000px" dashboardId="0FK36000000QSq5GAG" ></wave:dashboard>
+</apex:component>

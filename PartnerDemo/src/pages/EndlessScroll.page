@@ -1,0 +1,92 @@
+<apex:page sidebar="false" showHeader="false" controller="ProductBrowserController" docType="html-5.0">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+<apex:includeScript value="{!URLFOR($Resource.jquery214)}" />  
+<apex:includeScript value="{!URLFOR($Resource.jqueryendlessscroll)}" /> 
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />    
+ 
+<apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />    
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+<html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<script type="text/javascript">  
+ function getMore(){  
+       if(noRecords === true){  
+               ProductBrowserController.getMore(currentPageNumber, hasNext, function(result, event){  
+                 currentPageNumber = result.pageNumber;  
+                 hastNext = result.hasMore;  
+                 noRecords = result.noRecords;  
+                if(result.noRecords != false){  
+                      if(event.status == true){  
+                           buildAccountRow(result.records);  
+                      }  
+                }  
+          });  
+       } else {  
+           hasNext = false;  
+       }       
+  } 
+function buildAccountRow(records){  
+       $.each(records, function(){  
+            var moreposts = '';   
+          moreposts += '<table class="grid_2_table" style="width:90%; border-style:solid;">';  
+            moreposts += '<tr width="50%">';  
+         moreposts += '<td><div class="padding_bottom_10"><span class="bold">Family: </span>' + this.Family+ '</div></td>';  
+           moreposts += '<td><div class="padding_bottom_10"><span class="bold">IsActive: </span>' + this.IsActive+ '</div></td>';  
+           moreposts += '</tr>';  
+           moreposts += '<tr width="50%">';  
+            moreposts += '<td><div class="padding_bottom_10"><span class="bold">Account Name: </span>' + this.Name + '</div></td>';  
+            moreposts += '<td><div class="padding_bottom_10"><span class="bold">Price__c: </span>' + this.Price__c+ '</div></td>';  
+           moreposts += '</tr>';  
+            moreposts += '<tr width="50%">';  
+            moreposts += '<td><div class="padding_bottom_10"><span class="bold">ProductCode: </span>' + this.ProductCode+ '</div></td>';  
+            moreposts += '<td><div class="padding_bottom_10"><span class="bold">Stock__c: </span>' + this.Stock__c + '</div></td>';  
+          moreposts += '</tr>';  
+            moreposts += '<tr width="50%">';  
+            moreposts += '<td><div class="padding_bottom_10"><span class="bold">Image_URL__c: </span>' + this.Image_URL__c+ '</div></td>';  
+            moreposts += '<td><div class="padding_bottom_10"><span class="bold">Image__c: </span>' + this.Image__c + '</div></td>';  
+            moreposts += '</tr>';              
+            moreposts += '</table>';  
+            moreposts += '<br />';  
+            $('#records').append(moreposts);  
+       });  
+  }  
+    </script>
+  
+
+  <script>
+  $(document).ready(function(){  
+       var data = {!accountList};  
+       currentPageNumber = data.pageNumber;  
+       hasNext = data.hasMore;  
+      noRecords = data.noRecords;  
+       if(data.noRecords != false){  
+            buildAccountRow(data.records);  
+       }  
+  }); 
+  $(document).endlessScroll({  
+      fireOnce: true,  
+      fireDelay: 1000,  
+      bottomPixels: 10,  
+       content: function(p){  
+            getMore();  
+       },  
+       ceaseFireOnEmpty: true  
+  });
+  var currentPageNumber = 0;  
+  var hasNext = false;  
+  var noRecords = false;  
+  </script>
+  <body>
+      <apex:pageBlock title="Product Browser">  
+          <div id="product_container">  
+                <apex:outputPanel id="wrapper">  
+                <div id="records">  
+                </div>  
+                </apex:outputPanel>  
+           </div>  
+      </apex:pageBlock>
+  </body>
+  </html>  
+  </apex:page>

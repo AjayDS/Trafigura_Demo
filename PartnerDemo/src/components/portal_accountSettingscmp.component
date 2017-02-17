@@ -1,0 +1,18 @@
+<apex:component controller="portal_AccountSettings">
+ <apex:form >
+     <apex:sectionHeader title="Account Setting Details"/>        
+     <apex:pageBlock >
+        Account:<apex:outputField value="{!accountSettings.Account__c}"/><br/>
+        Category Limit:<apex:inputText value="{!categoryLimit}"/><br/>
+        Copyright:<apex:inputText value="{!copyRight}"/><br/>
+        Language:<apex:inputText value="{!accountSettings.Language__c}"/><br/>
+        No Of Items Per Page:<apex:inputText value="{!accountSettings.No_of_Items_Per_Page__c}"/><br/>
+        User Icon Options:<apex:inputTextArea value="{!accountSettings.User_Icon_Options__c}"/><br/>
+        Theme:<apex:inputText value="{!accountSettings.Theme__c}"/><br/>
+        Categories:<apex:inputText value="{!accountSettings.Categories__c}"/>
+         Image URL:<apex:inputText value="{!imageUrl }"/> 
+         Brands:<apex:selectList value="{!accountSettings.Brands__c}"/>     
+    </apex:pageBlock>     
+  <center><apex:commandButton value="Save" action="{!save}"/></center>
+  </apex:form>
+</apex:component>

@@ -1,0 +1,222 @@
+<apex:page html-lang="en" showHeader="false" sidebar="false" standardStylesheets="false" controller="portal_Home" docType="html-5.0">
+    <apex:composition template="portal_masterPage">
+    <site:googleAnalyticsTracking />
+        <apex:define name="header"/>        
+            <apex:define name="mainContent">
+             <c:portal_topAdvcmp ></c:portal_topAdvcmp>
+             <!--<apex:outputPanel style="height:300px;width:400px;!important">
+                 <c:VF_Chart_Component />            
+                 <c:VF_Google_Chart_Component />
+            </apex:outputPanel>-->
+                <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVSF8C"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>                     
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                           <c:portal_leftsideBarComp ></c:portal_leftsideBarComp>
+                        </div>
+                        <div class="col-sm-9 padding-right">
+                            <!--features_items-->
+                            <div class="features_items">
+                                <apex:outputpanel rendered="{!topSales.size>0}" > <h2 class="title text-center">Top Sales Items</h2></apex:outputpanel>
+                                <apex:repeat value="{!topSales}" var="topProduct" >
+                                    <c:portal_productCmp img="{!mapLabels['Domain_URL'].Value__c}{!topProduct.Product2.Image__c}" price="{!topProduct.UnitPrice}" Name="{!topProduct.Product2.Name}" prodId="{!topProduct.product2Id}"></c:portal_productCmp>                                  
+                                </apex:repeat>
+                            </div>
+                            
+                            <!--features_items-->
+                            <!--category-tab-->
+                            <div class="category-tab">
+                                <apex:form id="details" rendered="{!activeBrand!=null}">
+                                    <div class="col-sm-12">
+                                        <ul class="nav nav-tabs">
+                                            <li class="active"><a href="#{!activeBrand}" data-toggle="tab">{!activeBrand}</a></li>
+                                            <apex:repeat value="{!productBrands}" var="brand" >
+                                                <li><a href="#{!brand}" data-toggle="tab">{!brand}</a></li>                                         
+                                            </apex:repeat>
+                                        </ul>
+                                    
+                                    <!--<apex:commandButton value="First Page" action="{!FirstPage}"  rerender="details" disabled="{!prev}"/>
+                                    <apex:commandButton value="Previous" action="{!previous}"  rerender="details" disabled="{!prev}"/>
+                                    <apex:commandButton value="Next"  action="{!next}" rerender="details" disabled="{!nxt}"/>
+                                    <apex:commandButton value="Last Page"  action="{!LastPage}" rerender="details" disabled="{!nxt}"/>-->
+                                    </div>
+                                </apex:form>
+                                
+                                <apex:form id="details1">
+                                    <div class="tab-content">   
+                                         <div class="tab-pane fade active in" id="{!activeBrand}" >
+                                            <apex:repeat value="{!activeBrandList}" var="ac" >
+                                                <apex:repeat value="{!activeBrandList[ac]}" var="acBrands" >
+                                                    <div class="col-sm-3">                                             
+                                                           <c:portal_smProductCmp img="{!mapLabels['Domain_URL'].Value__c}{!acBrands.Product2.Image__c}" price="{!acBrands.UnitPrice}" Name="{!acBrands.Product2.name}" prodId="{!acBrands.product2Id}"></c:portal_smProductCmp>                                                                                                         
+                                                    </div>                                                                            
+                                                </apex:repeat>
+                                            </apex:repeat>
+                                         </div>
+                                        <apex:repeat value="{!productBrands}" var="brand" > 
+                                            <div class="tab-pane fade" id="{!brand}" >                                  
+                                                <apex:repeat value="{!brandList[brand]}" var="acBrands" >                                           
+                                                        <div class="col-sm-3">
+                                                            <c:portal_smProductCmp img="{!mapLabels['Domain_URL'].Value__c}{!acBrands.Product2.Image__c}" price="{!acBrands.UnitPrice}" Name="{!acBrands.Product2.name}" prodId="{!acBrands.product2Id}"></c:portal_smProductCmp>
+                                                        </div>                                                                                      
+                                                </apex:repeat>                                          
+                                            </div>  
+                                        </apex:repeat>
+                                                                            
+                                    
+                                    <!--<apex:commandButton value="First Page" action="{!FirstPage}"  rerender="details1" disabled="{!prev}"/>
+                                    <apex:commandButton value="Previous" action="{!previous}"  rerender="details1" disabled="{!prev}"/>
+                                    <apex:commandButton value="Next"  action="{!next}" rerender="details1" disabled="{!nxt}"/>
+                                    <apex:commandButton value="Last Page"  action="{!LastPage}" rerender="details1" disabled="{!nxt}"/>-->
+                                    </div>
+                                </apex:form>
+                            </div>
+                            <!--/category-tab-->
+                            
+                             <!--recommended_items-->
+                            <div class="recommended_items">
+                                <apex:outputpanel rendered="{!recommendedProducts.size>0}" > <h2 class="title text-center">recommended items</h2></apex:outputpanel>-
+                                <!--<h2 class="title text-center">recommended items</h2>-->
+                                <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="item active">                                               
+                                            <apex:repeat value="{!activeRecommendtn}" var="activePro">
+                                                <div class="col-sm-3">
+                                                    <div class="product-image-wrapper">
+                                                        <div class="single-products">
+                                                            <div class="productinfo text-center">
+                                                                <img src="{!mapLabels['Domain_URL'].Value__c}{!activePro.Product2.Image__c}" alt="active product" />
+                                                                <h2>${!activePro.UnitPrice}</h2>
+                                                                <p>{!activePro.Product2.Name}</p>
+                                                                <a href="#" class="btn btn-default add-to-cart" onClick="insertToCart('{!activePro.Product2id}');"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </apex:repeat>
+                                            
+                                        </div>                                        
+                                            <apex:repeat value="{!recommendedProducts}" var="otherPro">
+                                            <div class="item"> 
+                                                <div class="col-sm-3">
+                                                        <div class="product-image-wrapper">
+                                                            <div class="single-products">
+                                                                <div class="productinfo text-center">
+                                                                    <img src="{!mapLabels['Domain_URL'].Value__c}{!otherPro.Product2.Image__c}" alt="active product" />
+                                                                    <h2>${!otherPro.UnitPrice}</h2>
+                                                                    <p>{!otherPro.product2.Name}</p>
+                                                                    <a href="#" class="btn btn-default add-to-cart" onClick="insertToCart('{!otherPro.Product2id}');"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                             </div>
+                                            </apex:repeat>
+                                       
+                                    </div>
+                                   
+                                   <apex:outputPanel rendered="{!activeRecommendtn.size>4}">
+                                       <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                                            <i class="fa fa-angle-left"></i>
+                                        </a>
+                                        <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                                            <i class="fa fa-angle-right"></i>
+                                        </a>  
+                                    </apex:outputpanel> 
+                                </div>
+                            </div>
+                            <!--/recommended_items-->
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+            <apex:form id="formId">
+                <apex:actionFunction name="insertToCart" id="insertToCart" action="{!insertQuantity}" rerender="formId">
+                    <apex:param name="selectedPrdId" assignTo="{!selectedPrdId}" value="" />                     
+                </apex:actionFunction>
+                <!--<input type='text' name='txt_medium' id='txt_medium' value='1' />
+                <input type='text' name='txt_source' id='txt_source' value='' />
+                <input type='text' name='txt_campaign_name' id='txt_campaign_name' value='' />
+                <input type='text' name='txt_term' id='txt_term' value='' />
+                <input type='text' name='txt_content' id='txt_content' value='' />-->
+            </apex:form>
+        </apex:define>
+        <apex:define name="footer"/>
+    </apex:composition>
+    
+     <script>
+     
+        /*function insertQuantity(productId){    
+                    alert('in');
+                    insertToCart(productId);
+                    alert('out');
+        }*/
+     </script>
+     
+     <script type="text/javascript">
+        var z = _uGC(document.cookie, '__utmz=', ';');
+        var source = _uGC(z, 'utmcsr=', '|');
+        var medium = _uGC(z, 'utmcmd=', '|');
+        var term = _uGC(z, 'utmctr=', '|');
+        var content = _uGC(z, 'utmcct=', '|');
+        var campaign = _uGC(z, 'utmccn=', '|');
+        var gclid = _uGC(z, 'utmgclid=', '|');
+        if (gclid !="-") {
+         source = 'google';
+         medium = 'cpc';
+        }
+
+        var csegment = _uGC(document.cookie, '__utmv=', ';');
+        if (csegment != '-') {
+         var csegmentex = /[1-9]*?\.(.*)/;
+         csegment = csegment.match(csegmentex);
+         csegment = csegment[1];
+        
+        } else {
+         csegment = '';
+        }
+
+        function _uGC(l,n,s)
+        {
+            if (!l || l=="" || !n || n=="" || !s || s=="") return "-";
+            var i,i2,i3,c="-";
+            i=l.indexOf(n);
+            i3=n.indexOf("=")+1;
+            if (i &gt; -1) {
+                i2=l.indexOf(s,i); if (i2 &lt; 0){ i2=l.length; 
+             }
+            c=l.substring((i+i3),i2);
+        }
+        return c;
+        }
+
+        document.getElementById("txt_medium").value =medium; /* Campaign_Medium */
+        document.getElementById("txt_source").value =source; /* Campaign_Source */
+        document.getElementById("txt_campaign_name").value =campaign; /* Campaign_CampaignName */
+        document.getElementById("txt_term").value =term; /* Campaign_Term */
+        document.getElementById("txt_content").value =content; /* Campaign_Content */
+         
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-86322300-1', 'auto');
+  ga(function(tracker) {
+  var clientId = tracker.get('clientId');
+  tracker.set('dimension100',clientId);
+});
+  ga('send', 'pageview');
+
+</script>
+             
+</apex:page>

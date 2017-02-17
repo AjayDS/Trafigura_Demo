@@ -1,0 +1,166 @@
+<apex:component >
+        
+    <body>   
+        <div class="container-fluid">
+            <div class="font_18 title"><span class="glyphicon glyphicon-stats"></span> Overview</div>
+        </div>
+
+<div class="container-fluid cards">
+    <div class="row">
+            <div class="col-md-3">
+                <div class="panel panel-default firstBlock">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-xs-8">
+                                <h3>Traffic Volume</h3>
+                                <div class="width_50">
+                                    <div class="text-muted">Total</div>
+                                </div>
+                                <div class="width_50 text-right">
+                                    <div class="green up">
+                                        <span class="glyphicon glyphicon-triangle-top"></span> 
+                                        <span class="upText">1120</span>
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="number">19,212,00</div>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <h3>Rank</h3>
+                                <div class="text-muted">Average</div>
+                                <div class="number mt_3">125</div>
+                            </div>
+                        </div>  
+                    </div>
+                    <div class="graphbg one">
+                        <apex:image styleclass="firstImg" url="{!URLFOR($Resource.CFO_Static_File, 'images/1.png')}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default secondBlock">
+                    <div class="panel-body">
+                        <div class="row row-eq-height">
+                            <div class="col-xs-4">
+                                <h3>Revenue in $</h3>
+                                <div class="width_50">
+                                    <div class="text-muted">Total</div>
+                                </div>
+                                <div class="width_50 text-right">
+                                    <div class="green red">
+                                        <span class="glyphicon glyphicon-triangle-bottom"></span> 
+                                        4
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="number">19,21,00</div>
+                            </div>
+                            <div class="col-xs-4 text-center">
+                                <h3>Conversion</h3>
+
+                                <div class="width_50">
+                                    <div class="text-muted">Total</div>
+                                </div>
+                                <div class="width_50 text-right">
+                                    <div class="green red">
+                                        <span class="glyphicon glyphicon-triangle-bottom"></span> 
+                                        4
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="number">19,00</div>
+                            </div>
+                            <div class="col-xs-4 text-right">
+                                <h3>Commission</h3>
+                                <div class="width_50">
+                                    <div class="text-muted">Total</div>
+                                </div>
+                                <div class="width_50 text-right">
+                                    <div class="green red">
+                                        <span class="glyphicon glyphicon-triangle-bottom"></span> 
+                                        3
+                                    </div>
+                                </div>
+                                <div class="clear"></div>
+                                <div class="number">13</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="graphbg two">
+                         <apex:image styleclass="secondImg" url="{!URLFOR($Resource.CFO_Static_File, 'images/2.png')}"/>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 ">
+                <div class="panel panel-default thirdBlock">
+                    <div class="panel-body ">
+                        <h3>return on investment</h3>
+                    </div>
+                    <div class="graphbg three">
+                        <apex:image url="{!URLFOR($Resource.CFO_Static_File, 'images/3_Option2.png')}"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="container-fluid">
+            <div class="font_18 title"><span class="glyphicon glyphicon-stats"></span> Trending</div>
+        </div>
+
+        <div class="container-fluid">
+            <table class="table table-hover"> 
+                <thead> 
+                    <tr> 
+                        <th class="rank">Rank</th> 
+                        <th>Company</th> 
+                        <th>Traffice Volume</th> 
+                        <th>RO / $</th> 
+                        <th>Traffice Trend</th> 
+                    </tr> 
+                </thead> 
+                <tbody> 
+                    <tr>
+                        <td class="rank">12 <span class="greenTab"><span class="glyphicon glyphicon-menu-up"></span> 2</span> </td>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </td>
+                        <td>222,456</td>
+                        <td>23.56</td>
+                        <td>
+                         <apex:image url="{!URLFOR($Resource.CFO_Static_File, 'images/Untitled-2-01.png')}"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="rank">9 <span class="greenTab redTab"><span class="glyphicon glyphicon-menu-up"></span> 2</span> </td>
+                        <td>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</td>
+                        <td>222,456</td>
+                        <td>23.56</td>
+                        <td><apex:image url="{!URLFOR($Resource.CFO_Static_File, 'images/Untitled-2-02.png')}"/></td>
+                    </tr>
+                    <tr>
+                        <td class="rank">34  </td>
+                        <td>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</td>
+                        <td>222,456</td>
+                        <td>23.56</td>
+                        <td><apex:image url="{!URLFOR($Resource.CFO_Static_File, 'images/Untitled-2-03.png')}"/></td>
+                    </tr>
+                    <tr>
+                        <td class="rank">56 <span class="greenTab"><span class="glyphicon glyphicon-menu-up"></span> 2</span> </td>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </td>
+                        <td>222,456</td>
+                        <td>23.56</td>
+                        <td><apex:image url="{!URLFOR($Resource.CFO_Static_File, 'images/Untitled-2-04.png')}"/></td>
+                    </tr>
+                    <tr>
+                        <td class="rank">47  </td>
+                        <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </td>
+                        <td>222,456</td>
+                        <td>23.56</td>
+                        <td><apex:image url="{!URLFOR($Resource.CFO_Static_File, 'images/Untitled-2-05.png')}"/></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+                               
+    </body>
+    
+</apex:component>

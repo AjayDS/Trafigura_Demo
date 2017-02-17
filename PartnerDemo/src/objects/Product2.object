@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Add</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Brand__c</fullName>
+        <externalId>false</externalId>
+        <label>Brand</label>
+        <picklist>
+            <picklistValues>
+                <fullName>JBL</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Harman Kardon</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>AKG</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Infinity</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CanUseQuantitySchedule</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>CanUseRevenueSchedule</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Category__c</fullName>
+        <externalId>false</externalId>
+        <label>Category</label>
+        <picklist>
+            <controllingField>Family</controllingField>
+            <picklistValues>
+                <fullName>Over Ear</fullName>
+                <default>false</default>
+                <controllingFieldValues>Headphones</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>On Ear</fullName>
+                <default>false</default>
+                <controllingFieldValues>Headphones</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Ear</fullName>
+                <default>false</default>
+                <controllingFieldValues>Headphones</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>With Microphone</fullName>
+                <default>false</default>
+                <controllingFieldValues>Headphones</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Theater</fullName>
+                <default>false</default>
+                <controllingFieldValues>Home Theaters</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Sounds Bar</fullName>
+                <default>false</default>
+                <controllingFieldValues>Home Theaters</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Computer Speakers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Home Theaters</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Docks</fullName>
+                <default>false</default>
+                <controllingFieldValues>Home Theaters</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Wireless Speakers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Home Theaters</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Stand-Alone Speakers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Home Theaters</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Custom-Install Speakers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Home Theaters</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Speakers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Car Speakers</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Subwoofers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Car Speakers</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Amplifiers</fullName>
+                <default>false</default>
+                <controllingFieldValues>Car Speakers</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Component Systems</fullName>
+                <default>false</default>
+                <controllingFieldValues>Car Speakers</controllingFieldValues>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Connected Car</fullName>
+                <default>false</default>
+                <controllingFieldValues>Car Speakers</controllingFieldValues>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>CurrencyIsoCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>DisplayUrl</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>ExternalDataSourceId</fullName>
+        <trackHistory>false</trackHistory>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>ExternalId</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Family</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Bluetooth Speakers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Headphones</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Home Theaters</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Car Speakers</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Marine Audio</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Image_URL__c</fullName>
+        <externalId>false</externalId>
+        <label>Image URL</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Url</type>
+    </fields>
+    <fields>
+        <fullName>Image__c</fullName>
+        <externalId>false</externalId>
+        <formula>MID(Image_URL__c, 33, 55)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Image</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsActive</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>Price__c</fullName>
+        <externalId>false</externalId>
+        <label>Price</label>
+        <precision>12</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ProductCode</fullName>
+        <trackHistory>false</trackHistory>
+    </fields>
+    <fields>
+        <fullName>QuantityUnitOfMeasure</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Each</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackHistory>false</trackHistory>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Stock__c</fullName>
+        <description>Available stock of the product</description>
+        <externalId>false</externalId>
+        <label>Stock</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Total_Quantity_Sold__c</fullName>
+        <externalId>false</externalId>
+        <label>Total Quantity Sold</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <listViews>
+        <fullName>AllProducts</fullName>
+        <columns>PRODUCT2.NAME</columns>
+        <columns>PRODUCT2.ACTIVE</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>PRODUCT2.FAMILY</columns>
+        <columns>PRODUCT2.CUSTOMER_PRODUCT_ID</columns>
+        <columns>PRODUCT2.DESCRIPTION</columns>
+        <columns>Brand__c</columns>
+        <columns>Category__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Products</label>
+        <language>en_US</language>
+    </listViews>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Partner_Portal1</fullName>
+        <active>true</active>
+        <label>Partner Portal1</label>
+        <picklistValues>
+            <picklist>Brand__c</picklist>
+            <values>
+                <fullName>AKG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Harman Kardon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infinity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JBL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Amplifiers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Component Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connected Car</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom-Install Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Docks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Theater</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Ear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Ear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over Ear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sounds Bar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stand-Alone Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subwoofers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Microphone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Family</picklist>
+            <values>
+                <fullName>Bluetooth Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Car Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Headphones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Theaters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marine Audio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Partner_Portal2</fullName>
+        <active>true</active>
+        <label>Partner Portal2</label>
+        <picklistValues>
+            <picklist>Brand__c</picklist>
+            <values>
+                <fullName>AKG</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Harman Kardon</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Infinity</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>JBL</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Category__c</picklist>
+            <values>
+                <fullName>Amplifiers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Component Systems</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Computer Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Connected Car</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Custom-Install Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Docks</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Theater</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>In Ear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>On Ear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Over Ear</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Sounds Bar</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Stand-Alone Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Subwoofers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Wireless Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>With Microphone</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Family</picklist>
+            <values>
+                <fullName>Bluetooth Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Car Speakers</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Headphones</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Home Theaters</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Marine Audio</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>PRODUCT2.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</customTabListAdditionalFields>
+        <customTabListAdditionalFields>PRODUCT2.DESCRIPTION</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Brand__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>PRODUCT2.FAMILY</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.DESCRIPTION</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>PRODUCT2.FAMILY</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.CUSTOMER_PRODUCT_ID</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.DESCRIPTION</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>PRODUCT2.FAMILY</searchResultsAdditionalFields>
+    </searchLayouts>
+</CustomObject>

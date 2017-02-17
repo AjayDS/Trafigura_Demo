@@ -1,0 +1,241 @@
+<apex:component controller="Portal_Profile"  >
+  <div class="container">
+                    
+                <div class="col-xs-6">
+                    <ul class="nav nav-tabs" id="myTab">
+                        <li class="active"><a href="#home" data-toggle="tab">Personal Information</a></li>
+                        <li><a href="#address" data-toggle="tab">Address Information</a></li>
+                        <li><a href="#changepassword" data-toggle="tab">Change Password</a></li>
+                    </ul>
+                </div> <br/> <br/><br/> <br/>
+                
+                <div class="col-xs-11">
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="home">  
+                            <div class="login-right">                                    
+                                <apex:form styleclass="well form-horizontal"  html-action=" " html-method="post" id="contact_form" >
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">First Name</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                    <!--<input  name="first_name" placeholder="First Name" class="form-control"  type="text"/>-->
+                                                    <apex:inputfield value="{!userobj.FirstName}"  html-placeholder="First Name" styleclass="form-control"  /> 
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label" >Last Name</label> 
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                    <!--<input name="last_name" placeholder="Last Name" class="form-control"  type="text"/>-->
+                                                    <apex:inputfield value="{!userobj.lastname}"  html-placeholder="Last Name" styleclass="form-control"  /> 
+                                                </div>
+                                            </div>
+                                    </div>
+                            
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">E-Mail</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                                                    <!--<input name="email" placeholder="E-Mail Address" class="form-control"  type="text" readonly="readonly"/>-->
+                                                    <apex:inputfield value="{!userobj.Email}"  html-placeholder="E-Mail Address" styleclass="form-control"  /> 
+                                                </div>
+                                            </div>
+                                    </div>
+                            
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Phone #</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                                    <!--<input name="phone" placeholder="(812)366-5463" class="form-control" type="text"/>-->
+                                                    <apex:inputfield value="{!userobj.phone}"  html-placeholder="(812)366-5463" styleclass="form-control"  /> 
+                                                
+                                                </div>                                        
+                                            </div>
+                                    </div>
+                            
+                                    <div class="form-group">
+                                        <div class="col-md-9 control-label">
+                                            <!--<button type="button" class="btn btn-default get" onclick="userdata();">Save Changes</button>-->
+                                            <apex:commandButton action="{!}" value="Save changes" styleclass="btn btn-default get"/>
+                                        </div>
+                                    </div>                   
+                                </apex:form>                     
+                            </div>                
+                        </div>
+    
+                        <div class="tab-pane" id="address">
+                            <div class="login-right">                                
+                                <apex:form styleclass="well form-horizontal"  html-action=" " html-method="post"  id="address_form">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Name</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                                    <!--<input  name="full_name" placeholder="Name" class="form-control"  type="text"/>-->
+                                                    <apex:inputtext value="{!addname}"  html-placeholder="Name" styleclass="form-control"  /> 
+                                                </div>
+                                            </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Address</label>
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                                                    <!--<textarea class="form-control" name="address" placeholder="Address"></textarea>-->
+                                                    <apex:inputTextarea styleclass="form-control" value="{!address}" html-placeholder="Address"/>
+                                                </div>
+                                            </div>
+                                    </div>
+                        
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Landmark</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                                    <!--<input name="landmark" placeholder="Landmark" class="form-control" type="text"/>-->
+                                                    <apex:inputtext value="{!landmark}"  html-placeholder="Landmark" styleclass="form-control"  /> 
+                                                </div>
+                                            </div>
+                                    </div> 
+                        
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">City</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                                    <!--<input name="city" placeholder="City" class="form-control"  type="text"/>-->
+                                                    <apex:inputtext value="{!city}"  html-placeholder="City" styleclass="form-control"  /> 
+                                                </div>
+                                            </div>
+                                    </div> 
+                                    
+                                    <div class="form-group"> 
+                                        <label class="col-md-4 control-label">State</label>
+                                            <div class="col-md-4 selectContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                        <!--<select name="state" class="form-control selectpicker" >
+                                                            <option value=" " >Please select your state</option>
+                                                            <option>Andhra Pradesh</option>
+                                                            <option>Karnataka</option>                                                            
+                                                        </select>-->
+                                                    <apex:selectList size="1" multiselect="false"  value="{!state}" styleclass="form-control selectpicker">
+                                                      <!--<apex:selectOptions value="{!state}" >Please select your state</apex:selectOptions>-->
+                                                      <apex:selectOption itemValue=" " itemLabel="Please select your state"/>
+                                                      <apex:selectOption itemValue="Andhra Pradesh" itemLabel="Andhra Pradesh"/>
+                                                      <apex:selectOption itemValue="Karnataka" itemLabel="Karnataka"/>
+                                                    </apex:selectList>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group"> 
+                                        <label class="col-md-4 control-label">Country</label>
+                                            <div class="col-md-4 selectContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span>
+                                                        <!--<select name="country" class="form-control selectpicker" >
+                                                            <option value=" " >Please select your Country</option>
+                                                            <option>India</option>
+                                                            <option>Australia</option>
+                                                            <option>USA</option>                                                            
+                                                        </select>-->
+                                                     <apex:selectList size="1" multiselect="false"  value="{!country}" styleclass="form-control selectpicker">
+                                                      <!--<apex:selectOptions value="{!state}" >Please select your state</apex:selectOptions>-->
+                                                      <apex:selectOption itemValue=" " itemLabel="Please select your Country"/>
+                                                      <apex:selectOption itemValue="India" itemLabel="India"/>
+                                                      <apex:selectOption itemValue="Australia" itemLabel="Australia"/>
+                                                      <apex:selectOption itemValue="USA" itemLabel="USA"/>
+                                                    </apex:selectList>
+                                            </div>
+                                        </div>
+                                    </div>
+                          
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Zip Code</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                                    <!--<input name="zip" placeholder="Zip Code" class="form-control"  type="text"/>-->
+                                                    <apex:inputtext value="{!zip}"  html-placeholder="Zip Code" styleclass="form-control"  />
+                                                </div>
+                                            </div>
+                                    </div>
+                        
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Phone #</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+                                                    <!--<input name="phonenumber" placeholder="(812)366-5463" class="form-control" type="text"/>-->
+                                                    <apex:inputtext value="{!phonenumber}"  html-placeholder="(812)366-5463" styleclass="form-control"  />
+                                                </div>                                        
+                                            </div>
+                                    </div>
+                        
+                                    <div class="form-group">
+                                        <div class="col-md-8 control-label">
+                                          
+                                            <apex:commandButton action="{!}" value="+ Add New Address" styleclass="btn btn-default get"/>
+                                        </div>
+                                    </div>
+                    
+                                </apex:form>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="changepassword">
+                            <div class="login-right">
+                                <form class="well form-horizontal"  action=" " method="post"  id="contact_form">
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Old Password</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                    <input name="oldpwd" placeholder="Old Password" class="form-control"  type="password"/>
+                                                </div>
+                                            </div>
+                                    </div> 
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">New Password</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                    <input name="newpwd" placeholder="Old Password" class="form-control"  type="password"/>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label class="col-md-4 control-label">Retype New Password</label>  
+                                            <div class="col-md-4 inputGroupContainer">
+                                                <div class="input-group">
+                                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                                    <input name="retypepwd" placeholder="Retype New Password" class="form-control"  type="password"/>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <div class="col-md-8 control-label">
+                                            <button type="button" class="btn btn-default get">Save Changes</button>
+                                        </div>
+                                    </div>  
+                                       
+                                </form>     
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+         </div>
+    
+</apex:component>

@@ -1,0 +1,54 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="portal_productCls">
+    <apex:composition template="portal_masterPage">
+        <apex:define name="header"/>
+        <apex:define name="mainContent">
+            <section>
+                <apex:form >
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-3">
+                                <c:portal_leftsideBarComp ></c:portal_leftsideBarComp>
+                            </div>
+                            <!--START Main Content -->
+                            <apex:pageBlock id="details">
+                                <div class="col-sm-9 padding-right">
+                                    <div class="features_items"><!--features_items-->
+                                        <h2 class="title text-center">Features Items</h2>
+                                         <div class="category-tab">                                
+                                            <div class="tab-content">                                   
+                                                <apex:pageBlock >
+                                                    <apex:repeat value="{!SelectedProducts}" var="selProd">                                           
+                                                            <div class="col-sm-3">
+                                                                <c:portal_smProductCmp img="{!mapLabels['Domain_URL'].Value__c}{!selProd.Product2.Image__c}" price="{!selProd.UnitPrice}" Name="{!selProd.Product2.Name}" prodId="{!selProd.Product2Id}"></c:portal_smProductCmp>                               
+                                                            </div>                                                                                      
+                                                    </apex:repeat>  
+                                                    <apex:outputText value="No Records found" id="noRec" rendered="{!productsList.size==0}" />
+                                                    
+                                                </apex:pageBlock>
+                                            </div>
+                                        </div>
+                                        <apex:outputpanel rendered="{!SelectedProducts.size!=0}">
+                                                <apex:commandButton value="First Page" rerender="details" action="{!FirstPage}"   disabled="{!prev}"/>
+                                                <apex:commandButton value="Previous" rerender="details" action="{!previous}"   disabled="{!prev}"/>
+                                                <apex:commandButton value="Next"  action="{!next}" disabled="{!nxt}" rerender="details"/>
+                                                <apex:commandButton value="Last Page"  action="{!LastPage}"  disabled="{!nxt}" rerender="details" />                                            
+                                       </apex:outputpanel>                                                                                            
+                                        
+                                    </div><!--features_items-->
+                                </div>
+                            </apex:pageBlock>
+                            <!-- END main Content-->
+                        </div>
+                    </div>
+                </apex:form>
+            </section>
+            
+            <apex:form id="formId">
+                <apex:actionFunction name="insertToCart" id="insertToCart" action="{!insertQuantity}" rerender="formId">
+                    <apex:param name="selectedPrdId" assignTo="{!selectedPrdId}" value="" />
+                </apex:actionFunction>
+            </apex:form>
+        </apex:define>
+        <apex:define name="footer"/>
+    </apex:composition>
+</apex:page>

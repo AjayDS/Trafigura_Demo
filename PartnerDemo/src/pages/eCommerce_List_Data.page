@@ -1,0 +1,77 @@
+<apex:page showHeader="false" controller="eCommerceHomePage" id="pageId" standardStylesheets="false" sidebar="false" applyHtmlTag="false" applyBodyTag="false" docType="html-5.0" action="{!selectedProductSummary}">
+
+<c:Static_Content />
+ 
+ <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+    <style>
+    #header {
+    background-color:LightSeaGreen;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px; 
+    //width:25%;
+    }
+    
+    </style>
+   
+    <style>
+        input[type=radio] { margin-left: 50px;}
+        .radioClass { margin-left: -100px;}
+    </style>   
+           <c:siteheader2_Copy /> <br/><br/>
+<!-- login -->
+            
+<!-- //login -->
+<c:Payment_Section />
+<c:loginpopup />
+<c:eCommerce_portalFooter ></c:eCommerce_portalFooter>
+<script typ="text/javascript">
+        function echo()
+        {
+            var txtVal1 = document.getElementById('txt1').value;
+            var txtVal2 = document.getElementById('txt2').value;
+            var txtVal3 = document.getElementById('txt3').value;
+            var txtVal4 = document.getElementById('txt4').value;
+            var txtVal5 = document.getElementById('txt5').value;    
+            var txtVal6 = document.getElementById('txt6').value;
+            var txtVal7 = document.getElementById('txt7').value;
+            var txtVal8 = document.getElementById('txt8').value;  
+            
+            alert('111111111'+txtVal1); 
+            
+            echoVal(txtVal1,txtVal2,txtVal3,txtVal4,txtVal5,txtVal6,txtVal7,txtVal8);
+            
+        }
+        
+        function collectDataforPayment(){
+            var price = simpleCart.total();  
+            alert(price);
+            generateTransactionid(price);           
+        }
+
+        var app = angular.module('myapp', ['UserValidation']);
+
+        angular.module('UserValidation', []).directive('validPasswordC', function () {
+                return {
+                require: 'ngModel',
+                link: function (scope, elm, attrs, ctrl) {
+                    ctrl.$parsers.unshift(function (viewValue, $scope) {
+                                            var noMatch = viewValue != scope.myForm.password.$viewValue
+                                        ctrl.$setValidity('noMatch', !noMatch)
+                                        })
+                    }
+                }
+        })
+</script>
+<script> var postalcode = '{!$Component.postalcode}' </script> 
+        <script type="text/javascript"> 
+        function validateText(numb){ 
+            if(isNaN(parseInt(numb))) {alert("zip code is numbers only")  
+            return false } 
+            else  return true };
+        </script>
+
+
+</html>
+</apex:page>

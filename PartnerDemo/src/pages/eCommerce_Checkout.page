@@ -1,0 +1,323 @@
+<apex:page sidebar="false" showHeader="false" controller="eCommerceHomePage" docType="html-5.0" >
+ <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            <title>Ecommerce</title>
+            <!-- Bootstrap -->
+            <!-- FONTAWESOME -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+             <!--Container-->
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            <apex:stylesheet value="{!URLFOR($Resource.Portal_UI, '/HTML/css/style.css')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.Portal_UI, '/HTML/assets/js/carousel-animation.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.Portal_UI, '/HTML/assets/js/carousel-swipe.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.community, '/community/js/bootstrap-3.1.1.min.js')}"/>
+            <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+            <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'/>
+            <apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery.easing.min.js')}"/>
+           <c:Static_Content ></c:Static_Content>
+        </head>
+        <body style="background:white;">
+            <c:Portal_Header />
+            <c:Shopping_Cart ></c:Shopping_Cart>
+            <c:Portal_Footer ></c:Portal_Footer>
+        </body>
+   </html>
+       
+  <script>
+  
+  localStorage.setItem('simpleCart_items', '{!jsonString}');  
+  simpleCart_items = localStorage.getItem("simpleCart_items");
+  Cart_items = JSON.parse(simpleCart_items);
+
+  var cartList1=[];
+    
+    $.each( Cart_items, function( index, value ){
+        cartList1.push({
+            img:'https://harmancommunities.force.com/partner' + value.thumb.split(",")[0],
+            name:value.name,
+            price: value.price,
+            quantity: value.quantity,
+            total:(value.price*value.quantity),
+            prodId:value.prodId 
+        }); 
+        
+    }); 
+    
+    console.log(Cart_items);     
+    
+    try{
+        sforce.connection.sessionId = '{!$Api.Session_ID}';             
+    }
+    catch(err){
+        alert(err.message);
+    }
+
+        function emptyCart(){
+
+            var deleIds=[];
+            var userId= '{!u.id}';
+            //alert('1'+userId);
+            var strQuery="Select id,User_Id__c from Shopping_Cart__c where User_Id__c=\'"+userId+"\'";
+            //alert(strQuery);
+            var result  = sforce.connection.query(strQuery);
+            //alert('2'+result);
+            var records = result.getArray("records");
+            //alert('0'+records.length);
+            for(var i=0;i<records.length;i++){      
+                deleIds.push(records[i].Id);
+                //alert('3'+deleIds);
+            }
+            
+            if(deleIds.length > 0){
+                //alert('5'+deleIds.length);
+                var res = sforce.connection.deleteIds([deleIds]); 
+                //alert("{!mapLabels['HomePage_URL'].Value__c}");
+                window.location.href="{!mapLabels['HomePage_URL'].Value__c}";
+            }
+            
+            //alert('4');
+        }   
+    
+/* jslint browser: true*/
+/*global $*/
+
+// https://github.com/jasonmoo/t.js
+(function(){function c(a){this.t=a}function l(a,b){for(var e=b.split(".");e.length;){if(!(e[0]in a))return!1;a=a[e.shift()]}return a}function d(a,b){return a.replace(h,function(e,a,i,f,c,h,k,m){var f=l(b,f),j="",g;if(!f)return"!"==i?d(c,b):k?d(m,b):"";if(!i)return d(h,b);if("@"==i){e=b._key;a=b._val;for(g in f)f.hasOwnProperty(g)&&(b._key=g,b._val=f[g],j+=d(c,b));b._key=e;b._val=a;return j}}).replace(k,function(a,c,d){return(a=l(b,d))||0===a?"%"==c?(new Option(a)).innerHTML.replace(/"/g,"&quot;"):
+a:""})}var h=/\{\{(([@!]?)(.+?))\}\}(([\s\S]+?)(\{\{:\1\}\}([\s\S]+?))?)\{\{\/\1\}\}/g,k=/\{\{([=%])(.+?)\}\}/g;c.prototype.render=function(a){return d(this.t,a)};window.t=c})();
+// end of 't';
+
+Number.prototype.to_$ = function () {
+  return "$" + parseFloat( this ).toFixed(2);
+};
+String.prototype.strip$ = function () {
+  return this.split("$")[1];
+};
+
+var prodId;
+
+function setProdId(productId){
+    prodId=productId;
+    //alert('@@@'+prodId+productId);    
+}
+
+function removeProductFromCart(item){
+                try{
+                    sforce.connection.sessionId = '{!$Api.Session_ID}';             
+                }
+                catch(err){
+                    alert(err.message);
+                }
+                
+                var strQuery="Select id,User_Id__c from Shopping_Cart__c where Product_Id__c=\'"+item+"\' and User_Id__c=\'"+'{!u.Id}'+"\'";
+                //alert(strQuery);
+                var result  = sforce.connection.query(strQuery);
+                                
+                var records = result.getArray("records");
+                var deleIds=[];
+                deleIds.push(records[0].Id);
+                var res = sforce.connection.deleteIds(deleIds);   
+                app.updateTotals();             
+                window.location.href=window.location.href;
+}  
+
+function updateQuantity(productId,proQuant){
+    
+            try{
+                sforce.connection.sessionId = '{!$Api.Session_ID}';                             
+                var shoppingCart = new sforce.SObject("Shopping_Cart__c");
+                var strQuery="Select Id,User_Id__c from Shopping_Cart__c where Product_Id__c=\'"+productId+"\' and User_Id__c=\'"+'{!u.Id}'+"\'";
+                //var strQuery="Select id,User_Id__c from Shopping_Cart__c";                
+                var result  = sforce.connection.query(strQuery);                                                            
+                var records = result.getArray("records");               
+                shoppingCart.Id=records[0].Id;                              
+                shoppingCart.Quantity__c=proQuant;
+                var result=sforce.connection.update([shoppingCart]); 
+                app.updateTotals();
+                window.location.href=window.location.href;
+            }
+            catch(err){
+                //console.log(err.message);
+                alert('Exception found'+err);
+            }
+} 
+ 
+ 
+function getAvailableStock(productId){
+            var stock=0;
+        try{
+                //sforce.connection.sessionId = '{!$Api.Session_ID}';                 
+                //var prodId='01t360000017xd4AAA';
+                console.log("prodId:"+productId);
+                //var product  = sforce.connection.retrieve("Stock__c","Product2", [prodId]);
+                var queryStr="SELECT Stock__c FROM Product2 where Id=\'"+productId+"\'";
+                var productsRetrieved=sforce.connection.query(queryStr);
+                //console.log("product:"+productsRetrieved.getArray("records")[0]);                
+                var product=productsRetrieved.getArray("records")[0];
+                stock=product.Stock__c;
+               console.log("Available Stock:"+stock);            
+            }
+            catch(err){
+                //console.log(err.message);
+                alert(err.message);
+            }                
+            return stock;
+  } 
+var app = {
+
+  shipping : 0.00,
+  products : cartList1,
+
+  removeProduct: function () {
+    "use strict";   
+    var item = $(this).closest(".shopping-cart--list-item");
+    
+    var images = $(".product-image"),
+        ctr,
+        img;
+
+    item.addClass("closing");
+    window.setTimeout( function () {
+      item.remove();
+      app.updateTotals();    
+    }, 500); // Timeout for css animation
+  },
+
+  addProduct: function () {
+    "use strict";
+
+        var qtyCtr = $(this).prev(".product-qty"),
+        quantity = parseInt(qtyCtr.html(), 10) + 1;
+        
+         $(this).closest('._grid').next(".out-of-stock").hide();
+        updateQuantity(prodId,quantity);
+        app.updateProductSubtotal(this, quantity);
+        /*//outofStock.html().style.display='block';
+        //outofStock.html().innerHTML="Out of Stock";
+        //alert(prodId);
+        $(this).closest('._grid').next(".out-of-stock").hide();
+        //document.getElementById("out_of_stock").style.display='none';   
+        // document.getElementById("out_of_stock").innerHTML="";
+        updateQuantity(prodId,quantity);
+        app.updateProductSubtotal(this, quantity);
+        var stock =getAvailableStock(prodId);
+        if(stock <= quantity-1)
+        {
+            //console.log("stock:"+stock);
+            $(this).closest('._grid').next(".out-of-stock").show().html('Out of Stock');
+            
+            //document.getElementById("out_of_stock").style.display='block';   
+            //document.getElementById("out_of_stock").innerHTML="Out of Stock";
+            //alert("Quantity is more than available stock");
+        }else{
+            $(this).closest('._grid').next(".out-of-stock").hide();
+            //document.getElementById("out_of_stock").style.display='none';   
+           // document.getElementById("out_of_stock").innerHTML="";
+            updateQuantity(prodId,quantity);
+            app.updateProductSubtotal(this, quantity);
+
+        }*/
+  },
+
+  subtractProduct: function () {
+    "use strict";
+
+    var qtyCtr = $(this).next(".product-qty"),
+        num = parseInt(qtyCtr.html(), 10) - 1,
+        quantity = num <= 0 ? 0 : num; 
+        //document.getElementById("out_of_stock").style.display='none';   
+        //document.getElementById("out_of_stock").innerHTML=""; 
+        $(this).closest('._grid').next(".out-of-stock").hide();
+        updateQuantity(prodId,quantity);
+        app.updateProductSubtotal(this, quantity);
+  },
+
+  updateProductSubtotal: function (context, quantity) {
+    "use strict";
+
+    var ctr = $(context).closest(".product-modifiers"),
+        productQtyCtr = ctr.find(".product-qty"),
+        productPrice = parseFloat(ctr.data("product-price")),
+        subtotalCtr = ctr.find(".product-total-price"),
+        subtotalPrice = quantity * productPrice;
+
+    productQtyCtr.html(quantity);
+    subtotalCtr.html( subtotalPrice.to_$() );
+
+    app.updateTotals();
+  },
+
+  updateTotals: function () {
+    "use strict";
+    var products = $(".shopping-cart--list-item"),
+        subtotal = 0,
+        shipping;
+
+    for (var i = 0; i < products.length; i += 1) {
+      subtotal += parseFloat( $(products[i]).find(".product-total-price").html().strip$() );
+    }
+
+    shipping = (subtotal > 0 && subtotal < (25000 / 1.06)) ? app.shipping : 0;
+
+    $("#subtotalCtr").find(".cart-totals-value").html( subtotal.to_$() );
+   // $("#taxesCtr").find(".cart-totals-value").html( (subtotal * 0.06).to_$() );
+    //$("#totalCtr").find(".cart-totals-value").html( (subtotal * 1.06 + shipping).to_$() );
+    $("#totalCtr").find(".cart-totals-value").html( (subtotal+ shipping).to_$() );
+    //$("#shippingCtr").find(".cart-totals-value").html( shipping.to_$() );
+  },
+
+  attachEvents: function () {
+    "use strict";
+
+    $(".product-remove").on("click", app.removeProduct);
+    $(".product-plus").on("click", app.addProduct);
+    $(".product-subtract").on("click", app.subtractProduct);
+    
+  },
+
+  setProductImages: function () {
+    "use strict";
+
+    var images = $(".product-image"),
+        ctr,
+        img;
+
+    for (var i = 0; i < images.length; i += 1) {
+      ctr = $(images[i]),
+      img = ctr.find(".product-image--img");        
+      ctr.css("background-image", "url(" + img.attr("src") + ")");    
+      img.remove();
+    }
+  },
+
+  renderTemplates: function () {
+    "use strict";
+
+    var products = app.products,
+        content = [],
+        template = new t( $("#shopping-cart--list-item-template").html() );
+
+    for (var i = 0; i < products.length; i += 1) {
+      content[i] = template.render(products[i]);
+    }
+
+    $("#shopping-cart--list").html(content.join(""));
+        
+  }
+
+};
+app.renderTemplates();
+app.setProductImages();
+app.attachEvents();
+
+  </script>
+  
+</apex:page>

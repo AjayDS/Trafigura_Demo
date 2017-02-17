@@ -1,0 +1,120 @@
+<apex:component controller="portal_footerCls" allowDML="true" >
+     <footer id="footer" ><!--Footer-->        
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">
+                  <!--  <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Service</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Online Help</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                                <li><a href="#">Order Status</a></li>
+                                <li><a href="#">Change Location</a></li>
+                                <li><a href="#">FAQ’s</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Quock Shop</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">T-Shirt</a></li>
+                                <li><a href="#">Mens</a></li>
+                                <li><a href="#">Womens</a></li>
+                                <li><a href="#">Gift Cards</a></li>
+                                <li><a href="#">Shoes</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-2">
+                        <div class="single-widget">
+                            <h2>Policies</h2>
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="#">Terms of Use</a></li>
+                                <li><a href="#">Privecy Policy</a></li>
+                                <li><a href="#">Refund Policy</a></li>
+                                <li><a href="#">Billing System</a></li>
+                                <li><a href="#">Ticket System</a></li>
+                            </ul>
+                        </div>
+                    </div>-->
+                    <apex:repeat value="{!footerLinks}" var="footer" >
+                        <apex:repeat value="{!footerLinks[footer]}" var="footerSubMen" >
+                            <div class="col-sm-2">
+                                <div class="single-widget">
+                                    <h2>{!footerSubMen}</h2>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <apex:repeat value="{!footerLinks[footer][footerSubMen]}" var="subM">
+                                            <li><apex:outputLink styleClass="active" value="{!mapLabels['Portal_product'].Value__c}?accId={!AccId}&pfn={!subM}">{!subM}</apex:outputLink></li>
+                                            <!--<li><a href="#">Careers</a></li>
+                                            <li><a href="#">Store Location</a></li>
+                                            <li><a href="#">Affillate Program</a></li>
+                                            <li><a href="#">Copyright</a></li>-->
+                                        </apex:repeat>
+                                    </ul>
+                                </div>
+                            </div>
+                        </apex:repeat>
+                    </apex:repeat>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="single-widget" >
+                            <h2>About Shopper</h2>
+                            <apex:form styleclass="searchform" id="formId" html-name="test" html-var="this">
+                                <apex:inputText html-placeholder="Your email addresses" id="emailID" value="{!subtList}">
+                                    
+                                </apex:inputText>
+                                <button type="submit" class="btn btn-default" onclick="update_subscription(this),checkEmail(this);"><i class="fa fa-arrow-circle-o-right"></i></button>
+                                <p>Get the most recent updates from <br />our site and be updated your self...</p>
+                            </apex:form>
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left">{!copyrightText}</p>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </footer><!--/Footer-->
+    <apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/jquery.js')}"/>  
+<apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/bootstrap.min.js')}"/>
+
+<apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/jquery.prettyPhoto.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/jquery.scrollUp.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/main.js')}"/>
+<script src="/soap/ajax/28.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/28.0/apex.js" type="text/javascript"></script>
+<script type="text/javascript">
+        function update_subscription(itemVal){
+        alert(email+'&&&&&1'+itemVal.Id);
+        var email=document.getElementById('{!$Component.formId.emailid}').value;
+        alert(email+'&&&&&2'+itemVal.Id);
+        sforce.connection.sessionId = '{!$Api.Session_ID}';                             
+        var subscription= new sforce.SObject("Subscritption_Email__c");                         
+        subscription.Subscrittption_Email_id__c=email;
+        var result=sforce.connection.create([subscription]); 
+        alert('Thank you for Subsription!');
+        //email.reset();
+        return false;      
+       }
+       function checkEmail() {
+
+            var email = document.getElementById('txtEmail');
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                if (!filter.test(email.value)) {
+                    alert('Please provide a valid email address');
+                email.focus;
+               return false;
+ }
+</script>
+</apex:component>

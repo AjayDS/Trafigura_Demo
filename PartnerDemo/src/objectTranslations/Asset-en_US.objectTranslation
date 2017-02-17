@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Inventory</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Inventory</value>
+    </caseValues>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Access</value>
+        </caseValues>
+        <name>asset_access</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Access Level</value>
+        </caseValues>
+        <name>asset_access_level</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Account</value>
+        </caseValues>
+        <name>asset_account</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Contact</value>
+        </caseValues>
+        <name>asset_contact</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Currency</value>
+        </caseValues>
+        <name>asset_currency</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Custom Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Inventory Custom Fields</value>
+        </caseValues>
+        <name>asset_custom_field</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Data</value>
+        </caseValues>
+        <name>asset_data</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Description</value>
+        </caseValues>
+        <name>asset_description</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Detail Link</value>
+        </caseValues>
+        <name>asset_detail_link</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Division</value>
+        </caseValues>
+        <name>asset_division</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Edit</value>
+        </caseValues>
+        <name>asset_edit</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Field</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Inventory Fields</value>
+        </caseValues>
+        <name>asset_field</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory History</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Inventory History</value>
+        </caseValues>
+        <name>asset_history</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory History ID</value>
+        </caseValues>
+        <name>asset_history_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory ID</value>
+        </caseValues>
+        <name>asset_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Information</value>
+        </caseValues>
+        <name>asset_information</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Install Date</value>
+        </caseValues>
+        <name>asset_installdate</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Is Competitor Product</value>
+        </caseValues>
+        <name>asset_iscompetitorproduct</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Name</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Inventory Names</value>
+        </caseValues>
+        <name>asset_name</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Owner</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Inventory Owners</value>
+        </caseValues>
+        <name>asset_owner</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Owner Alias</value>
+        </caseValues>
+        <name>asset_owner_alias</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Inventory</value>
+        </caseValues>
+        <name>asset_parent</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Parent Inventory ID</value>
+        </caseValues>
+        <name>asset_parent_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Price</value>
+        </caseValues>
+        <name>asset_price</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Product</value>
+        </caseValues>
+        <name>asset_product</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Purchase Date</value>
+        </caseValues>
+        <name>asset_purchasedate</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Quantity</value>
+        </caseValues>
+        <name>asset_quantity</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Inventory Record Types</value>
+        </caseValues>
+        <name>asset_record_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Root Inventory</value>
+        </caseValues>
+        <name>asset_root</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Root Inventory ID</value>
+        </caseValues>
+        <name>asset_root_id</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Serial Number</value>
+        </caseValues>
+        <name>asset_serialnumber</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Status</value>
+        </caseValues>
+        <name>asset_status</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory Usage End Date</value>
+        </caseValues>
+        <name>asset_usageenddate</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Inventory View</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Inventory Views</value>
+        </caseValues>
+        <name>asset_view</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Competitor Inventory</value>
+        </caseValues>
+        <name>competitor_asset</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <name>ProductFamily</name>
+        <picklistValues>
+            <masterLabel>Bluetooth Speakers</masterLabel>
+            <translation><!-- Bluetooth Speakers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Car Speakers</masterLabel>
+            <translation><!-- Car Speakers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Headphones</masterLabel>
+            <translation><!-- Headphones --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Theaters</masterLabel>
+            <translation><!-- Home Theaters --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marine Audio</masterLabel>
+            <translation><!-- Marine Audio --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>Status</name>
+        <picklistValues>
+            <masterLabel>Installed</masterLabel>
+            <translation><!-- Installed --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Obsolete</masterLabel>
+            <translation><!-- Obsolete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Purchased</masterLabel>
+            <translation><!-- Purchased --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Registered</masterLabel>
+            <translation><!-- Registered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Shipped</masterLabel>
+            <translation><!-- Shipped --></translation>
+        </picklistValues>
+    </fields>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

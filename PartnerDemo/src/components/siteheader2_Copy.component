@@ -1,0 +1,227 @@
+<apex:component controller="eCommerceHomePage">
+        <!-- header-bot -->
+<div class="header-bot">
+    <div class="container">
+        <div class="col-md-3 header-left">
+            <h1><a href="index.html"><img src="{!partnerLogoURL}" height="130px" width="140px"/></a></h1>
+        </div>
+        
+        <div class="col-md-6 header-middle">
+        <apex:form id="formId" >
+                <div class="search">
+                    <input id="SearchID" type="search" value="{!$label.Search}" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required=""/>
+                     
+                    <!-- <apex:input value="{!SearchText}" id="searchInput"/> -->
+                </div>
+                <div class="sear-sub">
+                    <input class="portal_background_color" type="submit" value=" " onclick="doSearch();"/>
+                </div>
+                <div class="clearfix"></div>
+            
+            <script>
+                function doSearch(){
+                    var SearchId = document.getElementById('SearchID').value;
+                   //alert('SerchId----->>>'+SearchId);
+                   //setRelatedProducts(SearchId ,'{!partnerName}');
+                   setRelatedProducts();
+                }
+            </script>           
+        </apex:form>
+        </div>       
+        <apex:form >    
+            <apex:ActionFunction name="setRelatedProducts" id="renderAction" action="{!setRelatedProducts}" rerender="formId">
+                <apex:param id="SearchProd" name="SearchProd" value="" />                
+                <apex:param id="accountName" name="accountName" value="" />
+            </apex:actionFunction>
+        </apex:form>
+        <div class="col-md-3 header-right footer-bottom">
+            <ul>
+                <li class="portal_foreground_color">
+                <apex:outputText rendered="{!$User.LastName=='Guest User'}"><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>{!$label.Login_Button}</span></a></apex:outputText>                   
+                <apex:outputText rendered="{!$User.LastName!='Guest User'}"><a href="{!mapLabels['SignIn_Page_URL'].Value__c}" class="use1" data-toggle="modal"><span>Logout1</span></a></apex:outputText>                    
+                 <apex:outputText rendered="{!$User.LastName!='Guest User'}"  >{!$Label.Logged_In_As} {!$User.FirstName} {!$User.LastName}</apex:outputText>
+                </li>    
+
+                <div class="dropdown-userOptioncontent">
+                    <a href="#">Personal information</a>
+                    <a href="#">Order History</a>
+                    <a href="#">Sign-out</a>
+                </div>      
+                
+                <br/>
+                <li>                    
+                </li>  
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- <p style="text-align:right;margin-right:00px;"><apex:outputText rendered="{!$User.LastName!='Guest User'}"  >Logged In As: {!$User.FirstName} {!$User.LastName}</apex:outputText></p>
+        -->
+        <div class="clearfix"></div>
+    </div>
+</div>
+        <!-- / PAGE HEADER -->  
+        <div class="slds">            
+        <div class="slds-tabs--default" >                   
+                <div class="ban-top" >
+                  <!-- TABS -->
+                  <ul class="slds-tabs--default__nav portal_background_color" role="tablist">
+                    <apex:repeat value="{!tabMenus}" var="tabM" id="tab">   
+                        <apex:repeat value="{!tabMenus[tabM]}" var="tabSubMen" id="tabsm">
+                        <li class="slds-tabs--default__item cartInfo " title="{!tabM}" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-0" id="tab-default-0__item"  onclick="selectTab(this);"><font color="white">{!tabSubMen}</font></a></li>
+                        </apex:repeat>
+                    </apex:repeat>
+                    <div class="cartInfo">
+                        
+                        <div class="cart box_1">
+                                    <a href="{!mapLabels['Checkout_Page'].Value__c}">
+                                        <h3> <div class="total">
+                                            <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
+                                            <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+                                            
+                                        </h3>
+                                    </a>                                                                              
+                                    <p><a href="javascript:;" class="simpleCart_empty" onclick="emptyCart();">Empty Cart</a></p>                        
+                        </div> 
+                                            
+                    </div> 
+                  </ul>
+                      <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                </div> 
+        </div>
+        </div>
+        
+        
+<!-- login -->
+            <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content modal-info">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                        
+                        </div>
+                        <div class="modal-body modal-spa">
+                            <div class="login-grids">
+                                <div class="login">
+                                    <div class="login-bottom">
+                                        <h3>{!$label.Sign_up_for_free}</h3>
+                                        <form>
+                                         <div class="sign-up" >
+                                                <h4>{!$label.First_Name}:</h4>
+                                                <input type="text" id="firstName" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required=""/> 
+                                            </div>
+                                             <div class="sign-up">
+                                                <h4>{!$label.Last_Name}</h4>
+                                                <input type="text" id="lastName" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required=""/> 
+                                            </div>
+                                            <div class="sign-up" >
+                                                <h4>{!$label.Email} :</h4>
+                                                <input type="text" id="emailId" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required=""/> 
+                                            </div>
+                                           <!-- <div class="sign-up">
+                                                <h4>Password :</h4>
+                                                <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required=""/>
+                                                
+                                            </div>
+                                            <div class="sign-up">
+                                                <h4>Re-type Password :</h4>
+                                                <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required=""/>
+                                                
+                                            </div> -->
+                                            <div class="sign-up">
+                                                <input type="submit" value="{!$label.REGISTER_NOW}" onclick="RegisterUser()"/>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                    <div class="login-right">
+                                        <h3>{!$LABEL.Sign_in_with_your_account}</h3>
+                                        <form>
+                                            <div class="sign-in">
+                                                <h4>{!$label.userName}:</h4>
+                                                <input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required=""/> 
+                                            </div>
+                                            <div class="sign-in">
+                                                <h4>{!$label.Password}:</h4>
+                                                <input type="password" value="{!$label.Password}Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required=""/>
+                                                <a href="#">{!$label.Forgot_password}</a>
+                                            </div>
+                                            <div class="single-bottom">
+                                                <input type="checkbox"  id="brand" value=""/>
+                                                <label for="brand"><span></span>{!$label.Remember_Me}.</label>
+                                            </div>
+                                            <div class="sign-in">
+                                                <input type="submit" value="{!$label.SIGNIN}" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <p>{!$label.By_logging_in_you_agree_to_our}By logging in you agree to our <a href="#">{!$label.Terms_and_Conditions}</a> and <a href="#">{!$label.Privacy_Policy}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- //login --><style>
+                .cartInfo{
+                    float:right;
+                    margin-left: 207px;
+                    text-transform: uppercase;
+                }​
+                
+                 /* Dropdown Button */
+                .dropbtn {
+                    background-color: #4CAF50;
+                    color: white;
+                    padding: 16px;
+                    font-size: 16px;
+                    border: none;
+                    cursor: pointer;
+                }
+
+                /* The container - needed to position the dropdown content */
+                .dropdown {
+                    position: relative;
+                    display: inline-block;
+                }
+
+                /* Dropdown Content (Hidden by Default) */
+                .dropdown-userOptioncontent {
+                    display: none;
+                    position: absolute;
+                    background-color: #f9f9f9;
+                    min-width: 160px;
+                    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                }
+
+                /* Links inside the dropdown */
+                .dropdown-userOptioncontent a {
+                    color: black;
+                    padding: 12px 16px;
+                    text-decoration: none;
+                    display: block;
+                }
+
+                /* Change color of dropdown links on hover */
+                .dropdown-userOptioncontent a:hover {background-color: #f1f1f1}
+
+                /* Show the dropdown menu on hover */
+                .dropdown:hover .dropdown-userOptioncontent {
+                    display: block;
+                }
+
+                /* Change the background color of the dropdown button when the dropdown content is shown */
+                .dropdown:hover .dropbtn {
+                    background-color: #3e8e41;
+                }
+
+                </style>
+<!-- //header-bot --></apex:component>

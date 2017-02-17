@@ -1,0 +1,52 @@
+<apex:component controller="eCommerceHomePage1" >
+        <!-- header-bot -->
+<div class="header-bot">
+    <div class="container">
+        <div class="col-md-3 header-left">
+            <h1><a href="index.html"><img src="http://demandware.edgesuite.net/aauj_prd/on/demandware.static/Sites-HA-US-Site/-/default/v1463960011032/images/logo.png"/></a></h1>
+        </div>
+        <div class="col-md-6 header-middle">
+            <form>
+                <div class="search">
+                    <input id="SearchID" type="search" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required=""/>
+                </div>
+                <div class="section_room">
+                    <select id="Country" onchange="change_country(this.value)" class="frm-field required">
+                        <option value="null">All categories</option>
+                        <option value="null">Headphone</option>     
+                        <option value="AX">Home Audio</option>
+                        <option value="AX">Car Audio</option>
+                        <option value="AX">Portable Sound</option>
+                       
+                    </select>
+                </div>
+                <div class="sear-sub">
+                    <input type="submit" value=" "/>
+                </div>
+                <div class="clearfix"></div>
+            </form>
+            <script>
+                function doSerach(){
+                alert('Entered..');
+                var SerchId = document.getElementById('SearchId').value;
+                var Country = document.getElementById('Country').value;
+                }
+            </script>
+        </div>
+        <div class="col-md-3 header-right footer-bottom">
+            <ul>
+                <li>
+                <apex:outputText rendered="{!$User.LastName=='Guest User'}"><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>Login</span></a></apex:outputText>                   
+                <apex:outputText rendered="{!$User.LastName!='Guest User'}"><a href="../secur/logout.jsp" class="use1" data-toggle="modal"><span>Logout</span></a></apex:outputText>                    
+                </li>               
+                <li><a class="fb" href="#"></a></li>
+                <li><a class="twi" href="#"></a></li>
+                <li><a class="insta" href="#"></a></li>
+                <li><a class="you" href="#"></a></li>               
+            </ul><br />
+            <!--<p style="text-align:left"><apex:outputText rendered="{!$User.LastName!='Guest User'}"  id="userLoggedIn" value="">Logged In As: {!$User.FirstName} {!$User.LastName}</apex:outputText></p>-->
+        </div><p style="text-align:right;margin-right:00px;"><apex:outputText rendered="{!$User.LastName!='Guest User'}"  >Logged In As: {!$User.FirstName} {!$User.LastName}</apex:outputText></p>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<!-- //header-bot --></apex:component>

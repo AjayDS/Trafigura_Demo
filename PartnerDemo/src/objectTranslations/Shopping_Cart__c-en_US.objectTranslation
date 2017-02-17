@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Shopping Cart</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Shopping Carts</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Shopping Carts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Deletion Date --></label>
+        <name>Deletion_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price --></label>
+        <name>Price__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Id --></label>
+        <name>Product_Id__c</name>
+        <relationshipLabel><!-- Shopping Carts --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Quantity --></label>
+        <name>Quantity__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Details --></label>
+        <name>Shipping_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- SubTotal --></label>
+        <name>SubTotal__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Id --></label>
+        <name>User_Id__c</name>
+        <relationshipLabel><!-- Shopping Carts --></relationshipLabel>
+    </fields>
+    <layouts>
+        <layout>Shopping Cart Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

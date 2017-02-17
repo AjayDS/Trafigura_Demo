@@ -1,0 +1,32 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  <div class="slds-tabs--default" >                   
+                <div class="ban-top">
+                  <!-- TABS -->
+                  <ul class="slds-tabs--default__nav" role="tablist">
+                    <li class="slds-tabs--default__item slds-text-heading--label slds-active" title="Home" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-0" id="tab-default-0__item"  onclick="selectTab(this);"><font color="white">Home</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Support Info" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-4" id="tab-default-4__item" onclick="selectTab(this);"><font color="white">Support</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Bluetooth Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-1" id="tab-default-1__item" onclick="javascript:selectTab(this,'Bluetooth Speakers');"><font color="white">Bluetooth Speakers</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Home Theaters" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item" onclick="javascript:selectTab(this,'Home Theaters');"><font color="white">Home Theaters</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Car Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item"  onclick="javascript:selectTab(this,'Car Speakers');"><font color="white">Car Speakers</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Product Feature" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-4" id="tab-default-4__item" onclick="selectTab(this,'File Upload');"><font color="white">Product Feature</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Car Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item" onclick="selectTab(this);"><font color="white"></font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Car Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item" onclick="selectTab(this);"><font color="white"></font></a></li>
+                    <div class="top_nav_right" >
+                        <div class="cart box_1">
+                                    <a href="../apex/eCommerce_Checkout">
+                                        <h3> <div class="total">
+                                            <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
+                                            <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+                                            
+                                        </h3>
+                                    </a>                                                                              
+                                    <p><a href="javascript:;" class="simpleCart_empty" onclick="emptyCart();">Empty Cart</a></p>                        
+                        </div> 
+                                            
+                    </div> 
+                  </ul>
+                </div> 
+                </div>
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

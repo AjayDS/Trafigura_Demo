@@ -1,0 +1,9 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+      <style type="text/css">
+        
+      .header_top {
+          background: none repeat scroll 0 0 #green;
+          max-height: 36px;
+        }
+      </style>
+</apex:page>

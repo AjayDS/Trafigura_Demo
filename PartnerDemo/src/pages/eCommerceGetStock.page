@@ -1,0 +1,321 @@
+<apex:page sidebar="false" showHeader="false" controller="eCommerceHomePage" docType="html-5.0" >
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+<apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />    
+<apex:includeScript value="{!URLFOR($Resource.jquery214)}" />   
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/bootstrap.css')}"/>
+<apex:stylesheet value="{!$Resource.checkout_CSS}"/>
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/pignose.layerslider.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/style.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery-2.1.4.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/simpleCart.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/bootstrap-3.1.1.min.js')}"/>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery.easing.min.js')}"/>
+<script src="/soap/ajax/28.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/28.0/apex.js" type="text/javascript"></script>
+<c:siteheader2_Copy />
+ <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">   
+  <body>     
+    <div class="slds">
+      <!--<h1>Shopping cart</h1>  -->
+    
+    <div class="ban-top">
+                  <!-- TABS -->
+                  <ul class="slds-tabs--default__nav" role="tablist">                                       
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Car Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item" onclick="selectTab(this);"><font color="white"></font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Car Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item" onclick="selectTab(this);"><font color="white"></font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Car Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item" onclick="selectTab(this);"><font color="white"></font></a></li>                   
+                  </ul>              
+    </div>
+     <br /><br />
+      <section class="shopping-cart">
+        <ol class="ui-list shopping-cart--list" id="shopping-cart--list">
+
+          <script id="shopping-cart--list-item-template" type="text/template">
+            <li class="_grid shopping-cart--list-item">
+              <div class="_column product-image">
+                <img class="product-image--img" src="{{=img}}" alt="Item image" />
+              </div>
+              <div class="_column product-info">
+                <h4 class="product-name">{{=name}}</h4>
+                <!--<p class="product-desc">{{=desc}}</p>-->
+                <div class="price product-single-price"><font size="5">${{=price}}</font></div>
+              </div>
+              <div class="_column product-modifiers" data-product-price="{{=price}}">
+                <div class="_grid">
+                  <!--<button class="_btn _column product-subtract">&minus;</button>
+                  <div class="_column product-qty">0</div>
+                  <button class="_btn _column product-plus">&plus;</button>-->
+                  <div class="_btn _column product-subtract">&minus;</div>
+                  <div class="_column product-qty">{{=quantity}}</div>
+                  <div class="_btn _column product-plus">&plus;</div>
+                </div>
+                <button class="_btn entypo-trash product-remove"><font color="Red">Remove</font></button>
+                <div class="price product-total-price">${{=total}}</div>
+              </div>
+            </li>
+            
+          </script>
+
+        </ol>
+
+        <footer class="_grid cart-totals">
+          <div class="_column subtotal" id="subtotalCtr">
+            <div class="cart-totals-key">Subtotal</div>
+            <div class="cart-totals-value simpleCart_total">$0.00</div>
+          </div>
+          <div class="_column shipping" id="shippingCtr">
+            <div class="cart-totals-key">Shipping</div>
+            <div class="cart-totals-value simpleCart_shipping">$0.00</div>
+          </div>
+          <!--<div class="_column taxes" id="taxesCtr">
+            <div class="cart-totals-key">Taxes (6%)</div>
+            <div class="cart-totals-value">$0.00</div>
+          </div>-->
+          <div class="_column total" id="totalCtr">
+            <div class="cart-totals-key">Total</div>
+            <div class="cart-totals-value simpleCart_total">$0.00</div>
+          </div>
+          <div class="_column checkout">
+            <!--<button class="checkout-btn entypo-forward" onclick="saveCartDetails();"><a href="../apex/eCommerce_List_Data">Checkout</a></button>-->
+            <button class="checkout-btn entypo-forward" onclick="saveCartDetails();">Checkout</button>
+          </div>
+        </footer>
+
+      </section>
+    </div>    
+     
+   </body>
+</html> 
+  <c:sitefooter1 ></c:sitefooter1>
+    
+  <script>
+  
+  simpleCart_items = localStorage.getItem("simpleCart_items");
+  Cart_items = JSON.parse(simpleCart_items);
+  
+  console.log(simpleCart_items);
+  
+  var shoppingCartRecords = [];
+  var cartList1=[];
+  
+    $.each( Cart_items, function( index, value ){
+        cartList1.push({
+            img:value.thumb.split(",")[0],
+            name:value.name,
+            price: value.price,
+            quantity: value.quantity,
+            total:(value.price*value.quantity)
+        }); 
+        
+    }); 
+    
+    console.log(Cart_items);     
+    
+    function saveCartDetails(){        
+        var shoppingCartRecords = [];
+        try{
+            alert("1");
+            for(var i in Cart_items)
+                {            
+                    sforce.connection.sessionId = '{!$Api.Session_ID}'; 
+                    var shopObj=new sforce.SObject("Shopping_Cart__c"); 
+                    var accObj = new sforce.SObject("Account"); 
+                    var attObj = new sforce.SObject("Attachment");
+                    shopObj.Quantity__c= parseInt(Cart_items[i].quantity);
+                    shopObj.SubTotal__c=(Cart_items[i].price*Cart_items[i].quantity);   
+                    var result  = sforce.connection.query("Select id from Account limit 1");
+                    var records = result.getArray("records");
+                    shopObj.Account__c=records[0].Id;
+                    shopObj.User_Id__c='{!u.Id}'; 
+                    var result2=sforce.connection.query("SELECT Id,Name,ParentId FROM Attachment limit 1");
+                    var records2 = result2.getArray("records");
+                    shopObj.Product_Id__c=records2[0].ParentId;
+                    console.log("shopObj------>"+shopObj);
+                    shoppingCartRecords.push(shopObj);
+                    console.log("shoppingCartRecords--->:"+shoppingCartRecords);
+                 }
+                result3=sforce.connection.create(shoppingCartRecords); 
+                console.log("result3--->"+result3);          
+            }
+            catch(err){
+                alert(err.message);
+            }
+            
+            
+
+       
+           
+    }
+/* jslint browser: true*/
+/*global $*/
+
+// https://github.com/jasonmoo/t.js
+(function(){function c(a){this.t=a}function l(a,b){for(var e=b.split(".");e.length;){if(!(e[0]in a))return!1;a=a[e.shift()]}return a}function d(a,b){return a.replace(h,function(e,a,i,f,c,h,k,m){var f=l(b,f),j="",g;if(!f)return"!"==i?d(c,b):k?d(m,b):"";if(!i)return d(h,b);if("@"==i){e=b._key;a=b._val;for(g in f)f.hasOwnProperty(g)&&(b._key=g,b._val=f[g],j+=d(c,b));b._key=e;b._val=a;return j}}).replace(k,function(a,c,d){return(a=l(b,d))||0===a?"%"==c?(new Option(a)).innerHTML.replace(/"/g,"&quot;"):
+a:""})}var h=/\{\{(([@!]?)(.+?))\}\}(([\s\S]+?)(\{\{:\1\}\}([\s\S]+?))?)\{\{\/\1\}\}/g,k=/\{\{([=%])(.+?)\}\}/g;c.prototype.render=function(a){return d(this.t,a)};window.t=c})();
+// end of 't';
+
+Number.prototype.to_$ = function () {
+  return "$" + parseFloat( this ).toFixed(2);
+};
+String.prototype.strip$ = function () {
+  return this.split("$")[1];
+};
+
+    
+var app = {
+
+  shipping : 100.00,
+  products : cartList1,
+
+  removeProduct: function () {
+    "use strict";   
+    var item = $(this).closest(".shopping-cart--list-item");
+
+    item.addClass("closing");
+    window.setTimeout( function () {
+      item.remove();
+      app.updateTotals();
+    }, 500); // Timeout for css animation
+  },
+
+  addProduct: function () {
+    "use strict";
+
+    var qtyCtr = $(this).prev(".product-qty"),
+        quantity = parseInt(qtyCtr.html(), 10) + 1;
+    app.getAvailableStock();
+    app.updateQuantity(this,quantity);
+    app.updateProductSubtotal(this, quantity);
+  },
+    getAvailableStock:function(){
+            
+        try{
+                sforce.connection.sessionId = '{!$Api.Session_ID}';                 
+                var prodId='01t360000017xd4AAA';
+                console.log("prodId:"+prodId);
+                //var product  = sforce.connection.retrieve("Stock__c","Product2", [prodId]);
+                var productsRetrieved=sforce.connection.query("SELECT Stock__c FROM Product2 where Id='01t360000017xd4AAA'");
+                //console.log("product:"+productsRetrieved.getArray("records")[0]);                
+                var product=productsRetrieved.getArray("records")[0];
+                var stock=product.Stock__c;
+                //alert(stock);            
+            }
+            catch(err){
+                alert(err.message);
+            }                
+  },
+  updateQuantity:function(context, quantity){
+      try{
+                sforce.connection.sessionId = '{!$Api.Session_ID}';                 
+                var prodId='01t360000019TSU';
+                console.log("prodId:"+prodId);
+                var shoppingCart = new sforce.SObject("Shopping_Cart__c");
+                shoppingCart.Id='a0F3600000312kwEAA';
+                shoppingCart.Product_Id__c=prodId;
+                shoppingCart.Quantity__c=quantity;
+                //var product  = sforce.connection.retrieve("Stock__c","Product2", [prodId]);
+                var result=sforce.connection.update([shoppingCart]);
+                console.log("result:"+result);                
+                          
+            }
+            catch(err){
+                alert(err.message);
+            } 
+  },
+  subtractProduct: function () {
+    "use strict";
+
+    var qtyCtr = $(this).next(".product-qty"),
+        num = parseInt(qtyCtr.html(), 10) - 1,
+        quantity = num <= 0 ? 0 : num;
+
+    app.updateProductSubtotal(this, quantity);
+  },
+
+  updateProductSubtotal: function (context, quantity) {
+    "use strict";
+
+    var ctr = $(context).closest(".product-modifiers"),
+        productQtyCtr = ctr.find(".product-qty"),
+        productPrice = parseFloat(ctr.data("product-price")),
+        subtotalCtr = ctr.find(".product-total-price"),
+        subtotalPrice = quantity * productPrice;
+
+    productQtyCtr.html(quantity);
+    subtotalCtr.html( subtotalPrice.to_$() );
+
+    app.updateTotals();
+  },
+
+  updateTotals: function () {
+    "use strict";
+    var products = $(".shopping-cart--list-item"),
+        subtotal = 0,
+        shipping;
+
+    for (var i = 0; i < products.length; i += 1) {
+      subtotal += parseFloat( $(products[i]).find(".product-total-price").html().strip$() );
+    }
+
+    shipping = (subtotal > 0 && subtotal < (25000 / 1.06)) ? app.shipping : 0;
+
+    $("#subtotalCtr").find(".cart-totals-value").html( subtotal.to_$() );
+   // $("#taxesCtr").find(".cart-totals-value").html( (subtotal * 0.06).to_$() );
+    //$("#totalCtr").find(".cart-totals-value").html( (subtotal * 1.06 + shipping).to_$() );
+    $("#totalCtr").find(".cart-totals-value").html( (subtotal+ shipping).to_$() );
+    $("#shippingCtr").find(".cart-totals-value").html( shipping.to_$() );
+  },
+
+  attachEvents: function () {
+    "use strict";
+
+    $(".product-remove").on("click", app.removeProduct);
+    $(".product-plus").on("click", app.addProduct);
+    $(".product-subtract").on("click", app.subtractProduct);
+    
+  },
+
+  setProductImages: function () {
+    "use strict";
+
+    var images = $(".product-image"),
+        ctr,
+        img;
+
+    for (var i = 0; i < images.length; i += 1) {
+      ctr = $(images[i]),
+      img = ctr.find(".product-image--img");
+
+      ctr.css("background-image", "url(" + img.attr("src") + ")");
+      img.remove();
+    }
+  },
+
+  renderTemplates: function () {
+    "use strict";
+
+    var products = app.products,
+        content = [],
+        template = new t( $("#shopping-cart--list-item-template").html() );
+
+    for (var i = 0; i < products.length; i += 1) {
+      content[i] = template.render(products[i]);
+    }
+
+    $("#shopping-cart--list").html(content.join(""));
+        
+  }
+
+};
+app.renderTemplates();
+app.setProductImages();
+app.attachEvents();
+
+  </script>
+  
+</apex:page>

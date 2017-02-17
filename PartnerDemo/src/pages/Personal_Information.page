@@ -1,0 +1,111 @@
+<apex:page showHeader="false" controller="eCommerceHomePage" docType="html-5.0">
+ <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>   
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+<apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />    
+<apex:includeScript value="{!URLFOR($Resource.jquery214)}" />   
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/bootstrap.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/pignose.layerslider.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/style.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.paymentForm, '/paymentForm/css/style.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery-2.1.4.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/simpleCart.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/bootstrap-3.1.1.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.paymentForm, '/paymentForm/js/index.js')}"/>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery.easing.min.js')}"/>
+ 
+ <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"> 
+ <style>
+    #header {
+    background-color:steelblue;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:8px; 
+    //width:25%;
+    }
+    
+    .marg{
+        margin-left:100px;
+    }
+    
+    </style>
+    
+    
+   
+    <c:siteheader2_Copy /> <br/><br/><br/>
+     
+    <div class="col-xs-5">
+        <ul class="nav nav-pills nav-justified" id="myTab"><!-- 'tabs-right' for right tabs -->
+            <li class="active"><a href="#home" data-toggle="tab">Personal Information</a></li>
+            <li><a href="#profile" data-toggle="tab">Change Password</a></li>
+            <li><a href="#OrderList" data-toggle="tab">Order Details</a></li>
+        </ul>
+    </div> <br/> <br/><br/> <br/>
+    <div class="col-xs-9">
+        <div class="tab-content">
+            <div class="tab-pane active" id="home">  
+                <div class="login-right">                   
+                    <h3 style="margin-left:100px;">Personal Information</h3> <br/> <br/>                
+                        <form class="marg">
+                            <div class="form-group">
+                                <h4>First Name:</h4>
+                                <input type="text" class="form-control"/> 
+                            </div>
+                            <div class="form-group">
+                                <h4>Last Name:</h4>
+                                <input type="text" class="form-control"/> 
+                            </div>
+                            <div class="form-group">
+                                <h4>Email:</h4>
+                                <input type="phone" class="form-control" readonly="readonly"/> 
+                            </div>
+                            <div class="form-group">
+                                <h4>Phone Number:</h4>
+                                <input type="phone" class="form-control"/> <br/>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" value="Update" class="form-control"/>
+                            </div>                            
+                        </form>                     
+            </div>                
+        </div>
+    <div class="tab-pane" id="profile">
+        <div class="login-right">
+            <h3 style="margin-left:100px;">Change Password</h3><br/> <br/>   
+                <form class="marg">
+                    <div class="form-group">
+                        <h4>Old Password:</h4>
+                        <input type="password" class="form-control"/>  
+                    </div>
+                    <div class="form-group">
+                        <h4>New Password:</h4>
+                        <input type="password" class="form-control"/>  
+                    </div>
+                    <div class="form-group">
+                        <h4>Retype New Password:</h4>
+                        <input type="password" class="form-control"/>  <br/>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Save Changes" class="form-control"/>
+                    </div>
+
+                </form>
+        </div>
+    </div>
+    <div class="tab-pane" id="OrderList">
+        <div class="login-right">
+            <h3 style="margin-left:100px;">Recent Orders</h3><br/> <br/>   
+        </div>
+    </div>
+    </div>
+    </div> <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
+    
+ <c:sitefooter1 ></c:sitefooter1>
+ </html>
+</apex:page>

@@ -1,0 +1,12 @@
+<apex:page controller="portal_footerCls" > 
+
+<!--<apex:pageBlock > 
+<apex:pageBlockSection columns="1">
+ 
+ <apex:inputfield label="Email" value="{!mailId}"/>
+ </apex:pageBlockSection> 
+ <apex:commandButton value="Submit" action="{!Submit}"/>
+ </apex:pageBlock>-->
+<c:portalheader1 ></c:portalheader1>
+ 
+ </apex:page>

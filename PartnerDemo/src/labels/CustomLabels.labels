@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>BEST_SELLERS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BEST SELLERS</shortDescription>
+        <value>BEST SELLERS</value>
+    </labels>
+    <labels>
+        <fullName>BLUETOOTH_SPEAKERS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BLUETOOTH SPEAKERS</shortDescription>
+        <value>BLUETOOTH SPEAKERS</value>
+    </labels>
+    <labels>
+        <fullName>BODY</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>BODY</shortDescription>
+        <value>Welcome to Harman Products....</value>
+    </labels>
+    <labels>
+        <fullName>Back_to_Login</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Back to Login</shortDescription>
+        <value>Back to Login</value>
+    </labels>
+    <labels>
+        <fullName>By_logging_in_you_agree_to_our</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>By logging in you agree to our</shortDescription>
+        <value>By logging in you agree to our</value>
+    </labels>
+    <labels>
+        <fullName>CAR_SPEAKERS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>CAR SPEAKERS</shortDescription>
+        <value>CAR SPEAKERS</value>
+    </labels>
+    <labels>
+        <fullName>Car_Audio</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Car Audio</shortDescription>
+        <value>Car Audio</value>
+    </labels>
+    <labels>
+        <fullName>Community1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Community1</shortDescription>
+        <value>https://harmancommunities.force.com/partner</value>
+    </labels>
+    <labels>
+        <fullName>Contact_Us</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Contact Us</shortDescription>
+        <value>Contact Us</value>
+    </labels>
+    <labels>
+        <fullName>Copywrite</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Copywrite</shortDescription>
+        <value>COPY 2016 HARMAN AUDIO</value>
+    </labels>
+    <labels>
+        <fullName>Domain_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Domain URL</shortDescription>
+        <value>https://harmancommunities.force.com/partner</value>
+    </labels>
+    <labels>
+        <fullName>Duplicate_Email_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Duplicate Email Error</shortDescription>
+        <value>Duplicate Email ID found</value>
+    </labels>
+    <labels>
+        <fullName>Email</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email</shortDescription>
+        <value>Email</value>
+    </labels>
+    <labels>
+        <fullName>Email_Address</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Email Address</shortDescription>
+        <value>Info@harman.com</value>
+    </labels>
+    <labels>
+        <fullName>Empty_Cart</fullName>
+        <categories>menu</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Empty Cart</shortDescription>
+        <value>Empty Cart</value>
+    </labels>
+    <labels>
+        <fullName>Exception_for_Duplicate_Email</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Exception for Duplicate Email</shortDescription>
+        <value>Email Address/ LastName is already exist in the System, Please change.</value>
+    </labels>
+    <labels>
+        <fullName>Exception_while_login</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Exception while login</shortDescription>
+        <value>Server Down..Please try after sometime.</value>
+    </labels>
+    <labels>
+        <fullName>Factory_Recertified</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Factory Recertified</shortDescription>
+        <value>Factory Recertified</value>
+    </labels>
+    <labels>
+        <fullName>File_Upload</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductSave_Button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>First_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>First Name</shortDescription>
+        <value>First Name</value>
+    </labels>
+    <labels>
+        <fullName>Footer_Link_Header</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Footer Link Header</shortDescription>
+        <value>Quick Links</value>
+    </labels>
+    <labels>
+        <fullName>Forgot_password</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Forgot password?</shortDescription>
+        <value>Forgot password?</value>
+    </labels>
+    <labels>
+        <fullName>HOME</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HOME</shortDescription>
+        <value>HOME</value>
+    </labels>
+    <labels>
+        <fullName>HOME_THEATERS</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>HOME THEATERS</shortDescription>
+        <value>HOME THEATERS</value>
+    </labels>
+    <labels>
+        <fullName>Headphone</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Headphone</shortDescription>
+        <value>Headphone</value>
+    </labels>
+    <labels>
+        <fullName>Home_Audio</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Home Audio</shortDescription>
+        <value>Home Audio</value>
+    </labels>
+    <labels>
+        <fullName>INFORMATION</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>INFORMATION</shortDescription>
+        <value>INFORMATION</value>
+    </labels>
+    <labels>
+        <fullName>Last_Name</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Last Name</shortDescription>
+        <value>Last Name</value>
+    </labels>
+    <labels>
+        <fullName>Logged_In_As</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Logged In As</shortDescription>
+        <value>Logged In As</value>
+    </labels>
+    <labels>
+        <fullName>Login_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Login Button</shortDescription>
+        <value>Login</value>
+    </labels>
+    <labels>
+        <fullName>Login_Heading</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Login Heading</shortDescription>
+        <value>Harman e-Commerce</value>
+    </labels>
+    <labels>
+        <fullName>New_User_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>New User Link</shortDescription>
+        <value>New User? SignUp</value>
+    </labels>
+    <labels>
+        <fullName>No_Contact_Error</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>No Contact Error</shortDescription>
+        <value>Cannot create a portal user without contact</value>
+    </labels>
+    <labels>
+        <fullName>PRODUCT_FEATURE</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>PRODUCT FEATURE</shortDescription>
+        <value>PRODUCT FEATURE</value>
+    </labels>
+    <labels>
+        <fullName>Password</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Password</shortDescription>
+        <value>Password</value>
+    </labels>
+    <labels>
+        <fullName>Phone</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Phone</shortDescription>
+        <value>Phone:</value>
+    </labels>
+    <labels>
+        <fullName>Phone_Number</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Phone Number</shortDescription>
+        <value>+1(877) 871-6755</value>
+    </labels>
+    <labels>
+        <fullName>Privacy_Policy</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Privacy Policy</shortDescription>
+        <value>Privacy Policy</value>
+    </labels>
+    <labels>
+        <fullName>ProductSave_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>ProductSave_Button</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Product_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Product URL</shortDescription>
+        <value>https://harmancommunities.force.com/partner</value>
+    </labels>
+    <labels>
+        <fullName>Purchase_Guaranty</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Purchase Guaranty</shortDescription>
+        <value>Not completely satisfied with your purchase? You may return it within 30 days from the date of purchase.</value>
+    </labels>
+    <labels>
+        <fullName>Quantity</fullName>
+        <categories>homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Quantity</shortDescription>
+        <value>QTY</value>
+    </labels>
+    <labels>
+        <fullName>REGISTER_NOW</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>REGISTER NOW</shortDescription>
+        <value>REGISTER NOW</value>
+    </labels>
+    <labels>
+        <fullName>Remember_Me</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Remember Me</shortDescription>
+        <value>Remember Me</value>
+    </labels>
+    <labels>
+        <fullName>Reset_Password</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Reset Password</shortDescription>
+        <value>Reset Password</value>
+    </labels>
+    <labels>
+        <fullName>SIGNIN</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SIGNIN</shortDescription>
+        <value>SIGNIN</value>
+    </labels>
+    <labels>
+        <fullName>SIGN_UP_FOR_NEWSLETTER</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SIGN UP FOR NEWSLETTER !</shortDescription>
+        <value>SIGN UP FOR NEWSLETTER !</value>
+    </labels>
+    <labels>
+        <fullName>SUPPORT</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>SUPPORT</shortDescription>
+        <value>SUPPORT</value>
+    </labels>
+    <labels>
+        <fullName>Satisfaction_Guaranteed</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Satisfaction Guaranteed</shortDescription>
+        <value>Satisfaction Guaranteed</value>
+    </labels>
+    <labels>
+        <fullName>Search</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Search</shortDescription>
+        <value>Search</value>
+    </labels>
+    <labels>
+        <fullName>Sign_in_with_your_account</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sign in with your account</shortDescription>
+        <value>Sign in with your account</value>
+    </labels>
+    <labels>
+        <fullName>Sign_up_for_free</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Sign up for free</shortDescription>
+        <value>Sign up for free</value>
+    </labels>
+    <labels>
+        <fullName>Signup_Button</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Signup Button</shortDescription>
+        <value>SignUp</value>
+    </labels>
+    <labels>
+        <fullName>Start_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Start URL</shortDescription>
+        <value>/portal_home_Copy</value>
+    </labels>
+    <labels>
+        <fullName>Submit</fullName>
+        <categories>Homepage</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Submit</shortDescription>
+        <value>Submit</value>
+    </labels>
+    <labels>
+        <fullName>Successfully_Registered_User</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Successfully Registered User</shortDescription>
+        <value>Successfully Registered. Please confirm the email Address.</value>
+    </labels>
+    <labels>
+        <fullName>Terms_and_Conditions</fullName>
+        <categories>header</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Terms and Conditions</shortDescription>
+        <value>Terms and Conditions</value>
+    </labels>
+    <labels>
+        <fullName>Validate_Email_Format</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Validate Email Format</shortDescription>
+        <value>Please enter valid email Id.</value>
+    </labels>
+    <labels>
+        <fullName>forgot_Paaswrd_Page_URL</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>forgot Paaswrd Page URL</shortDescription>
+        <value>../apex/eCommerce_Forgot_Password</value>
+    </labels>
+    <labels>
+        <fullName>forgot_Pass_Link</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>forgot Pass Link</shortDescription>
+        <value>Forgot your password?</value>
+    </labels>
+    <labels>
+        <fullName>image_harman</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>image_harman</shortDescription>
+        <value>http://demandware.edgesuite.net/aauj_prd/on/demandware.static/Sites-HA-US-Site/-/default/v1463960011032/images/logo.png</value>
+    </labels>
+    <labels>
+        <fullName>outOfStock</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>outOfStock</shortDescription>
+        <value>Out of Stock</value>
+    </labels>
+    <labels>
+        <fullName>star_icon_path</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>star icon path</shortDescription>
+        <value>/servlet/servlet.FileDownload?file=01536000000Bcfh</value>
+    </labels>
+    <labels>
+        <fullName>testing</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>testing</shortDescription>
+        <value>welcome to harman</value>
+    </labels>
+    <labels>
+        <fullName>testing1</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>testing1</shortDescription>
+        <value>Welcome to Harman</value>
+    </labels>
+    <labels>
+        <fullName>testing3</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>testing3</shortDescription>
+        <value>Welcome</value>
+    </labels>
+    <labels>
+        <fullName>userName</fullName>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>userName</shortDescription>
+        <value>Username</value>
+    </labels>
+</CustomLabels>

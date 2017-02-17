@@ -1,0 +1,43 @@
+<!--<apex:page controller="prosearchcontroller2">  
+  <apex:form >  
+ <apex:inputText value="{!search}" label="Input" />   
+  <apex:commandButton value="Search" action="{!search}"/>  
+   <apex:pageBlock title="Search Result">  
+    <apex:pageblockTable value="{!pro}" var="a">  
+     <apex:column >  
+      <apex:outputlink value="https://harmancommunities.my.salesforce.com/{!a.id}">{!a.Name}</apex:outputlink>  
+     </apex:column>  
+     <apex:column value="{!a.id}"/>  
+    </apex:pageBlockTable>     
+   </apex:pageBlock>   
+  </apex:form>  
+ </apex:page>-->
+ 
+<apex:page controller="prosearchcontroller2"> 
+<apex:form > 
+<script type='text/javascript'> 
+function runOnEnter(ev) { 
+if (window.event && window.event.keyCode == 13 || ev.which == 13) { 
+searchAccRecs(); 
+return false; 
+} else { 
+return true; 
+} 
+} 
+</script> 
+<apex:pageBlock > 
+<apex:inputText value="{!search}" onkeypress="return runOnEnter(event);"/>  
+<apex:pageBlockTable value="{!pro}" var="a" id="pgblcktbl"> 
+<apex:column >  
+      <apex:outputlink value="https://harmancommunities.my.salesforce.com/{!a.id}">{!a.Name}</apex:outputlink> 
+      <apex:repeat value="{!pro}" var="prods" >  
+        <div class="col-sm-4">
+        <c:portal_smProductCmp img="{!prods.Product2.Image__c}"  price="{!prods.Product2.Price__c}" Name="{!prods.product2.name}"></c:portal_smProductCmp>
+        </div>
+</apex:repeat>   
+     </apex:column>  
+</apex:pageBlockTable> 
+</apex:pageBlock> 
+<apex:actionFunction name="searchAccRecs" action="{!search}" reRender="pgblcktbl"/> 
+</apex:form> 
+</apex:page>

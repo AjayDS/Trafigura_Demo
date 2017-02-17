@@ -1,0 +1,33 @@
+<apex:component controller="eCommerceHomePage">
+    <!-- Carousel Start -->                
+    <div class="col-md-6">
+            <div id="fifthCarousel" class="carousel slide">
+                <!-- Menu -->
+                <ol class="carousel-indicators">
+                    <li data-target="#fifthCarousel" data-slide-to="0" class="active"></li>
+                    <li data-target="#fifthCarousel" data-slide-to="1"></li>
+                    <li data-target="#fifthCarousel" data-slide-to="2"></li>
+                    <!-- <li data-target="#homeCarousel" data-slide-to="3"></li>-->
+                </ol>
+                <!-- Items  -->
+                <div class="carousel-inner" role="listbox">
+                    <div class="item active carousal_height">
+                        <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images13.jpg')}" alt="image 13"/>
+                    </div>
+                    <div class="item carousal_height">
+                        <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images14.jpg')}" alt="image 14"/>
+                    </div>
+                    <div class="item carousal_height">
+                        <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images15.jpg')}" alt="image 15"/>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#fifthCarousel" data-slide="prev">
+                    <span class="icon-prev"></span>
+                </a>
+                <a class="right carousel-control" href="#fifthCarousel" data-slide="next">
+                    <span class="icon-next"></span>
+                </a>
+            </div>
+        </div>
+</apex:component>

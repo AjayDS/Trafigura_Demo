@@ -1,0 +1,26 @@
+<table border="0" cellpadding="10" width="650" cellspacing="5" height="400" >
+<tr valign="top" height="100" >
+<td width="150" tEditID="c1r1" style=" background-color:#CCCCCC; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+<td tEditID="c2r1" style=" background-color:#CCCCCC; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c2r1" locked="0" >
+<![CDATA[<div style="font-size: 18px; font-family: Arial, Helvetica, sans-serif; color: rgb(4, 46, 111); font-weight: bold; font-stretch: normal; margin-top: 10px; margin-bottom: 10px;"><span style="background-color: rgb(204, 204, 204);">Hi {!User.Name}</span></div><div style="width: 310px;"><span style="color: rgb(34, 34, 34); background-color: rgb(204, 204, 204);"><font face="Arial, sans-serif">Your order was delivered today. We hope you liked your purchase.</font></span></div>]]></td>
+</tr>
+<tr valign="top" height="100" >
+<td width="150" tEditID="c1r2" style=" background-color:#CCCCCC; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[Shipping Details]]></td>
+<td tEditID="c2r2" style=" background-color:#CCCCCC; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c2r2" locked="0" >
+<![CDATA[<font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">Order #:</font><span style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;">{!Order.Id}</span><div><font face="arial">Email:{!01I36000001ppMS.OwnerEmail}</font><br><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><div><font face="arial">Total Amount{!Order.TotalAmount}</font></div><div><font face="arial">Status:{!Order.Status}</font></div><div><font face="arial">Ordered Date:{!Order.PoDate}</font></div></div><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><br></div></div>]]></td>
+</tr>
+<tr valign="top" height="100" >
+<td width="150" tEditID="c1r3" style=" background-color:#CCCCCC; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[Billing Address]]></td>
+<td tEditID="c2r3" style=" background-color:#CCCCCC; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c2r3" locked="0" >
+<![CDATA[<font face="arial">Address:{!Order.ShippingAddress}</font>]]></td>
+</tr>
+<tr valign="top" height="100" >
+<td width="150" tEditID="c1r4" style=" background-color:#CCCCCC; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r4" locked="0" >
+<![CDATA[Product Details]]></td>
+<td tEditID="c2r4" style=" background-color:#CCCCCC; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c2r4" locked="0" >
+<![CDATA[<div><font face="arial">Name:{!Product2.Name}:</font><span style="font-size: 12pt;">{!Product2.Brand__c}</span></div><div><font face="arial">Ordered :{!Product2.Image__c}</font></div><div><font face="arial">Price:{!Product2.Price__c}</font></div>]]></td>
+</tr>
+</table>

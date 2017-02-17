@@ -1,0 +1,26 @@
+<table border="0" cellpadding="10" width="650" cellspacing="5" height="400" >
+<tr valign="top" height="100" >
+<td width="150" tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[]]></td>
+<td tEditID="c2r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c2r1" locked="1" >
+<![CDATA[<div>TransactionId:{!01I36000001MeJW.00N3600000GOUMf}</div>Your OrderId: {!01I36000001MeJW.Name}&nbsp;<div>ProductId :&nbsp;{!01I36000001MeJW.00N3600000EW8UB}</div><div>Quantity &nbsp; :&nbsp;{!01I36000001MeJW.00N3600000EWNxH}</div><div>Total Price:&nbsp;{!01I36000001MeJW.00N3600000DxmWP}</div>]]></td>
+</tr>
+<tr valign="top" height="100" >
+<td width="150" tEditID="c1r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r2" locked="0" >
+<![CDATA[]]></td>
+<td tEditID="c2r2" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c2r2" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="100" >
+<td width="150" tEditID="c1r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r3" locked="0" >
+<![CDATA[]]></td>
+<td tEditID="c2r3" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c2r3" locked="0" >
+<![CDATA[]]></td>
+</tr>
+<tr valign="top" height="100" >
+<td width="150" tEditID="c1r4" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r4" locked="0" >
+<![CDATA[]]></td>
+<td tEditID="c2r4" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c2r4" locked="0" >
+<![CDATA[Thank you!<div>Harman Connected Services</div><div>Contact#: 123123</div>]]></td>
+</tr>
+</table>

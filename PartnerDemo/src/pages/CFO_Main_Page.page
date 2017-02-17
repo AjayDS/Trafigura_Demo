@@ -1,0 +1,7 @@
+<apex:page html-lang="en" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+       <html>           
+            <!--<c:CFO_HeaderCmp />           -->
+            <c:CFO_HeaderComp />
+            <c:CFO_Component />                       
+       </html>              
+</apex:page>

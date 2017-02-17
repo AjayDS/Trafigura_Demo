@@ -1,0 +1,139 @@
+<apex:component controller="portal_Authentication" >
+<div class="container" ng-app="myapp">  
+    <apex:form html-name="myForm"  id="formId" >   
+        <div class="modal fade" id="loginbox" tabindex="-1" role="dialog">
+        
+            <div class="modal-dialog" role="document" id="loginModel">
+                <div class="modal-content">
+                    <div class="modal-header">      
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$('#loginbox').hide(); $('#loginModel').show();">×</button>                                            
+                        <h3>Please Sign In</h3>                         
+                        <hr class="colorgraph"/>                                                      
+
+                            <form ng-app="" name="myForm" forceSSL="true">                               
+                                <div class="form-group">
+                                  <label  for="username"><font size="3" color="black">{!$Label.userName}:</font></label><br />                                
+                                  <apex:inputText value="{!userN}" html-type="text" id="user" styleclass="form-control input-lg" html-name="user" html-ng-model="user" required="true" html-placeholder="{!$Label.userName}"  />
+                                </div>
+                                
+                                <div class="form-group">
+                                   <label  for="password"><font size="3" color="black">{!$Label.Password}:</font></label><br />                                   
+                                 
+                                    <apex:inputSecret value="{!pass}"  html-type="password" id="password" styleclass="form-control input-lg" html-name="password" html-ng-model="password" required="true" html-placeholder="{!$Label.Password}" />
+                                </div>
+                                                                                                                              
+                                <div class="form-group">
+                                    <div class="checkbox">
+                                     
+                                        <a href="#" class="btn btn-link pull-right" onClick="$('#loginModel').hide(); $('#pwdModal').show();">Forgot Password?</a>
+                                    </div>
+                                </div>
+                                <hr class="colorgraph"/>
+                                <div class="row">
+                                    <div class="col-xs-6 col-sm-6 col-md-6">                                        
+                                        <apex:Commandbutton styleclass="btn btn-lg get  btn-block active" html-ng-disabled="myForm.user.$dirty && myForm.user.$invalid || myForm.password.$dirty && myForm.password.$invalid" value="Login" action="{!login}"/> 
+                                    </div>
+                                    <div class="col-xs-6 col-sm-6 col-md-6">                                
+                                        <a href="#" onClick="$('#loginModel').hide(); $('#signupbox').show()" class="btn btn-lg btn-default get btn-block">Register</a>
+                                    </div>
+                                </div>
+                            </form>     
+                            
+                    </div>
+                </div>                                    
+            </div> 
+        
+
+            <div class="modal-dialog" id="signupbox" role="document" style="display:none;">         
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$('#signupbox').hide(); $('#loginModel').show();">×</button>
+                        <h3>Please Sign Up</h3>                                                
+                        <div style="float:right; font-size: 85%; position: relative; top:-10px">               
+                            <a id="signinlink" href="#" onclick="$('#signupbox').hide(); $('#loginModel').show();">Sign In</a>
+                        </div>
+                        <br/>
+                        
+                        <hr class="colorgraph"/>
+                        <form ng-app="" name="myForm" id="form2Id">
+                            <div class="form-group"> 
+                                <label  for="email"><font size="3" color="black">Email Address:</font></label><br />                              
+                                 <apex:inputText value="{!emailId}" html-type="text" id="email" styleclass="form-control input-lg" html-name="email" html-ng-model="email" required="true" html-placeholder="Email Address"  />
+                            </div>
+                            
+                            <div class="form-group">    
+                                <label  for="firstname"><font size="3" color="black">First Name:</font></label><br />                               
+                                <apex:inputText value="{!firstname}" html-type="text" id="firstname" styleclass="form-control input-lg" html-name="firstname" html-ng-model="firstname" required="true" html-placeholder="First Name"  />
+                            </div>
+                            
+                            <div class="form-group">    
+                                <label  for="lastname"><font size="3" color="black">Last Name:</font></label><br />                             
+                                <apex:inputText value="{!lastname}" html-type="text" id="lastname" styleclass="form-control input-lg" html-name="lastname" html-ng-model="lastname" required="true" html-placeholder="Last Name"  />
+                            </div>
+                                                    
+                            <div class="row">
+                                <div class="col-xs-6 col-sm-6 col-md-6">                                                                   
+                                   <!-- <apex:Commandbutton styleclass="btn btn-lg get  btn-block active" html-ng-disabled="myForm.firstname.$dirty && myForm.firstname.$invalid || myForm.email.$dirty && myForm.email.$invalid || myForm.lastname.$dirty && myForm.lastname.$invalid" value="Sign Up" action="{!registerUser}" />   -->
+                                    <apex:Commandbutton styleclass="btn btn-lg get  btn-block active" value="Sign Up" onClick="regUser()" />   
+                                    
+                                </div>
+                            </div>
+                        </form>  
+                        <apex:actionFunction rerender="form2Id" action="{!registerUser}" name="registerUser" />    
+                    </div>
+                </div>          
+            </div>
+        
+            <div class="modal-dialog" id="pwdModal" role="document" style="display:none;">         
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" onclick="$('#pwdModal').hide(); $('#loginModel').show();">×</button>
+                          <h3>Forgot Password?</h3> 
+                          
+                           <hr class="colorgraph"/>
+                        <form ng-app="" name="myForm">
+                            <div class="form-group">                                                                            
+                                <apex:inputText value="{!resetUserName}" html-type="text" id="resetUserName" styleclass="form-control input-lg" html-name="resetUserName" html-ng-model="resetUserName" required="true" html-placeholder="{!$Label.userName}"  />
+                            </div>                           
+                            <apex:Commandbutton styleclass="btn btn-lg get  btn-block active" html-ng-disabled="myForm.resetUserName.$dirty && myForm.resetUserName.$invalid" value="Reset Password" action="{!resetPassword}" rerender="formId"/> 
+                        </form>
+                        
+                    </div>
+
+                </div>
+            </div>
+        
+        
+        </div>
+              
+    </apex:form>
+                            
+ </div>
+
+<script>               
+    
+
+    var app = angular.module('myapp', ['ngMessages']);
+
+    angular.module('ngMessages', []).directive('validPasswordC', function () {
+            return {
+            require: 'ngModel',
+            link: function (scope, elm, attrs, ctrl) {
+                ctrl.$parsers.unshift(function (viewValue, $scope) {
+                                        var noMatch = viewValue != scope.myForm.password.$viewValue
+                                    ctrl.$setValidity('noMatch', !noMatch)
+                                    })
+                }
+            }
+    })
+    
+    function regUser(){
+        alert('asdasd');
+        //var emailid = document.getElementById('form2Id:email').value;
+        //alert('------'+emailid);
+        registerUser();
+    }
+    
+</script>
+
+</apex:component>

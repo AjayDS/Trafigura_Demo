@@ -1,0 +1,7 @@
+<aura:component access="global" controller="productController" implements="forceCommunity:availableForAllPageTypes">
+<aura:attribute name="ObjectName" type="String" default="Account" access="global" />
+<aura:attribute name="Fields" type="string" default="'Name', 'Id'" />
+<aura:attribute name="TotalRecord" type="Integer" default="3" />
+    {!v.ObjectName}
+   
+</aura:component>

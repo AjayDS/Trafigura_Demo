@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; bEditID:r3st1; color:#000000; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<font face="arial" style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><span style="font-size: 12pt;">Hi&nbsp;{!User.Name}</span></font><div><br><div><span class="Apple-tab-span" style="white-space:pre">	</span>Your address is changed .Please conform if you want to change it.</div><div>The updated address is:</div><div><br><div style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;"><font face="arial">{!01I36000001ppMS.OwnerEmail}</font></div><div><font face="arial">{!Contact.Phone}</font></div><div><font face="arial">{!01I36000001ppMS.00N3600000GNEWE}</font></div></div></div>]]></td>
+</tr>
+</table>

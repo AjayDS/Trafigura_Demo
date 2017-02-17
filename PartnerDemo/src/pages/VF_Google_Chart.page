@@ -1,0 +1,3 @@
+<apex:page sidebar="false" showheader="false"> 
+    <c:VF_Google_Chart_Component />
+</apex:page>

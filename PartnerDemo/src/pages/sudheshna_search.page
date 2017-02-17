@@ -1,0 +1,26 @@
+<!--<apex:page controller="eCommerceHomePage1">
+<apex:form>
+        <div class="search">
+        <input id="SearchID" type="search" value="Search" action="search"/>
+        </div>
+               
+        <div class="sear-sub">
+        <input type="submit" value="GO" />
+        </div>
+        <div class="clearfix"></div>
+</apex:form>
+</apex:page>-->
+ <apex:page controller="prosearchcontroller1">  
+  <apex:form >  
+ <apex:inputText value="{!search}" label="Input" />   
+  <apex:commandButton value="Search" action="{!search}"/>  
+   <apex:pageBlock title="Search Result">  
+    <apex:pageblockTable value="{!pro}" var="a">  
+     <apex:column >  
+      <apex:outputlink value="https://harmancommunities.my.salesforce.com/{!a.id}">{!a.Name}</apex:outputlink>  
+     </apex:column>  
+     <apex:column value="{!a.id}"/>  
+    </apex:pageBlockTable>     
+   </apex:pageBlock>   
+  </apex:form>  
+ </apex:page>

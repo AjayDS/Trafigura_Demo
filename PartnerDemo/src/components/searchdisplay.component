@@ -1,0 +1,181 @@
+<apex:component controller="eCommerceHomePage_New" >
+        <!-- header-bot -->
+<div class="header-bot">
+    <div class="container">
+        <div class="col-md-3 header-left">
+            <h1><a href="index.html"><img src="{!mapLabels['Harman_mainlogo1'].Value__c}" height="130px" width="140px"/></a></h1>
+        </div>
+        
+        <div class="col-md-6 header-middle">
+            <apex:form id="formId" >
+                <div class="search">
+                    <input id="SearchID" type="search" value="{!$label.Search}" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}" required=""/>
+                     
+                    <!-- <apex:input value="{!SearchText}" id="searchInput"/> -->
+                </div>
+                <!--
+                <div class="section_room">
+                    <select id="Country" onchange="change_country(this.value)" class="frm-field required">
+                        <option value="null">All categories</option>
+                        <option value="Headphone">Headphone</option>     
+                        <option value="Home Audio">Home Audio</option>
+                        <option value="Car Audio">Car Audio</option>
+                        <option value="Portable Sound">Portable Sound</option>
+                       
+                    </select>
+                </div> -->
+                <div class="sear-sub">
+                    <input type="submit" value=" " onclick="doSearch();"/>
+                </div>
+                <div class="clearfix"></div>
+            
+            <script>
+                function doSearch(){
+                    var SearchId = document.getElementById('SearchID').value;
+                   //alert('SerchId----->>>'+SearchId);
+                   searchProducts(SearchId ,'{!partnerName}');
+                   //setRelatedProducts();
+                }
+            </script>           
+        </apex:form>
+        </div>       
+        <apex:form >    
+            <apex:ActionFunction name="searchProducts" id="renderAction" action="{!searchProducts}" rerender="formId">
+                <apex:param id="SearchProd" name="SearchProd" value="" />                
+                <apex:param id="accountName" name="accountName" value="" />
+            </apex:actionFunction>
+        </apex:form>
+        <div class="col-md-3 header-right footer-bottom">
+            <ul>
+                <li>
+                <apex:outputText rendered="{!$User.LastName=='Guest User'}"><a href="#" class="use1" data-toggle="modal" data-target="#myModal4"><span>{!$label.Login_Button}</span></a></apex:outputText>                   
+                <apex:outputText rendered="{!$User.LastName!='Guest User'}"><a href="{!mapLabels['Logout_URL'].Value__c}" class="use1" data-toggle="modal"><span>Logout1</span></a></apex:outputText>                    
+                 <apex:outputText rendered="{!$User.LastName!='Guest User'}"  >{!$Label.Logged_In_As} {!$User.FirstName} {!$User.LastName}</apex:outputText>
+                </li>               
+                <br/>
+                <li>                    
+                </li>  
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- <p style="text-align:right;margin-right:00px;"><apex:outputText rendered="{!$User.LastName!='Guest User'}"  >Logged In As: {!$User.FirstName} {!$User.LastName}</apex:outputText></p>
+        -->
+        <div class="clearfix"></div>
+    </div>
+</div>
+        <!-- / PAGE HEADER -->  
+        <div class="slds">            
+        <div class="slds-tabs--default" >                   
+                <div class="ban-top">
+                  <!-- TABS -->
+                  <ul class="slds-tabs--default__nav" role="tablist">
+                    <li class="slds-tabs--default__item slds-text-heading--label slds-active" title="Home" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="0" aria-selected="true" aria-controls="tab-default-0" id="tab-default-0__item"  onclick="selectTab(this);"><font color="white">{!$label.Home}</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Support Info" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-4" id="tab-default-4__item" onclick="selectTab(this);"><font color="white">{!$label.Support}</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Bluetooth Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-1" id="tab-default-1__item" onclick="javascript:selectTab(this,'Bluetooth Speakers');"><font color="white">{!$label.Bluetooth_Speakers}</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Home Theaters" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-2" id="tab-default-2__item" onclick="javascript:selectTab(this,'Home Theaters');"><font color="white">{!$label.Home_Theaters}</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Car Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item"  onclick="javascript:selectTab(this,'Car Speakers');"><font color="white">{!$label.Car_Speakers}</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Product Feature" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-4" id="tab-default-4__item" onclick="selectTab(this,'File Upload');"><font color="white">{!$label.Product_Feature}</font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Car Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item" onclick="selectTab(this);"><font color="white"></font></a></li>
+                    <li class="slds-tabs--default__item slds-text-heading--label" title="Car Speakers" role="presentation"><a class="slds-tabs--default__link" href="#void" role="tab" tabindex="-1" aria-selected="false" aria-controls="tab-default-3" id="tab-default-3__item" onclick="selectTab(this);"><font color="white"></font></a></li>
+                    <div class="top_nav_right" >
+                        
+                        <div class="cart box_1">
+                                    <a href="{!mapLabels['Checkout_Page_URL'].Value__c}">
+                                        <h3> <div class="total">
+                                            <i class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></i>
+                                            <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
+                                            
+                                        </h3>
+                                    </a>                                                                              
+                                    <p><a href="javascript:;" class="simpleCart_empty" onclick="emptyCart();">Empty Cart</a></p>                        
+                        </div> 
+                                            
+                    </div> 
+                  </ul>
+                      <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                      </div>
+                </div> 
+        </div>
+        </div>
+        
+        
+<!-- login -->
+            <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content modal-info">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>                        
+                        </div>
+                        <div class="modal-body modal-spa">
+                            <div class="login-grids">
+                                <div class="login">
+                                    <div class="login-bottom">
+                                        <h3>{!$label.Sign_up_for_free}</h3>
+                                        <form>
+                                         <div class="sign-up" >
+                                                <h4>{!$label.First_Name}:</h4>
+                                                <input type="text" id="firstName" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required=""/> 
+                                            </div>
+                                             <div class="sign-up">
+                                                <h4>{!$label.Last_Name}</h4>
+                                                <input type="text" id="lastName" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required=""/> 
+                                            </div>
+                                            <div class="sign-up" >
+                                                <h4>{!$label.Email} :</h4>
+                                                <input type="text" id="emailId" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required=""/> 
+                                            </div>
+                                           <!-- <div class="sign-up">
+                                                <h4>Password :</h4>
+                                                <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required=""/>
+                                                
+                                            </div>
+                                            <div class="sign-up">
+                                                <h4>Re-type Password :</h4>
+                                                <input type="password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required=""/>
+                                                
+                                            </div> -->
+                                            <div class="sign-up">
+                                                <input type="submit" value="{!$label.REGISTER_NOW}" onclick="RegisterUser()"/>
+                                            </div>
+                                            
+                                        </form>
+                                    </div>
+                                    <div class="login-right">
+                                        <h3>{!$LABEL.Sign_in_with_your_account}</h3>
+                                        <form>
+                                            <div class="sign-in">
+                                                <h4>{!$label.userName}:</h4>
+                                                <input type="text" value="Type here" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type here';}" required=""/> 
+                                            </div>
+                                            <div class="sign-in">
+                                                <h4>{!$label.Password}:</h4>
+                                                <input type="password" value="{!$label.Password}Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Password';}" required=""/>
+                                                <a href="#">{!$label.Forgot_password}</a>
+                                            </div>
+                                            <div class="single-bottom">
+                                                <input type="checkbox"  id="brand" value=""/>
+                                                <label for="brand"><span></span>{!$label.Remember_Me}.</label>
+                                            </div>
+                                            <div class="sign-in">
+                                                <input type="submit" value="{!$label.SIGNIN}" />
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <p>{!$label.By_logging_in_you_agree_to_our}By logging in you agree to our <a href="#">{!$label.Terms_and_Conditions}</a> and <a href="#">{!$label.Privacy_Policy}</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+<!-- //login -->
+<!-- //header-bot --></apex:component>

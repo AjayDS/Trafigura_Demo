@@ -1,0 +1,86 @@
+<apex:component controller="GoogleChartsController" > 
+    <!-- Google API inclusion -->
+    <apex:includeScript id="a" value="https://www.google.com/jsapi" />         
+ 
+    <!-- Google Charts will be drawn in this DIV -->
+    <div id="chartBlock" />
+     
+    <script type="text/javascript">
+        // Load the Visualization API and the piechart package.
+        google.load('visualization', '1.0', {'packages':['corechart']});
+       
+        // Set a callback to run when the Google Visualization API is loaded.
+        google.setOnLoadCallback(initCharts);
+   
+        function initCharts() {         
+          // Following the usual Remoting syntax
+          // [<namespace>.]<controller>.<method>([params...,] <callbackFunction>(result, event) {...}
+          // controller : GoogleChartsController
+          // method : loadOpps
+          GoogleChartsController.loadOpps( 
+                 function(result, event){  
+                     // load Column chart
+                     var visualization = new google.visualization.ColumnChart(document.getElementById('chartBlock'));
+                     // Prepare table model for chart with columns
+                     var data = new google.visualization.DataTable();
+                     data.addColumn('string', 'Opportunity');
+                     data.addColumn('number', 'Expected Revenue');
+                     data.addColumn('number', 'Amount');    
+                     // add rows from the remoting results
+                     for(var i =0; i<result.length;i++){
+                        var r = result[i];
+                        data.addRow([r.Name, r.ExpectedRevenue, r.Amount]); 
+                      }
+                    // all done, lets draw the chart with some options to make it look nice.
+                    visualization.draw(data, {legend : {position: 'top', textStyle: {color: 'blue', fontSize: 10}}, width:window.innerWidth,vAxis:{textStyle:{fontSize: 10}},hAxis:{textStyle:{fontSize: 10},showTextEvery:1,slantedText:false}});
+              }, {escape:true});
+          } 
+    </script>
+    
+    <html>
+  <head>
+    <!--Load the AJAX API-->
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table, 
+      // instantiates the pie chart, passes in the data and
+      // draws it.
+      function drawChart() {
+
+      // Create the data table.
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Topping');
+      data.addColumn('number', 'Slices');
+      data.addRows([
+        ['JBL', 3],
+        ['Harman Kardon', 1],
+        ['AKG', 1], 
+        ['Lexicon', 1],
+        ['Infinity', 2]
+      ]);
+
+      // Set chart options
+      var options = {'title':'Total No of Products Sold',
+                     'width':400,
+                     'height':300};
+
+      // Instantiate and draw our chart, passing in some options.
+      var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+    </script>
+  </head>
+
+  <body>
+<!--Div that will hold the pie chart-->
+    <div id="chart_div" style="width:400; height:300"></div>
+  </body>
+</html>
+</apex:component>

@@ -1,0 +1,9 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+    <apex:composition template="portal_masterPage">
+        <apex:define name="header"/>
+        <apex:define name="mainContent">
+             <h2>Thank you for Registering!, please confirm your email address.</h2>
+        </apex:define>
+        <apex:define name="footer"/>
+    </apex:composition>
+</apex:page>

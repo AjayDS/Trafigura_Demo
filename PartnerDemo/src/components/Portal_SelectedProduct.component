@@ -1,0 +1,33 @@
+<apex:component controller="Portal_ProductsDisplay">
+        <apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery.easing.min.js')}"/>
+
+
+         <!-- Container Start -->  
+        <div class="container">                                      
+            <div class="row ">
+                 <apex:repeat value="{!CurrentProducts}" var="prod" id="products">
+                 <div class="men-pro-item col-md-3 col-sm-6 col-xs-12">
+                    <div class="image-details">
+                        <a  href="">
+                            <img src="{!mapLabels['Domain_URL'].Value__c}{!prod.Image__c}"  thumb="{!prod}" alt="image 1" />
+                        </a>
+    
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="full-details simpleCart_shelfItem item-info-product">
+                        <h5>{!prod.Name}</h5>
+    
+                        <!--<p class="item-info">Adidas Originals Tubular Viral</p>-->
+                        <apex:repeat value="{!prod.PriceBookEntries}" var="price">
+                            <span class="item_price"><p class="price-info">Rs.{!price.unitPrice}</p></span>                            
+                        </apex:repeat> 
+                        
+                        <button href="#" style="background-color:lightgrey;" class="cart item_add" onclick="updateCartDetails('{!prod.Id}','{!prod.PriceBookEntries[0].unitprice}','1')">Add to cart</button>                                                 
+                    </div>                  
+                </div><br />
+                 </apex:repeat>
+            </div>
+        </div>
+        <!--Container-->
+       
+</apex:component>

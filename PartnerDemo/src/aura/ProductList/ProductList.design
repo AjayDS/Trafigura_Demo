@@ -1,0 +1,6 @@
+<design:component label="product">
+<design:attribute name="ObjectName" label="Object Name" description="Name of the Object you want to Create Table" />    
+<design:attribute name="Fields" label="Fields Name" description="Name of the Field ',' seperate " />    
+<design:attribute name="TotalRecord" label="Total Number of Record" description="Total Number of record need to display" />    
+
+</design:component>

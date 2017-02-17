@@ -1,0 +1,98 @@
+<apex:component controller="FileUploadController" allowDML="true">
+<apex:includeScript value="{!URLFOR($Resource.jquery214)}" />
+<apex:stylesheet value="{!$Resource.fileUpload}"/>
+<script>
+function openWin(){
+    window.open("setup/Setup?setupid=SalesforceFiles");
+   } 
+   
+   function getIEFileSize(file){
+        var myFSO = new ActiveXObject("Scripting.FileSystemObject"),
+        filepath = file.value,
+        thefile = myFSO.getFile(filepath);
+        return thefile.size;
+    }
+//onclick="return checkFileSize();"
+    function checkFileSize()
+    {
+        var goodSize = true;
+        $('input[type=file]').each(function()
+        {
+            if(typeof this.files[0] !== 'undefined')
+            {
+                var file = this.files[0],
+                size = typeof ActiveXObject !== 'undefined' ?
+                    getIEFileSize(file)
+                    :
+                    file.fileSize || file.size;               
+                goodSize = 135000 > size;
+                if(!goodSize)
+                {
+                    alert(this.files[0].name +' is too large - please choose a file that is 135KB or less');                   
+                }
+                else
+                {
+                    if (130000 < size)
+                    {
+                        goodSize=confirm('The file size is ' + size + 
+                            ' bytes - this may take some time. Are you sure you wish to continue');
+                    }
+                }
+                return goodSize;
+            }
+        });
+        return goodSize;    }
+        
+        
+   function test(){
+       alert('1alert');
+       callAction();
+   }
+  
+  </script>
+  
+   <apex:form enctype="multipart/form-data" id="fileUploader">
+   <apex:pageMessages ></apex:pageMessages>       
+       <div class="fileupld">        
+       <div class="form-group">Product: 
+                <apex:selectList size="1" value="{!selectedValue}">
+                <apex:actionSupport event="onchange" action="{!getProdDetails}" reRender="fileUploader"></apex:actionSupport>
+                  <apex:selectOptions value="{!ProductsList}" id="p"></apex:selectOptions>
+              </apex:selectList>
+      </div> 
+     <div class="clearfix"></div> 
+     
+      <div class="form-group">Category:
+          <apex:inputField id="category" value="{!product.Category__c}" />
+      </div>
+      <div class="form-group ">Brand:
+          <apex:inputField id="brand" value="{!product.Brand__c}" />
+      </div>
+      <div class="form-group ">Price:
+          <apex:inputField id="price" value="{!product.Price__c}" />
+      </div> 
+      <div class="form-group ">
+          Stock:<apex:inputField id="stock" value="{!product.Stock__c}" />
+      </div>
+      <div class="form-group ">Family:
+          <apex:inputField id="family" value="{!product.Family}" />
+      </div>
+      <div class="form-group ">IsActive
+          <apex:inputCheckbox id="isActive" value="{!product.IsActive}" />
+      </div>
+      </div>
+       </apex:form>       
+ <apex:form enctype="multipart/form-data" id="fileForm">
+    <div class="form-group chosefile">Image:
+          <apex:inputFile id="attachmentID" value="{!picture}" accept="image/*" />
+      </div>
+      <div class="clearfix"></div>
+        <div class="form-group"> 
+           <apex:commandButton value="{!$Label.File_Upload}" action="{!save}"/> 
+        </div>
+           <!--apex:actionFunction action="{!save}" name="callAction" rerender="fileForm"></apex:actionFunction-->        
+      
+      <!--div class="form-group"><apex:commandButton value="Select a Salesforce File" onClick="openWin()"/></div>-->                
+    {!errorMessage}
+  </apex:form>
+</apex:component>

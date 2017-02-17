@@ -1,0 +1,18 @@
+<apex:page Controller="contactforemail" > 
+<apex:form id="changeDescription"> 
+<apex:pageMessages /> 
+    <apex:pageBlock Title="FOR SUBSCRIPTION OF EMAILS" > <br>
+    </br>
+        <apex:pageBlockSection columns="1">
+             <apex:inputField value="{!contact.firstName}" />
+             <apex:inputField value="{!contact.lastName}" />
+             <apex:inputfield label="Email" value="{!contact.email}"/>
+             <apex:inputfield label="Mobile Number" value="{!contact.MobilePhone}"/>
+             <apex:inputCheckbox value="{!contact.For_Subscription__c}"/>
+         </apex:pageBlockSection> 
+         <apex:pageBlockButtons >
+             <apex:commandButton action="{!submit}"  value="save"/>
+         </apex:pageBlockButtons>
+     </apex:pageBlock>
+ </apex:form> 
+ </apex:page>

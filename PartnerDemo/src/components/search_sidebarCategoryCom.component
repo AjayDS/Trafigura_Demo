@@ -1,0 +1,48 @@
+<apex:component controller="sidebar" >
+
+<apex:form >
+<div class="left-sidebar">
+        <h2>Category</h2>
+        <div class="panel-group category-products" id="accordian"><!--category-productsr-->
+        <div class="panel panel-default">
+        <div class="panel-heading">
+            <h4 class="panel-title">
+                <a data-toggle="collapse" data-parent="#accordian" href="#Amplifiers">
+                    <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                    Amplifiers
+                </a>
+            </h4>
+        </div>
+        <div id="Amplifires" class="panel-collapse collapse">
+            <div class="panel-body">
+                <ul>
+                    <li><a href="">JBL</a></li>
+                    <li><a href="">INFINITY</a></li>
+                   <!-- <li><a href="">Computer Speakers</a></li>
+                    <li><a href="">connected car </a></li>
+                    <li><a href="">Custom-Install Speakers</a></li> 
+                    <li><a href="">Docks/a></li>
+                    <li><a href="">Home Theater</a></li>
+                    <li><a href="">In Ear Headphone</a></li>
+                    <li><a href="">On Ear Headphone</a></li>
+                    <li><a href="">Over Ear Headphone-</a></li>
+                    <li><a href="">Sounds bar</a>
+                    <li><a href="">Speakers</a>
+                    <li><a href="">Subwoofers</a>
+                    <li><a href="">Wireless Headphone</a></li>
+                    <li><a href="">Wireless Speakers</a></li>-->
+                    
+                </ul>
+                <ul class="nav nav-tabs">
+                <apex:commandlink value="{!family}" action="{!fetch}"/>
+                   <apex:actionSupport event="onclick" action="{!FETCH}" rerender="selectText,selectValues"/>
+                   <apex:repeat value="{!family}" var="family" >
+                        <li><a href="#{!family}" data-toggle="tab">{!family}</a></li>                                            
+                   </apex:repeat>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div></div>
+  </apex:form>
+</apex:component>

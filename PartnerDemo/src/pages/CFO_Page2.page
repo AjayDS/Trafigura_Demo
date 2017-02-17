@@ -1,0 +1,5 @@
+<apex:page html-lang="en" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+
+  <wave:dashboard height="900px" width="100%" dashboardId="0FK36000000QSplGAG" openLinksInNewWindow="true" ></wave:dashboard>
+
+</apex:page>

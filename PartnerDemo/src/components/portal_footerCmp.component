@@ -1,0 +1,82 @@
+<apex:component controller="portal_footerCls" allowDML="true" >
+
+     <footer id="footer" ><!--Footer-->        
+        <div class="footer-widget">
+            <div class="container">
+                <div class="row">                 
+                    <apex:repeat value="{!footerLinks}" var="footer" >
+                        <apex:repeat value="{!footerLinks[footer]}" var="footerSubMen" >
+                            <div class="col-sm-2">
+                                <div class="single-widget">
+                                    <h2>{!footerSubMen}</h2>
+                                    <ul class="nav nav-pills nav-stacked">
+                                        <apex:repeat value="{!footerLinks[footer][footerSubMen]}" var="subM">
+                                            <li><apex:outputLink styleClass="active" value="{!mapLabels['Portal_product'].Value__c}?accId={!AccId}&pfn={!subM}">{!subM}</apex:outputLink></li>                                            
+                                        </apex:repeat>
+                                    </ul>
+                                </div>
+                            </div>
+                        </apex:repeat>
+                    </apex:repeat>
+                    <div class="col-sm-3 col-sm-offset-1">
+                        <div class="single-widget" >
+                            <h2>About Shopper</h2>
+                            <apex:form styleclass="searchform" id="formId" html-name="test" html-var="this">
+                                <apex:inputText html-placeholder="Your email addresses" id="emailID" value="{!subtList}">                                
+                                </apex:inputText>                               
+                                <button type="button" class="btn btn-default" onclick="update_subscription();"><i class="fa fa-arrow-circle-o-right"></i></button>
+                                <p>Get the most recent updates from <br />our site and be updated your self...</p>
+                            </apex:form>
+                           <!-- <p id="resultmsg"></p> 
+                            <apex:pageMessages />--> 
+                            
+                            
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <div class="container">
+                <div class="row">
+                    <p class="pull-left">{!copyrightText}</p>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </footer><!--/Footer-->
+<apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/jquery.js')}"/>  
+<apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/bootstrap.min.js')}"/>
+
+<apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/jquery.prettyPhoto.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/jquery.scrollUp.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.portal, '/sfdcportal/js/main.js')}"/>
+<script src="/soap/ajax/28.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/28.0/apex.js" type="text/javascript"></script>
+<script type="text/javascript">
+        function update_subscription(){                        
+            
+            var email=document.getElementById('{!$Component.formId.emailID}').value;
+          
+            if(email=='' || email==null){
+                alert('Please enter the email Address');                
+            }else{
+                Visualforce.remoting.Manager.invokeAction(
+                    '{!$RemoteAction.portal_footerCls.subscribeEmail}',
+                    email, 
+                    function(result, event){
+                        if (event.status) {                                                                     
+                                alert(result);
+                                document.getElementById('{!$Component.formId.emailID}').value='';                                
+                        } 
+                    }, 
+                    {escape: true}
+                );
+            }
+            
+        }
+</script>
+</apex:component>

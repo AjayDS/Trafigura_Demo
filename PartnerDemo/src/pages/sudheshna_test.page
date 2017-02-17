@@ -1,0 +1,19 @@
+<apex:page >
+  <!-- Begin Default Content REMOVE THIS -->
+  
+  <apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/test4drop.css')}"/>
+  <!-- End Default Content REMOVE THIS -->
+  <!--<c:portalheader1 ></c:portalheader1>
+  <c:Portal_topMenuComp ></c:Portal_topMenuComp>
+ <!-- <c:search_leftsideBarComp ></c:search_leftsideBarComp>-->
+ <!-- <c:search_sidebarCategoryCom ></c:search_sidebarCategoryCom>
+  <c:portal_topmenu1 ></c:portal_topmenu1>-->
+  <!--<c:portal_headerCmp ></c:portal_headerCmp>
+  <c:Portal_topMenuComp1 ></c:Portal_topMenuComp1>-->
+  
+  <c:searchcompp ></c:searchcompp>
+  
+  
+  
+ 
+</apex:page>

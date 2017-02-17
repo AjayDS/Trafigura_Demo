@@ -1,0 +1,71 @@
+<apex:component controller="portal_menuCls" extensions="prosearchcontroller2">
+            <div class="header-bottom"><!--header-bottom-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-9">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                        </div>
+                        
+                        <div class="mainmenu pull-left">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <apex:repeat value="{!tabMenus}" var="tabM" >
+                                    <apex:repeat value="{!tabMenus[tabM]}" var="tabSubMen" id="tabsm">
+                                        <!--<li><a href="index.html">{!tabSubMen}</a></li>-->                                       
+                                        <li class="dropdown">
+                                            <apex:outputLink styleClass="active" value="{!mapLabels['Domain_URL'].Value__c}" style="text-decoration:none;" rendered="{!tabSubMen=='Home' || tabSubMen=='HOME'}">{!tabSubMen}</apex:outputLink>
+                                            <apex:outputLink styleClass="active" value="{!mapLabels['Domain_URL'].Value__c}{!mapLabels['Product_Detail_Page'].Value__c}?accId={!AccId}&pfn={!tabSubMen}" style="text-decoration:none;" rendered="{!tabSubMen!='Home' && tabSubMen!='HOME'}">{!tabSubMen}<i class="fa fa-angle-down"></i></apex:outputLink>
+                                            <!--<a href="#" class="active">{!tabSubMen}<i class="fa fa-angle-down"></i></a>-->
+                                            <ul role="menu" class="sub-menu">
+                                                <apex:repeat value="{!tabMenus[tabM][tabSubMen]}" var="SubMen" id="tabsm">
+                                                    <li><apex:outputLink styleClass="active" value="{!mapLabels['Domain_URL'].Value__c}{!mapLabels['Portal_product'].Value__c}?accId={!AccId}&pfn={!tabSubMen}&pcategory={!SubMen}">{!SubMen}</apex:outputLink></li>
+                                                </apex:repeat>                             
+                                            </ul>
+                                        </li> 
+                                    
+                                    </apex:repeat>
+                                </apex:repeat>
+                            </ul>
+                        </div>                       
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="search_box pull-right">
+                           
+                            <!--<c:searchcompp ></c:searchcompp> --> 
+                            <script type='text/javascript'> 
+                                function runOnEnter(ev,text) { 
+                                if (window.event && window.event.keyCode == 13 || ev.which == 13) { 
+                                //searchAccRecs(); 
+                                //alert('aaaa'+text.value);
+                                
+                                var urlString = window.location.href;
+                                
+                                urlString = urlString.split("?")[0];
+                                
+                                //alert('======'+urlString);
+                                
+                                window.location.href = "{!mapLabels['Search_Page_URL'].Value__c}"+"?searchText="+text.value;
+                                return false; 
+                                } else { 
+                                //alert('@@@@'+Search Not Found);
+                                return true; 
+                                } 
+                                } 
+                            </script> 
+                           <!-- <apex:form > 
+                                <apex:inputText value="{!searchText}"  html-placeholder="Search" id="param1"  onkeypress="return runOnEnter(event,this);" />
+                                <apex:actionFunction name="searchAccRecs" action="{!getSearchResults}" reRender="pageId,searchForm,details"> 
+                                </apex:actionFunction> 
+                                
+                            </apex:form>                                                           -->
+                           </div>
+                    </div>
+                </div>
+                </div>
+            </div>            
+</apex:component>

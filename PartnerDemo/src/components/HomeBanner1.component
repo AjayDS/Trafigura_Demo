@@ -1,0 +1,69 @@
+<apex:component controller="eCommerceHomePage">
+    <apex:repeat value="{!homeBannerProducts}" var="prod" id="banner">                       
+            <!-- content-bottom -->
+
+                    <div class="content-bottom">
+                        <div class="col-md-7 content-lgrid">
+                            <div class="col-sm-6 content-img-left text-center">
+                                <div class="content-grid-effect slow-zoom vertical">
+                                    <div class="img-box">                                    
+                     <!-- <img src="{!URLFOR($Resource.community,'/community/images/JBL_Flip3Sale_1400x536.jpg')}" alt="image" class="img-responsive zoom-img"/>-->
+                                    
+                                    <img src="{!homeBannerProducts[prod].Image_URL__c}" alt="image" class="img-responsive zoom-img"/>
+                                    </div>
+                     
+                                        <div class="info-box">
+                                            <div class="info-content simpleCart_shelfItem">
+                                                        <h4 style="color:white;">{!homeBannerProducts[prod].Name}</h4>
+                                                        <span class="separator"></span>
+                                                        <p><span class="item_price">{!productSellPrice[prod]}</span></p>
+                                                        <span class="separator"></span>
+                                                        <a class="item_add hvr-outline-out button2" href="#">add to cart </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6 content-img-right">
+                                <h3>Special Offers and 50%<span>Discount On</span> JBL </h3>
+                            </div>
+                            
+                            <div class="col-sm-6 content-img-right">
+                                <h3>Buy 1 get 1  free on <span> Branded</span> Wireless Headphone</h3>
+                            </div>
+                            <div class="col-sm-6 content-img-left text-center">
+                                <div class="content-grid-effect slow-zoom vertical">
+                                    <div class="img-box">
+                                    <img src="{!URLFOR($Resource.community,'/community/images/HK_SohoTravel_1400x536.jpg')}" alt="image" class="img-responsive zoom-img"/>                                   
+                                    </div>
+                                        <div class="info-box">
+                                            <div class="info-content simpleCart_shelfItem">
+                                                <h4 style="color:White;">{!homeBannerProducts[prod].Name}</h4>
+                                                <span class="separator"></span>
+                                                <p><span class="item_price">{!productSellPrice[prod]}</span></p>
+                                                <span class="separator"></span>
+                                                <a class="item_add hvr-outline-out button2" href="#">add to cart </a>
+                                            </div>
+                                        </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="col-md-5 content-rgrid text-center">
+                            <div class="content-grid-effect slow-zoom vertical">
+                                    <div class="img-box"><img src="{!URLFOR($Resource.community,'/community/images/p4.jpg')}" alt="image" class="img-responsive zoom-img"/></div>
+                                        <div class="info-box">
+                                            <div class="info-content simpleCart_shelfItem">
+                                                        <h4>{!homeBannerProducts[prod].Name}</h4>
+                                                        <span class="separator"></span>
+                                                        <p><span class="item_price">{!productSellPrice[prod]}</span></p>
+                                                        <span class="separator"></span>
+                                                        <a class="item_add hvr-outline-out button2" href="#">add to cart </a>
+                                            </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <!-- //content-bottom -->
+    </apex:repeat>  
+</apex:component>

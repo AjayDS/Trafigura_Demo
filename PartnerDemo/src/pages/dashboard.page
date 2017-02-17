@@ -1,0 +1,5 @@
+<apex:page >
+  <wave:dashboard dashboardId="0FK36000000QSpgGAG" height="700px"></wave:dashboard>
+ <!--<wave:dashboard dashboardId="0FK36000000QSplGAG"></wave:dashboard>
+ <wave:dashboard dashboardId="0FK36000000QSpWGAW"></wave:dashboard>-->
+</apex:page>

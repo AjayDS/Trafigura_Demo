@@ -1,0 +1,63 @@
+<apex:component controller="portal_CheckoutCls" allowDML="true" id="scId">
+                <html lang="en">
+                    <link rel='stylesheet prefetch' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/5175/utf-latest.min.css' />
+                    <link href='https://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css' />
+                    <link rel="stylesheet" href="http://weloveiconfonts.com/api/?family=entypo" />
+                    <apex:includeScript value="{!URLFOR($Resource.community, '/community/js/simpleCart.min.js')}"/>
+                    <script src="/soap/ajax/28.0/connection.js" type="text/javascript"></script>
+                    <script src="/soap/ajax/28.0/apex.js" type="text/javascript"></script>
+                    <div class="slds men-pro-item simpleCart_shelfItem item-info-product">
+                      <!--<h1>Shopping cart</h1>  -->       
+                     <br /><br />
+                      <section class="shopping-cart">
+                        <ol class="ui-list shopping-cart--list" id="shopping-cart--list">
+    
+                          <script id="shopping-cart--list-item-template" type="text/template">
+                            <li class="_grid shopping-cart--list-item">
+                              <div class="_column product-image">
+                                <img class="product-image--img" src="{{=img}}" alt="{{=prodId}}" />
+                              </div>
+                              <div class="_column product-info">
+                                <h4 class="product-name">{{=name}}</h4>
+                               
+                                <div class="price product-single-price"><font size="5">${{=price}}</font></div>
+                                
+                              </div>
+                              <div class="_column product-modifiers item-decrement item-increment" data-product-price="{{=price}}">
+                                <div class="_grid">
+                                 
+                                  <div class="simpleCart_decrement item_subtract _btn _column product-subtract" onclick="setProdId('{{=prodId}}');" >&minus;</div>
+                                  <div class="_column product-qty">{{=quantity}}</div>
+                                  <div class="_btn _column product-plus item_add single-item" onclick="setProdId('{{=prodId}}');">&plus;</div>                  
+                                </div>
+                                <div class="_btn entypo-trash out-of-stock" style="display:none">Out of Stock</div>                         
+                                <div />
+                                <button style="" class="_btn entypo-trash product-remove simpleCart_remove" onclick="removeProductFromCart('{{=prodId}}')"><font color="black">Remove</font></button>
+                                <div class="price product-total-price">${{=total}}</div>
+                              </div>
+                            
+                            </li>
+                            
+                          </script>
+    
+                        </ol>  
+    
+                         <footer class="_grid cart-totals">
+                          
+                          <div class="_column total" id="totalCtr" style="margin-">
+                            <div class="cart-totals-key">Total</div>
+                            <div class="cart-totals-value simpleCart_total"></div>
+                          </div>
+                          <div class="_column checkout" id="totalCtr">                            
+                            <!--<a href="{!mapLabels['Payment_Page_URL'].Value__c}"  onclick="window.location.href="></a>-->
+                            <apex:form ><apex:commandbutton styleclass="btn btn-default fa fa-arrow-circle-o-right simpleCart_empty" action="{!placeOrder}" value="Checkout"></apex:commandbutton></apex:form>
+                          </div>
+                        
+                        </footer>
+    
+                      </section>
+                    </div>    
+
+             </html>
+             
+</apex:component>

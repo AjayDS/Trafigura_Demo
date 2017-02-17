@@ -1,0 +1,155 @@
+<apex:page sidebar="false" standardStylesheets="false" showHeader="false" controller="portal_ProductDescription">
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/simpleCart.min.js')}"/>
+    <apex:composition template="portal_masterPage">
+        <apex:define name="header"/>
+        <apex:define name="mainContent">
+            <div class="container" id="product-section">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img id="item-display" src="{!mapLabels['Domain_URL'].Value__c}{!priceBookObj.Product2.image__c}" alt="" width="350" height="290"></img>
+                    </div>
+            
+                    <div class="col-md-6 simpleCart_shelfItem">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h3>{!priceBookObj.Product2.Name}</h3>
+                            </div>
+                        </div>                                               
+                        <br/>
+                        
+                        <!--<div class="row">
+                            <div class="col-md-12">
+                                <p class="description"> {!priceBookObj.Product2.Description}</p>
+                            </div>
+                        </div>--><!-- end row -->                                           
+                        
+                        <div class="row">
+                            <div class="col-md-12 bottom-rule">
+                                <h2 class="product-price">${!priceBookObj.UnitPrice}</h2>
+                            </div>
+                        </div><!-- end row -->
+                       
+                        <!--<button type="button" class="btn btn-default get item_add single-item" onClick="insertToCart('{!priceBookObj.Product2id}');"> Add to cart </button> -->
+                         <a href="#" class="btn btn-default add-to-cart get item_add single-item" onClick="insertToCart('{!priceBookObj.Product2id}');"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                        <br/> <br/> 
+                        <!--
+                        <div class="row">
+                            <div class="col-md-12 top-10">
+                                <p>To order by telephone, <a href="tel:18005551212">please call 1-800-555-1212</a></p>
+                            </div>
+                        </div>-->
+                        <!-- end row -->
+                        
+                        
+                        <ul class="nav nav-tabs" role="tablist">
+                             <li role="presentation" class="active">
+                                  <a href="#description"
+                                   aria-controls="description"
+                                   role="tab"
+                                   data-toggle="tab"
+                                  >Description</a>
+                             </li>
+                             <li role="presentation">
+                                  <a href="#features"
+                                   aria-controls="features"
+                                   role="tab"
+                                   data-toggle="tab"
+                                  >Features</a>
+                             </li>
+                             <!--<li role="presentation">
+                                  <a href="#notes"
+                                   aria-controls="notes"
+                                   role="tab"
+                                   data-toggle="tab"
+                                   >Notes</a>
+                             </li>
+                             <li role="presentation">
+                                  <a href="#reviews"
+                                   aria-controls="reviews"
+                                   role="tab"
+                                   data-toggle="tab"
+                                  >Reviews</a>
+                             </li>-->
+                        </ul>
+                        <br/>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane active" id="description">
+                                 {!priceBookObj.Product2.Description}
+                            </div>
+                            
+                            <div role="tabpanel" class="tab-pane top-10" id="features">
+                                Demo Features
+                            </div>
+                           <!-- <div role="tabpanel" class="tab-pane" id="notes">
+                                Demo Notes
+                            </div>
+                            <div role="tabpanel" class="tab-pane" id="reviews">
+                                Demo Reviews
+                            </div>-->
+                        </div>
+                        
+                        
+                        
+            
+                    </div>
+                    
+                </div><!-- end row -->
+            </div><!-- end container --> 
+        <br/>
+                         
+    </apex:define>
+    
+    </apex:composition>  
+    <apex:form id="formId">
+        <apex:actionFunction name="insertToCart" id="insertToCart" action="{!insertQuantity}" rerender="formId">
+            <apex:param name="selectedPrdId" assignTo="{!selectedPrdId}" value="" />
+        </apex:actionFunction>
+    </apex:form>
+     <script>
+     
+        function insertQuantity(productId){                   
+                  //alert('#####'+productId);  
+                            try{
+                                sforce.connection.sessionId = '{!$Api.Session_ID}';                             
+                                var shoppingCart = new sforce.SObject("Shopping_Cart__c");
+                                
+                                var cartQuery="Select Id,Quantity__c,User_Id__c from Shopping_Cart__c where Product_Id__c=\'"+productId+"\' and User_Id__c=\'"+'{!userObj.Id}'+"\'";
+                                var result  = sforce.connection.query(cartQuery);
+                                //alert('!!!!!!!'+result); 
+                                var records = result.getArray("records"); 
+                                if(records.length>0){                                                                       
+                                    shoppingCart.Id=records[0].Id;  
+                                    
+                                    var qty=records[0].Quantity__c;
+                                    qty++;
+                                    //alert('$$$'+qty);
+                                    shoppingCart.Quantity__c=qty;                                   
+                                    //alert('#####'+shoppingCart.Quantity__c); 
+                                    result=sforce.connection.update([shoppingCart]);                                    
+                                    window.location.href=window.location.href;
+                                }else{
+                                
+                                
+                                    var strQuery="SELECT Id,ProductCode,UnitPrice,Product2.Description,Product2.Name,Product2.Image__c,Product2.Category__c,Product2.Brand__c,Product2.Stock__c,Product2.isActive,Product2.Family FROM PricebookEntry where Product2Id=\'"+productId+"\' and PriceBook2Id="+'\'{!acSet.Price_Book__c}\'';
+                                    //alert('1111111'+strQuery);                                                                            
+                                    var result  = sforce.connection.query(strQuery);                                                            
+                                    var records = result.getArray("records");  
+                                    //alert('222'+records);                               
+                                    shoppingCart.Quantity__c=1;
+                                    shoppingCart.Account__c='{!accId}';
+                                    shoppingCart.Price__c=records[0].UnitPrice;
+                                    shoppingCart.Product_Id__c= productId;
+                                    shoppingCart.User_Id__c = '{!userObj.Id}';
+                                    shoppingCart.SubTotal__c=shoppingCart.Price__c;
+                                    var result=sforce.connection.create([shoppingCart]); 
+                                    //alert('3333333'+result);                                 
+                                    window.location.href=window.location.href;
+                                }
+                            }
+                            catch(err){
+                                //console.log(err.message);
+                                alert('Exception found'+err);
+                            }
+        } 
+    </script>
+</apex:page>

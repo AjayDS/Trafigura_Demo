@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Tab Setting</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Tab Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Tab Settings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Display Order --></label>
+        <name>Display_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- Submenus for Tab --></label>
+        <name>Submenus_for_Tab__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tab Name --></label>
+        <name>Tab_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tab URL --></label>
+        <name>Tab_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Unique Display Order --></label>
+        <name>Unique_Display_Order__c</name>
+    </fields>
+    <fields>
+        <label><!-- is Active --></label>
+        <name>is_Active__c</name>
+    </fields>
+    <gender>Neuter</gender>
+</CustomObjectTranslation>

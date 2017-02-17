@@ -1,0 +1,44 @@
+<apex:component controller="soql_offset_example">
+<apex:pageBlock >   
+   <apex:pageBlockButtons location="top" >
+   <apex:outputPanel id="myButtons">
+   <apex:form >
+        <apex:commandButton action="{!Beginning}" title="Beginning" value="<<" disabled="{!disablePrevious}" reRender="products"/>
+        <apex:commandButton action="{!Previous}" title="Previous" value="<" disabled="{!disablePrevious}" reRender="products"/>        
+        <apex:commandButton action="{!Next}" title="Next" value=">" disabled="{!disableNext}" reRender="products"/>
+        <apex:commandButton action="{!End}" title="End" value=">>" disabled="{!disableNext}" reRender="products"/>        
+   </apex:form>
+   </apex:outputPanel>
+   </apex:pageBlockButtons>
+
+   <apex:pageBlockSection collapsible="false">
+   <apex:outputPanel id="myPanel">
+   <apex:pageMessages id="theMessages" />
+   <div class="container">                                      
+            <div class="row ">
+                 <apex:repeat value="{!Products}" var="prod" id="products">
+                <div class="men-pro-item col-md-3 col-sm-6 col-xs-12">
+                    <div class="image-details">
+                        <a  href="">
+                            <img src="{!mapLabels['Domain_URL'].Value__c}{!prod.Image__c}"  thumb="{!prod}" alt="image 1" />
+                        </a>
+    
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="full-details simpleCart_shelfItem item-info-product">
+                        <h5>{!prod.Name}</h5>                           
+                        <apex:repeat value="{!prod.PriceBookEntries}" var="price">
+                            <span class="item_price"><p class="price-info">Rs.{!price.unitPrice}</p></span>                            
+                        </apex:repeat> 
+                        <a href="#" style="background-color:lightgrey;" class="item_add" onclick="updateCartDetails('{!prod.Id}','{!prod.PriceBookEntries[0].unitprice}','1')">Add to cart</a>                                                 
+                    </div>                  
+                </div><br />
+                 </apex:repeat>
+                  </div>
+        </div>
+   </apex:outputPanel>
+   </apex:pageBlockSection>
+
+</apex:pageBlock>
+
+</apex:component>

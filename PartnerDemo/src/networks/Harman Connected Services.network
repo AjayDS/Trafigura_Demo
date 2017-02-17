@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Network xmlns="http://soap.sforce.com/2006/04/metadata">
+    <allowMembersToFlag>false</allowMembersToFlag>
+    <branding>
+        <loginFooterText>©2016 HARMAN INTERNATIONAL INDUSTRIES, INCORPORATED</loginFooterText>
+        <loginLogo>Communities_Shared_Document_Folder/Harman_png.png</loginLogo>
+        <primaryColor>#1797C0</primaryColor>
+        <primaryComplementColor>#FFFFFF</primaryComplementColor>
+        <quaternaryColor>#B1BAC1</quaternaryColor>
+        <quaternaryComplementColor>#222222</quaternaryComplementColor>
+        <secondaryColor>#51606E</secondaryColor>
+        <tertiaryColor>#DDE4E9</tertiaryColor>
+        <tertiaryComplementColor>#222222</tertiaryComplementColor>
+        <zeronaryColor>#51606E</zeronaryColor>
+        <zeronaryComplementColor>#FFFFFF</zeronaryComplementColor>
+    </branding>
+    <changePasswordTemplate>unfiled$public/CommunityChangePasswordEmailTemplate</changePasswordTemplate>
+    <emailSenderAddress>ajay.satish@symphonyteleca.com</emailSenderAddress>
+    <emailSenderName>Harman Connected Services</emailSenderName>
+    <enableGuestChatter>false</enableGuestChatter>
+    <enableInvitation>false</enableInvitation>
+    <enableKnowledgeable>false</enableKnowledgeable>
+    <enableNicknameDisplay>false</enableNicknameDisplay>
+    <enablePrivateMessages>false</enablePrivateMessages>
+    <enableReputation>false</enableReputation>
+    <forgotPasswordTemplate>unfiled$public/CommunityForgotPasswordEmailTemplate</forgotPasswordTemplate>
+    <networkMemberGroups>
+        <permissionSet>Wave_Analytics</permissionSet>
+        <permissionSet>View_Wave_Analytics_on_Communities_Pages</permissionSet>
+        <profile>Admin</profile>
+        <profile>Partner Manager</profile>
+        <profile>Partner User</profile>
+        <profile>Partner Admin User</profile>
+        <profile>Customer Community Login User</profile>
+    </networkMemberGroups>
+    <picassoSite>Harman_Connected_Services1</picassoSite>
+    <selfRegistration>false</selfRegistration>
+    <sendWelcomeEmail>true</sendWelcomeEmail>
+    <site>Harman_Connected_Services</site>
+    <status>Live</status>
+    <tabs>
+        <customTab>Shopping_Cart__c</customTab>
+        <customTab>Payment_Tracker__c</customTab>
+        <defaultTab>home</defaultTab>
+        <standardTab>home</standardTab>
+        <standardTab>Chatter</standardTab>
+        <standardTab>Account</standardTab>
+        <standardTab>Contact</standardTab>
+        <standardTab>Opportunity</standardTab>
+        <standardTab>Case</standardTab>
+        <standardTab>Dashboard</standardTab>
+        <standardTab>report</standardTab>
+        <standardTab>Product2</standardTab>
+        <standardTab>Pricebook2</standardTab>
+        <standardTab>Order</standardTab>
+    </tabs>
+    <urlPathPrefix>partner</urlPathPrefix>
+    <welcomeTemplate>unfiled$public/CommunityWelcomeEmailTemplate</welcomeTemplate>
+</Network>

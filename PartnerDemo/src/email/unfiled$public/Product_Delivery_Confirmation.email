@@ -1,0 +1,11 @@
+<messaging:emailTemplate subject="Your Order has been successfully placed" recipientType="User" relatedToType="Order">
+    <messaging:htmlEmailBody >    
+   <center><img src="https://c.na30.content.force.com/servlet/servlet.ImageServer?id=01536000000BXuV&oid=00D36000000ZfyE" alt="logo" /></center><br/><br/><br/>
+    Hi,<br/><br/>
+    
+    We are pleased to inform that the following items in your order have been delivered. This completes your order. Thank you for shopping.<br/><br/>
+    
+    <c:OrderListComponent OrdId="{!relatedTo.Id}" /><br/><br/>
+    <b>Regards,</b><br/>  
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

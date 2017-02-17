@@ -1,0 +1,17 @@
+<messaging:emailTemplate subject="Your Order item is Shipped" recipientType="User" relatedToType="Addreess__c">
+<messaging:htmlEmailBody >    
+   <center><img src="https://c.na30.content.force.com/servlet/servlet.ImageServer?id=01536000000BXuV&oid=00D36000000ZfyE" alt="logo" /></center><br/><br/><br/>
+    Hi,<br/><br/>
+    
+    We would like to inform you that your order is/are out for delivery. You will receive your shipment by the end of the day.<br/><br/>
+ 
+
+    Please note that a signature is required for the delivery of the package. If no one will be available to sign for this package, you may wish to make alternate delivery arrangements with the carrier. <br/><br/>
+    
+    <c:OrderListComponent OrdId="{!relatedTo.Id}" /><br/><br/>
+    
+    <b> THE SHIPMENT WAS SENT TO </b><br/>
+    
+    <b>Regards,</b><br/>  
+    </messaging:htmlEmailBody>
+</messaging:emailTemplate>

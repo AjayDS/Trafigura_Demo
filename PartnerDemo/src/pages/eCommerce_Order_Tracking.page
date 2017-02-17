@@ -1,0 +1,212 @@
+<apex:page sidebar="false" showHeader="false" controller="eCommerceHomePage" id="a" docType="html-5.0">
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>   
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.9/jquery-ui.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<apex:stylesheet value="{!URLFOR($Resource.SLDS103, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />    
+<apex:includeScript value="{!URLFOR($Resource.jquery214)}" />   
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/bootstrap.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/pignose.layerslider.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.community, '/community/css/style.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery-2.1.4.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/simpleCart.min.js')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/bootstrap-3.1.1.min.js')}"/>
+<link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+<link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery.easing.min.js')}"/>
+<script src="/soap/ajax/28.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/28.0/apex.js" type="text/javascript"></script>
+
+ <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">    
+    <body ng-app="app" ng-controller="tabController">
+     <c:siteheader2_Copy />
+     
+         <div class="slds">  
+         <div class="slds-tabs--default" >                   
+            <!-- HTML for SEARCH BAR -->
+            <div id="tfheader">
+                <form id="tfnewsearch">
+                        <input type="text" id="tfq" class="tftextinput2" name="q" size="21" maxlength="120" placeholder="Please Enter Order Id" /><input type="button" value="Show Details" class="tfbutton2" onclick="showDetails();" />
+                </form>
+                <div class="tfclear"></div>             
+                <apex:form id="formId"> 
+                <apex:ActionFunction name="setOrderedProducts" id="renderAction" action="{!setOrderedProducts}" rerender="formId,orders,orderItems,pb">
+                 <apex:param id="orderId" name="orderId" value="" />
+                 <apex:param id="accountName" name="accountName" value="" />
+                </apex:actionFunction>
+                
+                
+                    <apex:repeat value="{!orderList}" var="o" id="orders">  
+                            <!--&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="3"></font><u>Status: </u><apex:outputText value="{!o.Status}"/></span>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span><font size="3"></font><u>Total Payment:</u> $<apex:outputText value="{!o.TotalAmount}"/></span><br  /><br  />
+                            <div><font size="3"></font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<u>Shipping Address: </u><br  />
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!o.BillingStreet}"/><br  />
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!o.BillingCity}"/> <br  />
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!o.BillingPostalCode}"/> <br  />
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!o.BillingState}"/> <br  />
+                                                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<apex:outputText value="{!o.BillingCountry}"/> <br  />
+                            </div>
+                            -->
+                            <h1><font size="5">&nbsp;&nbsp;&nbsp;&nbsp;Order Details</font></h1><br />
+                            <table style="height: 200px; width: 96%;" border="1"  align="center">
+                                <tbody>
+                                    <tr style="height: 60px;">
+                                    <td style="width: 126px; height: 60px;">
+                                    <p><u>Order ID:</u> <br />{!o.OrderNumber} </p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    </td>
+                                    <td style="width: 234px; text-align: left; height: 281px;" colspan="4" rowspan="7">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p><u>Shipping Address:</u></p>
+                                        <p>{!o.BillingStreet}</p>   
+                                        <p>{!o.BillingCity}</p>
+                                        <p>{!o.BillingPostalCode}</p>
+                                        <p>{!o.BillingState}</p>
+                                        <p>{!o.BillingCountry}</p>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr style="height: 60px;">
+                                    <td style="width: 126px; height: 60px;">
+                                    <p><u>Ordered Date:</u><br />{!o.CreatedDate}</p>
+                                    <p>&nbsp;</p>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr style="height: 60px;">
+                                    <td style="width: 126px; height: 60px;">
+                                    <p style="text-align: left;"><u>Amount Paid:</u><br />{!o.TotalAmount}</p>
+                                    </td>
+                                    </tr>
+                                    
+                                    <tr style="height: 60px;">
+                                    <td style="width: 126px; height: 60px;">
+                                    <p><u>Current Status :</u><br />{!o.Status}</p>
+                                    <p>&nbsp;</p>
+                                    <p>&nbsp;</p>
+                                    </td>
+                                    </tr>
+                                    
+                                </tbody>
+                            </table>
+                            
+                            
+                            <div class="tfheader2">                                                 
+                            <apex:repeat value="{!o.OrderItems}" var="oI" id="orderItems" rows="5">                         
+                            <!--<div class="col-md-3 product-men" id="tfheader2">-->
+                                
+                                <div class="col-md-4 product-men">
+                                
+                                <br /><br />        
+                                    <div class="men-pro-item simpleCart_shelfItem" style="cellspacing:10%;cellpadding:10%;width:90%;height:20%;">
+                                        <div class="simpleCart_shelfItem men-thumb-item">                                                               
+                                            <img src="{!productsMap[oI.Pricebookentry.Product2Id].Image_URL__c}" alt="image" thumb="{!productsMap[oI.Pricebookentry.Product2Id]}"  class="item_thumb pro-image-front"/>
+                                            <img src="{!productsMap[oI.Pricebookentry.Product2Id].Image_URL__c}" alt="image" thumb="{!productsMap[oI.Pricebookentry.Product2Id]}" class="item_thumb pro-image-back"/>                                                                                                               
+                                        </div>
+                                        <div class="item-info-product ">
+                                            <h4><a class="item_name" href="../apex/eCommerce_Select_Product_Information?sessionId={!loggedInUserName}&pCode={!oI.Pricebookentry.Product2Id}&qty=" target="_top"><font size="3">{!productsMap[oI.Pricebookentry.Product2Id].Name}</font></a></h4>
+                                                <div class="info-product-price" style="align:left;">                                                                   
+                                                     UnitPrice: <span class="slds-text-heading--label slds-truncate"><font size="3"><apex:outputText value="${!oI.UnitPrice}"/></font></span><br />
+                                                     TotalPrice: <span class="slds-text-heading--label slds-truncate"><font size="3"><apex:outputText value="${!IF(CONTAINS(TEXT(oI.UnitPrice * oI.Quantity),"."),RPAD(TEXT(oI.UnitPrice * oI.Quantity),FIND('.',TEXT(oI.UnitPrice * oI.Quantity))+3,'0'),TEXT(oI.UnitPrice * oI.Quantity)+'.00')}"/></font></span> <br />
+                                                     
+                                                     Qty: <span class="slds-text-heading--label slds-truncate"><font size="3"><apex:outputText value="{!oI.Quantity}"/></font></span>                                               
+                                                </div>                                                                                                                                                                                                                                                                      
+                                        </div>
+                                    </div>
+                            </div>
+                            </apex:repeat>
+                            </div>
+                     </apex:repeat>
+                    <!--<apex:pageBlock id="pb">
+                        {!testString}
+                        {!orderProductsMap}---------{!orderList}
+                    </apex:pageBlock>-->
+                </apex:form> 
+        
+            </div>                      
+         </div>     
+        </div>
+        <p> </p> <br></br>
+    
+    <c:sitefooter1 ></c:sitefooter1>
+    </body>           
+</html>
+<!-- CSS styles for standard search box with placeholder text-->
+<style type="text/css">
+    #tfheader{
+        background-color:#c3dfef;
+    }
+    #tfheader2{
+        background-color:#c3dfef;
+    }
+    
+    #formId{
+        background-color:#c3dfef;
+    }
+    
+    #tfnewsearch{
+        float:left;
+        padding:20px;
+    }
+    .tftextinput2{
+        margin: 0;
+        padding: 5px 15px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:14px;
+        color:#666;
+        border:1px solid #0076a3; border-right:0px;
+        border-top-left-radius: 5px 5px;
+        border-bottom-left-radius: 5px 5px;
+    }
+    .tfbutton2 {
+        margin: 0;
+        padding: 5px 7px;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size:14px;
+        font-weight:bold;
+        outline: none;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        color: #ffffff;
+        border: solid 1px #0076a3; border-right:0px;
+        background: #0095cd;
+        background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+        background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+        border-top-right-radius: 5px 5px;
+        border-bottom-right-radius: 5px 5px;
+    }
+    .tfbutton2:hover {
+        text-decoration: none;
+        background: #007ead;
+        background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+        background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+    }
+    /* Fixes submit button height problem in Firefox */
+    .tfbutton2::-moz-focus-inner {
+      border: 0;
+    }
+    .tfclear{
+        clear:both;
+    }
+    
+    orderDetail {
+        background-color: lightgrey;
+        width: 300px;
+        border: 25px;
+        padding: 25px;
+        margin: 25px;
+    }
+</style>    
+<!-- JAVASCRIPT to clear search text when the field is clicked -->
+<script type="text/javascript">
+    function showDetails(){
+        
+        var orderId = document.getElementById("tfq");       
+        setOrderedProducts(orderId.value,'{!partnerName}');
+    }
+</script>
+
+</apex:page>

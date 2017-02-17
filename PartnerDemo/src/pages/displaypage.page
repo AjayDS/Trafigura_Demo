@@ -1,0 +1,86 @@
+<apex:page sidebar="false" showHeader="false" controller="eCommerceHomePage" docType="html-5.0" >
+ <html lang="en">
+        <head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta name="viewport" content="width=device-width, initial-scale=1" />
+            <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+            <title>Ecommerce</title>
+            <!-- Bootstrap -->
+            <!-- FONTAWESOME -->
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+             <!--Container-->
+            <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <!-- Latest compiled and minified JavaScript -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+            <apex:stylesheet value="{!URLFOR($Resource.Portal_UI, '/HTML/css/style.css')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.Portal_UI, '/HTML/assets/js/carousel-animation.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.Portal_UI, '/HTML/assets/js/carousel-swipe.js')}"/>
+            <apex:includeScript value="{!URLFOR($Resource.community, '/community/js/bootstrap-3.1.1.min.js')}"/>
+            <link href='//fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+            <link href='//fonts.googleapis.com/css?family=Lato:400,100,100italic,300,300italic,400italic,700,900,900italic,700italic' rel='stylesheet' type='text/css'/>
+            <apex:includeScript value="{!URLFOR($Resource.community, '/community/js/jquery.easing.min.js')}"/>
+           <c:Static_Content ></c:Static_Content>
+        </head>
+        <body style="background:white;">
+            <c:Portal_Header />
+
+        
+        <!-- Container Start -->
+   
+
+    <div class="container" id="product_detail">
+        <div class="row">
+            <div class="col-md-3 col-sm-6 col-xs-12">
+                
+                <div class="image-details">
+                     <div class="rectangle" id="rectangle">
+                    <span id="plus">+</span>
+                    </div>
+                    <a  href="">
+                        <img src="../HTML/images/d3.jpg" alt="image 1" />
+                    </a>
+                     <button class="price">$200</button>
+                    <button class="cart">Add to Cart</button>
+                  
+                </div>
+                    
+                <div class="clearfix"></div>
+                <div class="full-details">
+                    <h5>ADIDAS ORIGINALS</h5>
+
+                    <p class="item-info">Adidas Originals Tubular Viral</p>
+                    <p class="price-info">$149.95</p>
+                    <p class="size-info">US 6,US 9,US 10, US 12</p>
+                </div>
+            </div>
+        </div>
+                            
+    </div>
+
+        
+        
+        
+        
+                
+       
+
+       <script>
+        $(document).ready(function(){
+    $("#plus").click(function(){
+        debugger;
+        $("#product_detail").css("display","none");
+        $("#single_product").css("display","block");
+        
+       
+    });
+        });
+        </script>
+        
+            <c:Portal_Footer ></c:Portal_Footer>
+        </body>
+   </html>
+</apex:page>

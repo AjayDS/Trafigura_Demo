@@ -1,0 +1,96 @@
+<apex:component controller="eCommerceHomePage">
+    <!-- Carousel Start -->                
+        <div class="row">
+            <div class="col-md-4 col-sm-4">
+                <div id="secondCarousel" class="carousel slide">
+                    <!-- Menu -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#secondCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#secondCarousel" data-slide-to="1"></li>
+                        <li data-target="#secondCarousel" data-slide-to="2"></li>
+                        <!-- <li data-target="#homeCarousel" data-slide-to="3"></li>-->
+                    </ol>
+                    <!-- Items  -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active div-2-section">
+                            <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images7.jpg')}" alt="image 7" />
+                        </div>
+                        <div class="item div-2-section">
+                            <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images8.jpg')}" alt="image 8" />
+                        </div>
+                        <div class="item div-2-section">
+                            <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images9.jpg')}" alt="image 9" />
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#secondCarousel" data-slide="prev">
+                        <span class="icon-prev"></span>
+                    </a>
+                    <a class="right carousel-control" href="#secondCarousel" data-slide="next">
+                        <span class="icon-next"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div id="thirdCarousel" class="carousel slide">
+                    <!-- Menu -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#thirdCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#thirdCarousel" data-slide-to="1"></li>
+                        <li data-target="#thirdCarousel" data-slide-to="2"></li>
+                        <!-- <li data-target="#homeCarousel" data-slide-to="3"></li>-->
+                    </ol>
+                    <!-- Items  -->
+                    <div class="carousel-inner" role="listbox">
+                        <!-- ITEM 1 START -->
+                        <div class="item active div-2-section">
+                            <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images10.jpg')}" alt="image 10" />
+                        </div>
+                        <div class="item div-2-section">
+                            <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images11.jpg')}" alt="image 11" />
+                        </div>
+                        <div class="item div-2-section">
+                            <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images12.jpg')}" alt="image 12"/>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#thirdCarousel" data-slide="prev">
+                        <span class="icon-prev"></span>
+                    </a>
+                    <a class="right carousel-control" href="#thirdCarousel" data-slide="next">
+                        <span class="icon-next"></span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-4">
+                <div id="fourthCarousel" class="carousel slide">
+                    <!-- Menu -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#fourthCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#fourthCarousel" data-slide-to="1"></li>
+                        <li data-target="#fourthCarousel" data-slide-to="2"></li>
+                        <!-- <li data-target="#homeCarousel" data-slide-to="3"></li>-->
+                    </ol>
+                    <!-- Items  -->
+                    <div class="carousel-inner" role="listbox">
+                        <div class="item active div-2-section">
+                            <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/index4.jpg')}" alt="image 4" />
+                        </div>
+                        <div class="item div-2-section">
+                            <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images5.jpg')}" alt="image 5" />
+                        </div>
+                        <div class="item div-2-section">
+                            <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images6.jpg')}" alt="image 6"/>
+                        </div>
+                    </div>
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#fourthCarousel" data-slide="prev">
+                        <span class="icon-prev"></span>
+                    </a>
+                    <a class="right carousel-control" href="#fourthCarousel" data-slide="next">
+                        <span class="icon-next"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+</apex:component>

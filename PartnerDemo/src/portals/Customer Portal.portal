@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Portal xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>false</active>
+    <admin>ajay.satish@harman.com.demo1</admin>
+    <defaultLanguage>en_US</defaultLanguage>
+    <description>Customer Portal</description>
+    <emailSenderAddress>ajay.satish@harman.com</emailSenderAddress>
+    <emailSenderName>ajay.satish@harman.com</emailSenderName>
+    <enableSelfCloseCase>false</enableSelfCloseCase>
+    <forgotPassTemplate>unfiled$public/CustomerPortalChangePwdEmail</forgotPassTemplate>
+    <isSelfRegistrationActivated>false</isSelfRegistrationActivated>
+    <newPassTemplate>unfiled$public/CustomerPortalChangePwdEmail</newPassTemplate>
+    <newUserTemplate>unfiled$public/CustomerPortalNewUserEmail</newUserTemplate>
+    <selfRegUserDefaultProfile>customer community login user</selfRegUserDefaultProfile>
+    <selfRegUserTemplate>unfiled$public/CustomerPortalSelfRegUserEmail</selfRegUserTemplate>
+    <showActionConfirmation>false</showActionConfirmation>
+    <type>CustomerSuccess</type>
+</Portal>

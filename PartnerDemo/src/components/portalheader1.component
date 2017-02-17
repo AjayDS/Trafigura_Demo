@@ -1,0 +1,109 @@
+<apex:component controller="Portal_headerCls" >
+    
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/bootstrap.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/font-awesome.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/prettyPhoto.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/price-range.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/animate.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/'+ClassName+'')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/responsive.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/main.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal2,'/sfdcportal/css/test4drop.css')}"/>
+
+
+     <header id="header"><!--header-->
+        <div class="header_top"><!--header_top-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <div class="contactinfo">
+                            <ul class="nav nav-pills">
+                             
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="social-icons pull-right">
+                            <ul class="nav navbar-nav">
+                                <apex:repeat value="{!socialMedia}" var="media" >
+                                    <li><a href=""><i class="fa fa-{!media}"></i></a></li>
+                                    <!--<li><a href=""><i class="fa fa-twitter"></i></a></li>
+                                    <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                                    <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                                    <li><a href=""><i class="fa fa-google-plus"></i></a></li>-->
+                                </apex:repeat>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header_top-->
+        
+        <div class="header-middle"><!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="index.html">
+                             <img src="{!partnerLogo}" alt="partner Logo" />
+                            </a>
+                        </div>
+                       <!-- <div class="btn-group pull-right">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                                    USA
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Canada</a></li>
+                                    <li><a href="">UK</a></li>
+                                </ul>
+                            </div>
+                            
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-default dropdown-toggle usa" data-toggle="dropdown">
+                                    DOLLAR
+                                    <span class="caret"></span>
+                                </button>
+                                <ul class="dropdown-menu">
+                                    <li><a href="">Canadian Dollar</a></li>
+                                    <li><a href="">Pound</a></li>
+                                </ul>
+                            </div>
+                        </div>-->
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav">
+                           
+                                <li class="dropdown"><a href="#"><i class="fa fa-user"></i><i class="none"></i>Account</a>
+                                            <ul role="menu" class="sub-menu">
+                                                <li><a href="Info" style="background-color:rgb(42,90,119);">View Profile</a></li>
+                                                <li><a href="ViewOrders" style="background-color:rgb(42,90,119);">View Orders</a></li>
+                                            </ul>
+                                  </li>  
+                                
+                                
+                                  
+                                 
+                                <!--<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li> <i class="fa fa-angle-down"></i>-->
+                                <li><a href="checkout.html"><i class="fa fa-crosshairs"></i> Checkout</a></li>
+                                <li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
+                                <li><a href="login.html"><i class="fa fa-lock"></i> Login</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-middle-->
+    
+         <c:Portal_topMenuComp />
+    </header>
+    <script>
+    $(document).ready(function(){
+         $(".nav-pills:first").append('{!topcontent}');
+     });
+    </script>
+</apex:component>

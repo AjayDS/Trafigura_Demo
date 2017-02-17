@@ -1,0 +1,24 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="portal_productCls">
+    <apex:composition template="portal_masterPage">
+        <apex:define name="header"/>
+        <apex:define name="mainContent">
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <c:portal_leftsideBarComp ></c:portal_leftsideBarComp>
+                        </div>
+                        <!--START Main Content -->                        
+                        <div class="col-sm-9 padding-right">
+                        <c:subscription_email > </c:subscription_email>   
+                        </div>                 
+                            
+                        <!-- END main Content-->
+                    </div>
+                </div>
+            </section>
+        </apex:define>
+        <apex:define name="footer"/>
+    </apex:composition>
+ 
+</apex:page>

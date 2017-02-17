@@ -1,0 +1,67 @@
+<apex:page sidebar="false" showHeader="false" controller="eCommerceHomePage" docType="html-5.0" >
+ <c:AuthenticationTemplate ></c:AuthenticationTemplate>
+    <div class="slds">  
+        <div ng-app="myapp">
+            <apex:form html-name="myForm" styleclass="login-box" id="formId"> 
+            <apex:pageMessages id="pageMId"/>           
+                           <label  for="firstName"><font size="3" color="white">{!$Label.First_Name}:</font></label> <br/>                           
+                           <apex:inputText value="{!fName}" style="width:250Px;"  styleclass="slds-input" html-type="text" id="firstName" html-name="firstName" html-ng-model="formData.firstName" required="true" html-placeholder="{!$Label.First_Name}" />                                             
+                           <br />
+                        
+                           <br />
+                           <label for="lastName"><font size="3" color="white">{!$Label.Last_Name}:</font></label> <br/>
+                           <apex:inputText value="{!lName}" style="width:250Px;float:center;" styleclass="slds-input" html-type="text" id="lastName" html-name="lastName" html-ng-model="formData.lastName" html-placeholder="{!$Label.Last_Name}" required="true"  />                   
+                           <br />
+                        
+                           <br />
+                           <label for="emailId"><font size="3" color="white">{!$Label.Email}:</font></label> <br/>                          
+                          <apex:inputText value="{!email}" style="width:250Px;" styleclass="slds-input" html-type="email" id="emailId" html-name="emailId" html-ng-model="formData.emailId" html-placeholder="{!$Label.Email}" required="true"  />                 
+                           <br />
+                        
+                           <br />                                                        
+                            <apex:Commandbutton html-ng-disabled="myForm.$valid && myForm.$submitted"  action="{!registerUser}" value="{!$Label.Signup_Button}" />                 
+                            <br />
+                            <a href="{!mapLabels['SignIn_Page_URL'].Value__c}"><p><br /> <font class="small" color="black">{!$Label.Back_to_Login}</font></p></a>                                                      
+            </apex:form>
+        </div>
+    </div>
+ <script>                
+        var app = angular.module('myapp', ['UserValidation']);
+
+        angular.module('UserValidation', []).directive('validPasswordC', function () {
+                return {
+                require: 'ngModel',
+                link: function (scope, elm, attrs, ctrl) {
+                    ctrl.$parsers.unshift(function (viewValue, $scope) {
+                                            var noMatch = viewValue != scope.myForm.password.$viewValue
+                                        ctrl.$setValidity('noMatch', !noMatch)
+                                        })
+                    }
+                }
+        })
+        
+        
+ </script>
+    <style>     
+        
+        .login-box {            
+            
+            max-width: 380px;
+            margin: 0 auto;
+            position: relative;
+            top: 40px;
+            padding-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 5px 50px rgba(0,0,0,0.4);
+            text-align: center;
+        }
+
+        .button {
+            position: absolute;
+            top: 70%;
+            width:100Px;
+            height:30Px;            
+        }
+                        
+    </style>
+</apex:page>

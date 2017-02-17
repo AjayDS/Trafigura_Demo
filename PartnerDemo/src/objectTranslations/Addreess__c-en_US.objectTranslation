@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Address</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Addresses</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Addresses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- City --></label>
+        <name>City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Country --></label>
+        <name>Country__c</name>
+    </fields>
+    <fields>
+        <label><!-- Land Mark --></label>
+        <name>Land_Mark__c</name>
+    </fields>
+    <fields>
+        <label><!-- Name --></label>
+        <name>Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Old Shipping Details --></label>
+        <name>Old_Shipping_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Phone Number --></label>
+        <name>Phone_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Pincode --></label>
+        <name>Pincode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shipping Address --></label>
+        <name>Shipping_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- Enter shipping details. --></help>
+        <label><!-- Shipping Details --></label>
+        <name>Shipping_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- State --></label>
+        <name>State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address --></label>
+        <name>Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- User --></label>
+        <name>User__c</name>
+        <relationshipLabel><!-- Addresses --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- image_harman --></label>
+        <name>image_harman__c</name>
+    </fields>
+    <layouts>
+        <layout>Address Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

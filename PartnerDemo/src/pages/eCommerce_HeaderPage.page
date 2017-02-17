@@ -1,0 +1,33 @@
+<apex:page showHeader="false" sidebar="false" >
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Include</title>
+    </head>
+    <body>
+        <a data-type="link1" class="category_link" href="javascript:;">Link1</a>
+        <a data-type="link2" class="category_link" href="javascript:;">Link2</a>
+        <a data-type="link3" class="category_link" href="javascript:;">Link3</a>
+        <a data-type="link4" class="category_link" href="javascript:;">Link4</a>
+
+
+        <div id="include"></div>
+
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+        <script type="text/javascript"> 
+            var includeDiv = $("#include");
+            
+            $(document).ready(function(){
+             $(document).on('click','.category_link',function(){
+              var page = $(this).data('type');
+              var url = 'include/'+page+".html";
+              $.post(url, function(data, status){
+               includeDiv.html(data);
+                 });
+              
+             });
+            });
+        </script> 
+    </body>
+</html>
+</apex:page>

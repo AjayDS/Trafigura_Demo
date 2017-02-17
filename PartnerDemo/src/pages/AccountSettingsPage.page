@@ -1,0 +1,10 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+  <c:portal_headerCmp ></c:portal_headerCmp>
+<apex:insert name="header"/>
+<apex:insert name="mainContent">
+    <c:portal_accountSettingscmp ></c:portal_accountSettingscmp>
+</apex:insert>
+<c:portal_footerCmp ></c:portal_footerCmp>
+<apex:insert name="footer" />
+<script src="{!URLFOR($Resource.portal, '/sfdcportal/js/price-range.js')}"></script>
+</apex:page>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>false</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Product_Orders</letterhead>
+    <name>Harman Product Cancelled</name>
+    <style>formalLetter</style>
+    <subject>Your Order # {!Order.Id} has been cancelled</subject>
+    <textOnly>We have received your request to cancel this order # {!Order.Id}. This item has been successfully cancelled and will not be dispatched by Harman.</textOnly>
+    <type>html</type>
+</EmailTemplate>

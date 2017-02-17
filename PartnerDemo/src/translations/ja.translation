@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Translations xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customApplications>
+        <label><!-- Ecommerce Development --></label>
+        <name>Ecommerce_Development</name>
+    </customApplications>
+    <customLabels>
+        <label>ベストセラー</label>
+        <name>BEST_SELLERS</name>
+    </customLabels>
+    <customLabels>
+        <label>BLUETOOTHスピーカー</label>
+        <name>BLUETOOTH_SPEAKERS</name>
+    </customLabels>
+    <customLabels>
+        <label>ハーマン製品へようこそ...</label>
+        <name>BODY</name>
+    </customLabels>
+    <customLabels>
+        <label>戻るログインします</label>
+        <name>Back_to_Login</name>
+    </customLabels>
+    <customLabels>
+        <label>あなたの中にログインすることで、に同意し、当社</label>
+        <name>By_logging_in_you_agree_to_our</name>
+    </customLabels>
+    <customLabels>
+        <label>車のスピーカー</label>
+        <name>CAR_SPEAKERS</name>
+    </customLabels>
+    <customLabels>
+        <label>カーオーディオ</label>
+        <name>Car_Audio</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Community1 --></label>
+        <name>Community1</name>
+    </customLabels>
+    <customLabels>
+        <label>お問い合わせ</label>
+        <name>Contact_Us</name>
+    </customLabels>
+    <customLabels>
+        <label>COPY 2016 HARMAN AUDIO</label>
+        <name>Copywrite</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Domain URL --></label>
+        <name>Domain_URL</name>
+    </customLabels>
+    <customLabels>
+        <label>重複メールのIDが見つかりました</label>
+        <name>Duplicate_Email_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>Eメール</label>
+        <name>Email</name>
+    </customLabels>
+    <customLabels>
+        <label>Info@harman.com</label>
+        <name>Email_Address</name>
+    </customLabels>
+    <customLabels>
+        <label>空のカート</label>
+        <name>Empty_Cart</name>
+    </customLabels>
+    <customLabels>
+        <label>メールアドレスは/姓がすでにシステムに存在しており、変更してください。</label>
+        <name>Exception_for_Duplicate_Email</name>
+    </customLabels>
+    <customLabels>
+        <label>Serverは、しばらくしてみてくださいDown..Please 。</label>
+        <name>Exception_while_login</name>
+    </customLabels>
+    <customLabels>
+        <label>工場再認定</label>
+        <name>Factory_Recertified</name>
+    </customLabels>
+    <customLabels>
+        <label>アップロード</label>
+        <name>File_Upload</name>
+    </customLabels>
+    <customLabels>
+        <label>ファーストネーム</label>
+        <name>First_Name</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Footer Link Header --></label>
+        <name>Footer_Link_Header</name>
+    </customLabels>
+    <customLabels>
+        <label>パスワードをお忘れですか？</label>
+        <name>Forgot_password</name>
+    </customLabels>
+    <customLabels>
+        <label>HOME</label>
+        <name>HOME</name>
+    </customLabels>
+    <customLabels>
+        <label>ホームシアター</label>
+        <name>HOME_THEATERS</name>
+    </customLabels>
+    <customLabels>
+        <label>ヘッドホン</label>
+        <name>Headphone</name>
+    </customLabels>
+    <customLabels>
+        <label>ホームオーディオ</label>
+        <name>Home_Audio</name>
+    </customLabels>
+    <customLabels>
+        <label>情報</label>
+        <name>INFORMATION</name>
+    </customLabels>
+    <customLabels>
+        <label>苗字</label>
+        <name>Last_Name</name>
+    </customLabels>
+    <customLabels>
+        <label>ログイン</label>
+        <name>Logged_In_As</name>
+    </customLabels>
+    <customLabels>
+        <label>ログイン</label>
+        <name>Login_Button</name>
+    </customLabels>
+    <customLabels>
+        <label>ハーマンのeコマース</label>
+        <name>Login_Heading</name>
+    </customLabels>
+    <customLabels>
+        <label>新しいユーザー？サインアップ</label>
+        <name>New_User_Link</name>
+    </customLabels>
+    <customLabels>
+        <label>非接触でポータルユーザを作成できません。</label>
+        <name>No_Contact_Error</name>
+    </customLabels>
+    <customLabels>
+        <label>製品の特徴</label>
+        <name>PRODUCT_FEATURE</name>
+    </customLabels>
+    <customLabels>
+        <label>パスワード</label>
+        <name>Password</name>
+    </customLabels>
+    <customLabels>
+        <label>電話：</label>
+        <name>Phone</name>
+    </customLabels>
+    <customLabels>
+        <label>+1(877) 871-6755</label>
+        <name>Phone_Number</name>
+    </customLabels>
+    <customLabels>
+        <label>個人情報保護方針</label>
+        <name>Privacy_Policy</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- ProductSave_Button --></label>
+        <name>ProductSave_Button</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Product URL --></label>
+        <name>Product_URL</name>
+    </customLabels>
+    <customLabels>
+        <label>完全にあなたの購入に満足していませんか？あなたは購入日から30日以内にそれを返すことがあります。</label>
+        <name>Purchase_Guaranty</name>
+    </customLabels>
+    <customLabels>
+        <label>QTY</label>
+        <name>Quantity</name>
+    </customLabels>
+    <customLabels>
+        <label>今すぐ登録</label>
+        <name>REGISTER_NOW</name>
+    </customLabels>
+    <customLabels>
+        <label>私を覚えてますか</label>
+        <name>Remember_Me</name>
+    </customLabels>
+    <customLabels>
+        <label>パスワードを再設定する</label>
+        <name>Reset_Password</name>
+    </customLabels>
+    <customLabels>
+        <label>サインイン</label>
+        <name>SIGNIN</name>
+    </customLabels>
+    <customLabels>
+        <label>ニュースレターにサインアップ！</label>
+        <name>SIGN_UP_FOR_NEWSLETTER</name>
+    </customLabels>
+    <customLabels>
+        <label>サポート</label>
+        <name>SUPPORT</name>
+    </customLabels>
+    <customLabels>
+        <label>満足保証</label>
+        <name>Satisfaction_Guaranteed</name>
+    </customLabels>
+    <customLabels>
+        <label>サーチ</label>
+        <name>Search</name>
+    </customLabels>
+    <customLabels>
+        <label>あなたのアカウントでログイン</label>
+        <name>Sign_in_with_your_account</name>
+    </customLabels>
+    <customLabels>
+        <label>無料でお申し込み頂けます</label>
+        <name>Sign_up_for_free</name>
+    </customLabels>
+    <customLabels>
+        <label>サインアップ</label>
+        <name>Signup_Button</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- Start URL --></label>
+        <name>Start_URL</name>
+    </customLabels>
+    <customLabels>
+        <label>提出します</label>
+        <name>Submit</name>
+    </customLabels>
+    <customLabels>
+        <label>正常に登録。メールアドレスを確認してください。</label>
+        <name>Successfully_Registered_User</name>
+    </customLabels>
+    <customLabels>
+        <label>規約と条件</label>
+        <name>Terms_and_Conditions</name>
+    </customLabels>
+    <customLabels>
+        <label>有効な電子メールIDを入力してください。</label>
+        <name>Validate_Email_Format</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- forgot Paaswrd Page URL --></label>
+        <name>forgot_Paaswrd_Page_URL</name>
+    </customLabels>
+    <customLabels>
+        <label>パスワードをお忘れですか？</label>
+        <name>forgot_Pass_Link</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- image_harman --></label>
+        <name>image_harman</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- outOfStock --></label>
+        <name>outOfStock</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- star icon path --></label>
+        <name>star_icon_path</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- testing --></label>
+        <name>testing</name>
+    </customLabels>
+    <customLabels>
+        <label><!-- testing1 --></label>
+        <name>testing1</name>
+    </customLabels>
+    <customLabels>
+        <label>Hāman e yōkoso</label>
+        <name>testing3</name>
+    </customLabels>
+    <customLabels>
+        <label>ユーザー名</label>
+        <name>userName</name>
+    </customLabels>
+    <customPageWebLinks>
+        <label><!-- Google Analytics --></label>
+        <name>Google_Analytics</name>
+    </customPageWebLinks>
+    <customTabs>
+        <label><!-- Dash Board --></label>
+        <name>Dash_Board</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Portal Demo --></label>
+        <name>Portal_Demo</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- Web Analytics Setup --></label>
+        <name>Web_Analytics_Setup</name>
+    </customTabs>
+    <customTabs>
+        <label><!-- testapp --></label>
+        <name>testapp</name>
+    </customTabs>
+    <quickActions>
+        <label><!-- LogACall --></label>
+        <name>LogACall</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewAccount --></label>
+        <name>NewAccount</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewCase --></label>
+        <name>NewCase</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewContact --></label>
+        <name>NewContact</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewEvent --></label>
+        <name>NewEvent</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewGroup --></label>
+        <name>NewGroup</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewLead --></label>
+        <name>NewLead</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewNote --></label>
+        <name>NewNote</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewOpportunity --></label>
+        <name>NewOpportunity</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- NewTask --></label>
+        <name>NewTask</name>
+    </quickActions>
+    <quickActions>
+        <label><!-- SendEmail --></label>
+        <name>SendEmail</name>
+    </quickActions>
+    <reportTypes>
+        <description><!-- Coaching Activities --></description>
+        <label><!-- Coaching Activities --></label>
+        <name>Coaching_Activities</name>
+        <sections>
+            <label><!-- Activities --></label>
+            <name>Activities</name>
+        </sections>
+        <sections>
+            <label><!-- Coaching --></label>
+            <name>Coaching</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Coaching Feeds --></description>
+        <label><!-- Coaching Feeds --></label>
+        <name>Coaching_Feeds</name>
+        <sections>
+            <label><!-- Coaching --></label>
+            <name>Coaching</name>
+        </sections>
+        <sections>
+            <label><!-- Coaching Feed --></label>
+            <name>Coaching Feed</name>
+        </sections>
+        <sections>
+            <label><!-- Comments --></label>
+            <name>Comments</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Goals --></description>
+        <label><!-- Goals --></label>
+        <name>Goals</name>
+        <sections>
+            <columns>
+                <label><!-- Department --></label>
+                <name>Department</name>
+            </columns>
+            <columns>
+                <label><!-- Division --></label>
+                <name>Division</name>
+            </columns>
+            <columns>
+                <label><!-- Employee Number --></label>
+                <name>Employee Number</name>
+            </columns>
+            <columns>
+                <label><!-- Manager --></label>
+                <name>Manager</name>
+            </columns>
+            <columns>
+                <label><!-- Owner --></label>
+                <name>Owner</name>
+            </columns>
+            <label><!-- Goals --></label>
+            <name>Goals</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Goals Feed --></description>
+        <label><!-- Goals Feed --></label>
+        <name>Goals_Feed</name>
+        <sections>
+            <columns>
+                <label><!-- Link Title --></label>
+                <name>Link Title</name>
+            </columns>
+            <label><!-- Feed --></label>
+            <name>Feed</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Department --></label>
+                <name>Department</name>
+            </columns>
+            <columns>
+                <label><!-- Division --></label>
+                <name>Division</name>
+            </columns>
+            <columns>
+                <label><!-- Employee Number --></label>
+                <name>Employee Number</name>
+            </columns>
+            <columns>
+                <label><!-- Manager --></label>
+                <name>Manager</name>
+            </columns>
+            <columns>
+                <label><!-- Owner --></label>
+                <name>Owner</name>
+            </columns>
+            <label><!-- Goals --></label>
+            <name>Goals</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Goals and Metrics --></description>
+        <label><!-- Goals and Metrics --></label>
+        <name>Goals_and_Metrics</name>
+        <sections>
+            <columns>
+                <label><!-- Owner --></label>
+                <name>Owner</name>
+            </columns>
+            <label><!-- Goals --></label>
+            <name>Goals</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Metric Actual Value --></label>
+                <name>Metric Actual Value</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Completion Date --></label>
+                <name>Metric Completion Date</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Created By --></label>
+                <name>Metric Created By</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Created Date --></label>
+                <name>Metric Created Date</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Due Date --></label>
+                <name>Metric Due Date</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Flagged As --></label>
+                <name>Metric Flagged As</name>
+            </columns>
+            <columns>
+                <label><!-- Metric ID --></label>
+                <name>Metric ID</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Last Modified By --></label>
+                <name>Metric Last Modified By</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Last Modified Date --></label>
+                <name>Metric Last Modified Date</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Name --></label>
+                <name>Metric Name</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Progress --></label>
+                <name>Metric Progress</name>
+            </columns>
+            <columns>
+                <label><!-- Metric Target Value --></label>
+                <name>Metric Target Value</name>
+            </columns>
+            <label><!-- Metrics --></label>
+            <name>Metrics</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Performance Cycles with Questions --></description>
+        <label><!-- Performance Cycles with Questions --></label>
+        <name>Performance_Cycles_with_Questions</name>
+        <sections>
+            <columns>
+                <label><!-- Multiple Choice Options --></label>
+                <name>Multiple Choice Options</name>
+            </columns>
+            <columns>
+                <label><!-- Question --></label>
+                <name>Question</name>
+            </columns>
+            <label><!-- Feedback Questions --></label>
+            <name>Feedback Questions</name>
+        </sections>
+        <sections>
+            <label><!-- Performance Cycles --></label>
+            <name>Performance Cycles</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Summary Type --></label>
+                <name>Summary Type</name>
+            </columns>
+            <label><!-- Performance Question Sets (performance, self, peer, and skip level details) --></label>
+            <name>Performance Question Sets (performance, self, peer, and skip level details)</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Performance Summary Cycles with Requests --></description>
+        <label><!-- Performance Summary Cycles with Requests --></label>
+        <name>Performance_Summary_Cycles_with_Requests</name>
+        <sections>
+            <columns>
+                <label><!-- Cycle State --></label>
+                <name>Cycle State</name>
+            </columns>
+            <label><!-- Performance Cycles --></label>
+            <name>Performance Cycles</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Summary Type --></label>
+                <name>Summary Type</name>
+            </columns>
+            <label><!-- Performance Question Sets (performance, self, peer, and skip level details) --></label>
+            <name>Performance Question Sets (performance, self, peer, and skip level details)</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Confidential --></label>
+                <name>Confidential</name>
+            </columns>
+            <columns>
+                <label><!-- Multiple choice options --></label>
+                <name>Multiple choice options</name>
+            </columns>
+            <columns>
+                <label><!-- Optional --></label>
+                <name>Optional</name>
+            </columns>
+            <columns>
+                <label><!-- Question --></label>
+                <name>Question</name>
+            </columns>
+            <columns>
+                <label><!-- Question Created Date --></label>
+                <name>Question Created Date</name>
+            </columns>
+            <columns>
+                <label><!-- Question Number --></label>
+                <name>Question Number</name>
+            </columns>
+            <columns>
+                <label><!-- Question Type --></label>
+                <name>Question Type</name>
+            </columns>
+            <label><!-- Questions --></label>
+            <name>Questions</name>
+        </sections>
+        <sections>
+            <label><!-- Subject Information --></label>
+            <name>Subject Information</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Date summary was shared with subject --></label>
+                <name>Date summary was shared with subject</name>
+            </columns>
+            <columns>
+                <label><!-- Owner of the subjects performance summary --></label>
+                <name>Owner of the subjects performance summary</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Request State --></label>
+                <name>Summary Request State</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Subject --></label>
+                <name>Summary Subject</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Writer --></label>
+                <name>Summary Writer</name>
+            </columns>
+            <label><!-- Summary Requests --></label>
+            <name>Summary Requests</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Summary Requests: Writer: Full Name --></label>
+                <name>Summary Requests: Writer: Full Name</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Requests: Writer: Title --></label>
+                <name>Summary Requests: Writer: Title</name>
+            </columns>
+            <label><!-- Writer Information --></label>
+            <name>Writer Information</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Performance Summary Requests with Answers --></description>
+        <label><!-- Performance Summary Requests with Answers --></label>
+        <name>Performance_Summary_Requests_with_Answers</name>
+        <sections>
+            <columns>
+                <label><!-- Answers --></label>
+                <name>Answers</name>
+            </columns>
+            <label><!-- Answers --></label>
+            <name>Answers</name>
+        </sections>
+        <sections>
+            <label><!-- Performance Cycles --></label>
+            <name>Performance Cycles</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Summary Type --></label>
+                <name>Summary Type</name>
+            </columns>
+            <label><!-- Performance Question Sets (performance, self, peer, and skip level details) --></label>
+            <name>Performance Question Sets (performance, self, peer, and skip level details)</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Choices --></label>
+                <name>Choices</name>
+            </columns>
+            <columns>
+                <label><!-- Confidential Answer --></label>
+                <name>Confidential Answer</name>
+            </columns>
+            <columns>
+                <label><!-- Question --></label>
+                <name>Question</name>
+            </columns>
+            <columns>
+                <label><!-- Question Number --></label>
+                <name>Question Number</name>
+            </columns>
+            <columns>
+                <label><!-- Question Type --></label>
+                <name>Question Type</name>
+            </columns>
+            <label><!-- Questions --></label>
+            <name>Questions</name>
+        </sections>
+        <sections>
+            <label><!-- Subject Information --></label>
+            <name>Subject Information</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Date summary was shared with subject --></label>
+                <name>Date summary was shared with subject</name>
+            </columns>
+            <columns>
+                <label><!-- Owner of the subjects performance summary --></label>
+                <name>Owner of the subjects performance summary</name>
+            </columns>
+            <columns>
+                <label><!-- State --></label>
+                <name>State</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Subject --></label>
+                <name>Summary Subject</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Writer --></label>
+                <name>Summary Writer</name>
+            </columns>
+            <label><!-- Summary Requests --></label>
+            <name>Summary Requests</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Summary Requests: Writer: Full Name --></label>
+                <name>Summary Requests: Writer: Full Name</name>
+            </columns>
+            <columns>
+                <label><!-- Summary Requests: Writer: Title --></label>
+                <name>Summary Requests: Writer: Title</name>
+            </columns>
+            <label><!-- Writer Information --></label>
+            <name>Writer Information</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Performance summary: users with managers --></description>
+        <label><!-- Performance summary: users with managers --></label>
+        <name>Performance_summary_users_with_managers</name>
+        <sections>
+            <columns>
+                <label><!-- Manager&apos;s Full Name --></label>
+                <name>Manager&apos;s Full Name</name>
+            </columns>
+            <columns>
+                <label><!-- Manager&apos;s Title --></label>
+                <name>Manager&apos;s Title</name>
+            </columns>
+            <label><!-- Users --></label>
+            <name>Users</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Reward Funds Statistics --></description>
+        <label><!-- Reward Funds Statistics --></label>
+        <name>Reward_Funds</name>
+        <sections>
+            <columns>
+                <label><!-- Fund Created By --></label>
+                <name>Fund Created By</name>
+            </columns>
+            <columns>
+                <label><!-- Fund Created Date --></label>
+                <name>Fund Created Date</name>
+            </columns>
+            <columns>
+                <label><!-- Fund Owner Name --></label>
+                <name>Fund Owner Name</name>
+            </columns>
+            <columns>
+                <label><!-- Fund: Last Modified By --></label>
+                <name>Fund: Last Modified By</name>
+            </columns>
+            <columns>
+                <label><!-- Fund: Last Modified Date --></label>
+                <name>Fund: Last Modified Date</name>
+            </columns>
+            <label><!-- Reward Funds --></label>
+            <name>Reward Funds</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Recipient: Company Name --></label>
+                <name>Recipient: Company Name</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Country --></label>
+                <name>Recipient: Country</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Department --></label>
+                <name>Recipient: Department</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Division --></label>
+                <name>Recipient: Division</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Employee Number --></label>
+                <name>Recipient: Employee Number</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Profile --></label>
+                <name>Recipient: Profile</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Role --></label>
+                <name>Recipient: Role</name>
+            </columns>
+            <label><!-- Reward Recipients --></label>
+            <name>Reward Recipients</name>
+        </sections>
+    </reportTypes>
+    <reportTypes>
+        <description><!-- Thanks and Badges --></description>
+        <label><!-- Thanks and Badges --></label>
+        <name>Thanks_and_Badges</name>
+        <sections>
+            <columns>
+                <label><!-- Active Badge --></label>
+                <name>Active Badge</name>
+            </columns>
+            <columns>
+                <label><!-- Badge Given: Created By --></label>
+                <name>Badge Given: Created By</name>
+            </columns>
+            <columns>
+                <label><!-- Badge Given: Created Date --></label>
+                <name>Badge Given: Created Date</name>
+            </columns>
+            <columns>
+                <label><!-- Badge Given: Description --></label>
+                <name>Badge Given: Description</name>
+            </columns>
+            <columns>
+                <label><!-- Badge Given: Last Modified By --></label>
+                <name>Badge Given: Last Modified By</name>
+            </columns>
+            <columns>
+                <label><!-- Badge Given: Last Modified Date --></label>
+                <name>Badge Given: Last Modified Date</name>
+            </columns>
+            <columns>
+                <label><!-- Badge Given: Owner Name --></label>
+                <name>Badge Given: Owner Name</name>
+            </columns>
+            <columns>
+                <label><!-- Badge Given: Reward Fund --></label>
+                <name>Badge Given: Reward Fund</name>
+            </columns>
+            <columns>
+                <label><!-- Badge Name --></label>
+                <name>Badge Name</name>
+            </columns>
+            <columns>
+                <label><!-- Company Wide --></label>
+                <name>Company Wide</name>
+            </columns>
+            <label><!-- Badge Given Details --></label>
+            <name>Badge Given Details</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Giver&apos;s Manager: Department --></label>
+                <name>Giver&apos;s Manager: Department</name>
+            </columns>
+            <columns>
+                <label><!-- Giver&apos;s Manager: Division --></label>
+                <name>Giver&apos;s Manager: Division</name>
+            </columns>
+            <columns>
+                <label><!-- Giver&apos;s Manager: Employee Number --></label>
+                <name>Giver&apos;s Manager: Employee Number</name>
+            </columns>
+            <columns>
+                <label><!-- Giver&apos;s Manager: Full Name --></label>
+                <name>Giver&apos;s Manager: Full Name</name>
+            </columns>
+            <columns>
+                <label><!-- Giver: Country --></label>
+                <name>Giver: Country</name>
+            </columns>
+            <columns>
+                <label><!-- Giver: Department --></label>
+                <name>Giver: Department</name>
+            </columns>
+            <columns>
+                <label><!-- Giver: Division --></label>
+                <name>Giver: Division</name>
+            </columns>
+            <columns>
+                <label><!-- Giver: E-mail --></label>
+                <name>Giver: E-mail</name>
+            </columns>
+            <columns>
+                <label><!-- Giver: Employee Number --></label>
+                <name>Giver: Employee Number</name>
+            </columns>
+            <columns>
+                <label><!-- Giver: Role --></label>
+                <name>Giver: Role</name>
+            </columns>
+            <columns>
+                <label><!-- Giver: State/Province --></label>
+                <name>Giver: State/Province</name>
+            </columns>
+            <columns>
+                <label><!-- Giver: Title --></label>
+                <name>Giver: Title</name>
+            </columns>
+            <columns>
+                <label><!-- Giver: Username --></label>
+                <name>Giver: Username</name>
+            </columns>
+            <columns>
+                <label><!-- Thanks Giver: Full Name --></label>
+                <name>Thanks Giver: Full Name</name>
+            </columns>
+            <label><!-- Giver Data --></label>
+            <name>Giver Data</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Recipient&apos;s Manager: Department --></label>
+                <name>Recipient&apos;s Manager: Department</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient&apos;s Manager: Division --></label>
+                <name>Recipient&apos;s Manager: Division</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient&apos;s Manager: E-mail --></label>
+                <name>Recipient&apos;s Manager: E-mail</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient&apos;s Manager: Employee Number --></label>
+                <name>Recipient&apos;s Manager: Employee Number</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient&apos;s Manager: Full Name --></label>
+                <name>Recipient&apos;s Manager: Full Name</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Company Name --></label>
+                <name>Recipient: Company Name</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Country --></label>
+                <name>Recipient: Country</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Department --></label>
+                <name>Recipient: Department</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Division --></label>
+                <name>Recipient: Division</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: E-mail --></label>
+                <name>Recipient: E-mail</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Employee Number --></label>
+                <name>Recipient: Employee Number</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Full Name --></label>
+                <name>Recipient: Full Name</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Phone --></label>
+                <name>Recipient: Phone</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Role --></label>
+                <name>Recipient: Role</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: State/Province --></label>
+                <name>Recipient: State/Province</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Title --></label>
+                <name>Recipient: Title</name>
+            </columns>
+            <columns>
+                <label><!-- Recipient: Username --></label>
+                <name>Recipient: Username</name>
+            </columns>
+            <label><!-- Recipient Data --></label>
+            <name>Recipient Data</name>
+        </sections>
+        <sections>
+            <columns>
+                <label><!-- Thanks Created Date --></label>
+                <name>Thanks Created Date</name>
+            </columns>
+            <columns>
+                <label><!-- Thanks Message --></label>
+                <name>Thanks Message</name>
+            </columns>
+            <columns>
+                <label><!-- Thanks: Created By --></label>
+                <name>Thanks: Created By</name>
+            </columns>
+            <label><!-- Thanks Posted --></label>
+            <name>Thanks Posted</name>
+        </sections>
+    </reportTypes>
+    <scontrols>
+        <label><!-- Web Analytics Dashboard Tracker --></label>
+        <name>Web_Analytics_Dashboard_Tracker</name>
+    </scontrols>
+</Translations>

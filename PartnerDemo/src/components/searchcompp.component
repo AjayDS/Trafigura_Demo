@@ -1,0 +1,32 @@
+<apex:component controller="prosearchcontroller1">
+<apex:form > 
+<script type='text/javascript'> 
+function runOnEnter(ev) { 
+if (window.event && window.event.keyCode == 13 || ev.which == 13) { 
+searchAccRecs(); 
+return false; 
+} else { 
+return true; 
+} 
+} 
+</script> 
+<!--<apex:pageBlock > -->
+<apex:inputText value="{!searchText}" onkeypress="return runOnEnter(event);"/> 
+<apex:actionFunction name="searchAccRecs" action="{!search}" reRender="pgblcktbl" > 
+    <apex:param value="" name="param1" assignTo="{!searchText}"/>
+ </apex:actionFunction>  
+<!--<apex:pageBlockTable value="{!pro}" var="a" id="pgblcktbl"> 
+<apex:column >  
+      <apex:outputlink value="https://harmancommunities.my.salesforce.com/{!a.id}">{!a.Name}</apex:outputlink> -->
+      <apex:repeat value="{!pro}" var="prods"  id="pgblcktbl">  
+        <div class="col-sm-4">
+        <c:portal_smProductCmp img="{!prods.Image__c}"  price="{!prods.Price__c}" Name="{!prods.name}"></c:portal_smProductCmp>
+        </div>
+       </apex:repeat>   
+     <!--</apex:column>  
+</apex:pageBlockTable> 
+</apex:pageBlock>--> 
+ 
+</apex:form> 
+
+</apex:component>

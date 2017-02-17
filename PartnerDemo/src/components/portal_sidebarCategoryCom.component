@@ -1,0 +1,24 @@
+<apex:component controller="portal_leftsideBarComp">
+    <div class="panel panel-default">
+        <apex:repeat value="{!categoryAndBrandMap}" var="category">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordian" href="#{!SUBSTITUTE(category,' ','')}">
+                        <span class="badge pull-right"><i class="fa fa-plus"></i></span>
+                        {!category}
+                    </a>
+                </h4>
+            </div>
+        
+            <div id="{!SUBSTITUTE(category,' ','')}" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul>
+                        <apex:repeat value="{!categoryAndBrandMap[category]}" var="brands">
+                            <li><apex:outputLink styleClass="active" value="{!mapLabels['Portal_product'].Value__c}?accId={!AccId}&pcategory={!category}&pbrand={!brands}">{!brands}</apex:outputLink></li>
+                        </apex:repeat>
+                    </ul>
+                </div>
+            </div>
+        </apex:repeat>
+    </div>
+</apex:component>

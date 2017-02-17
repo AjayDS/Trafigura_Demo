@@ -1,0 +1,32 @@
+<apex:component controller="portal_ProductDescription">
+    <apex:attribute name="img" type="String" description="Image Name"/>
+    <apex:attribute name="price" type="String" description="Price"/>
+    <apex:attribute name="Name" type="String" description="Product Name"/>
+    <apex:attribute name="prodId" type="String" description="Product id"/>
+    
+    <div class="col-sm-4">
+        <div class="product-image-wrapper">
+            <div class="single-products simpleCart_shelfItem">
+                <div class="productinfo text-center">
+                    
+                    <!--    <img src="{!URLFOR($Resource.portal, '/sfdcportal/images/shop/{!image}.jpg')}" alt="" />-->
+                     <apex:image url="{!img}"/>
+                     <h2>${!price}</h2>
+                    <p>{!Name}</p>
+                   <!-- <a href="#" class="item_add single-item btn btn-default add-to-cart" onClick="insertToCart('{!prodId}');"><i class="fa fa-shopping-cart"></i>Add to cart</a>-->
+                   <apex:outputpanel rendered="{!userObj.LastName=='Guest User'}"><li><a data-toggle="modal" data-target="#loginbox" title="Login" href="#"><button type="button" class="btn btn-default get">Add to Cart</button></a></li> </apex:outputpanel>                                              
+                   <apex:outputpanel rendered="{!userObj.LastName!='Guest User'}"><button type="button" class="item_add single-item btn btn-default get" onClick="insertToCart('{!prodId}');">Add to Cart</button></apex:outputpanel>                   
+                </div>
+                <div class="product-overlay">
+                    <div class="overlay-content">
+                        <h2>${!price}</h2>
+                        <p>{!Name}</p>
+                       <!-- <a href="#" class="item_add single-item btn btn-default add-to-cart" onClick="insertToCart('{!prodId}');" ><i class="fa fa-shopping-cart"></i>Add to cart</a>-->
+                       <apex:outputpanel rendered="{!userObj.LastName=='Guest User'}"><li><a data-toggle="modal" data-target="#loginbox" title="Login" href="#"><button type="button" class="btn btn-default get">Add to Cart</button></a></li> </apex:outputpanel> 
+                       <apex:outputpanel rendered="{!userObj.LastName!='Guest User'}"><button type="button" class="item_add single-item btn btn-default get" onClick="insertToCart('{!prodId}');">Add to Cart</button></apex:outputpanel>                   
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</apex:component>

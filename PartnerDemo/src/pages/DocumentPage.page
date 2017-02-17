@@ -1,0 +1,8 @@
+<apex:page html-lang="en" showHeader="false" sidebar="false" standardStylesheets="false" docType="html-5.0">
+     
+      <html>           
+             <c:CFO_StaticComp_Document />
+             <c:CFO_WaveDashboard2 />       
+       </html>  
+       
+</apex:page>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Category and Brand Mapping</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Category and Brand Mapping</value>
+    </caseValues>
+    <fields>
+        <label><!-- Brands --></label>
+        <name>Brands__c</name>
+    </fields>
+    <fields>
+        <label><!-- Category Name --></label>
+        <name>Category_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- More Brands --></label>
+        <name>More_Brands__c</name>
+    </fields>
+    <fields>
+        <label><!-- Partner Name --></label>
+        <name>Partner_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- is Active --></label>
+        <name>is_Active__c</name>
+    </fields>
+    <gender>Neuter</gender>
+</CustomObjectTranslation>

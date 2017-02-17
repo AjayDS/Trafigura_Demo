@@ -1,0 +1,74 @@
+<apex:component >
+     <apex:stylesheet value="{!URLFOR($Resource.CFO_Static_File, '/css/bootstrap.css')}"/>    
+    <apex:stylesheet value="{!URLFOR($Resource.CFO_Static_File, '/css/style.css')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.CFO_Static_File, '/js/jquery.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.CFO_Static_File, '/js/bootstrap.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.CFO_Static_File, '/js/script.js')}"/>  
+    
+    <head>
+        <title>Home</title>
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" />
+        <apex:stylesheet value="{!URLFOR($Resource.CFO_Static_File, '/css/bootstrap.css')}"/>
+        <apex:stylesheet value="{!URLFOR($Resource.CFO_Static_File, '/css/style.css')}"/>        
+        <apex:includeScript value="{!URLFOR($Resource.CFO_Static_File, '/js/jquery.js')}"/>
+         <apex:includeScript value="{!URLFOR($Resource.CFO_Static_File, '/js/bootstrap.js')}"/>        
+    </head>
+    
+    <body>
+    
+        <div class="topbar">
+            <div class="container-fluid">
+                <div class="col-sm-6">
+                    <h1 class="logo">Harman</h1>
+                </div>
+                <div class="col-sm-6 text-right">
+                    <ul>
+                        <li><a href="#"><span class="glyphicon glyphicon-cog"></span> Settings</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-off"></span>Logout</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-question-sign"></span>Help</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="secondarBar">
+            <div class="container-fluid">
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header hidden-md-up">
+                          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                          </button>
+                          <a class="navbar-brand" href="#">Menu</a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                          <ul class="nav navbar-nav">
+                            <li class="active"><a href="../apex/CFO_Main_Page">Dashboard</a></li>
+                            <li ><a href="../apex/CFO_Statistics_page">My Statistics</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Product <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="#">Product 1</a></li>
+                                    <li><a href="#">Product 2</a></li>
+                                    <li><a href="#">Product 1</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="../apex/DocumentPage">Document</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            
+                          </ul>
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </div>
+            
+        </div>
+                                      
+    </body>
+    
+</apex:component>

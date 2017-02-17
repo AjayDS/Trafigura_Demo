@@ -1,0 +1,61 @@
+<apex:component controller="portal_topAdvcls">
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/simpleCart.min.js')}"/>
+  <section id="slider"><!--slider-->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div id="slider-carousel" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                    <apex:outputpanel rendered="{!homeBannerFirstProduct.size>0}">
+                                        <apex:repeat value="{!counts}" var="num" id="bannerId">
+                                            <li data-target="#slider-carousel" data-slide-to="{!num}" class="active"></li>                                                                      
+                                        </apex:repeat>
+                                    </apex:outputpanel>
+                                </ol>
+                                <div class="carousel-inner">
+                                    <apex:repeat value="{!homeBannerFirstProduct}" var="banner" id="banner">
+                                        <div class="item active simpleCart_shelfItem">
+                                            <div class="col-sm-6">
+                                                <h1><span>{!banner.Product2.Name}</span><!---SPEAKERS--></h1>
+                                                <h2></h2>
+                                                <p>{!banner.Product2.Description}</p>                                               
+                                                <apex:outputpanel rendered="{!loggedinUser=='Guest User'}"><li><a data-toggle="modal" data-target="#loginbox" title="Login" href="#"><button type="button" class="btn btn-default get">Add to Cart</button></a></li> </apex:outputpanel>                                              
+                                                <apex:outputpanel rendered="{!loggedinUser!='Guest User'}"><button type="button" class="item_add single-item btn btn-default get" onClick="insertToCart('{!banner.Product2Id}');">Add to Cart</button></apex:outputpanel>                                              
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <apex:image Styleclass="girl img-responsive" alt="" url="{!mapLabels['Domain_URL'].Value__c}{!banner.Product2.Image__c}"/>
+                                               <!-- <apex:image Styleclass="girl img-responsive" alt="" url="{!URLFOR($Resource.portal, '/sfdcportal/images/home/pricing.png')}"/>-->
+                                                
+                                                
+                                            </div>
+                                        </div>
+                                    </apex:repeat>
+                                    <apex:repeat value="{!homeBannerProdList}" var="banner" id="banner2">
+                                        <div class="item simpleCart_shelfItem">
+                                            <div class="col-sm-6">
+                                                <h1><span>{!banner.Product2.Name}</span><!---SHOPPER--></h1>
+                                                <h2></h2>
+                                                <p>{!banner.Product2.Description} </p>
+                                              <apex:outputpanel rendered="{!loggedinUser=='Guest User'}"><li><a data-toggle="modal" data-target="#loginbox" title="Login" href="#"><button type="button" class="btn btn-default get" onClick="insertToCart('{!banner.Product2Id}');">Add to Cart</button></a></li> </apex:outputpanel>                                              
+                                                <apex:outputpanel rendered="{!loggedinUser!='Guest User'}"><button type="button" class="item_add single-item btn btn-default get" onClick="insertToCart('{!banner.Product2Id}');">Add to Cart</button></apex:outputpanel>                                              
+                                            </div>
+                                            <div class="col-sm-6">
+                                                   <apex:image Styleclass="girl img-responsive" alt="" url="{!mapLabels['Domain_URL'].Value__c}{!banner.Product2.Image__c}"/>                                                
+                                            </div>
+                                        </div>                                                                              
+                                    </apex:repeat>
+                                </div>
+                               <apex:outputPanel rendered="{!homeBannerFirstProduct.size>0}">
+                                   <a href="#slider-carousel" class="left control-carousel hidden-xs" data-slide="prev">
+                                        <i class="fa fa-angle-left"></i>
+                                    </a>
+                                    <a href="#slider-carousel" class="right control-carousel hidden-xs" data-slide="next">
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>
+                                </apex:outputPanel>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section><!--/slider-->
+</apex:component>

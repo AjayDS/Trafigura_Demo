@@ -1,0 +1,128 @@
+<apex:component >
+  <div id="ID-contextOverviewPanel">
+<div class="_GAb-_GAXc _GAb-_GAk-_GAmb-_GAqb"><div class="_GAb-_GAd _GAb-_GAz _GAJMb"><div id="ID-overviewCounterPanel" class="_GAzQb">
+<div class="_GAxU">Right now</div>
+<div>
+<div id="ID-overviewCounterValue" class="_GAUQ" style="text-shadow: rgb(255, 255, 255) 0px 0px 100px;">0</div>
+</div>
+<div>active users on site</div>
+</div>
+<div id="ID-overviewSummary" class="_GACsb">
+<div class="_GAkV"><div class="_GAhRb"></div>
+<div class="_GAYV"></div>
+</div>
+</div>
+</div>
+<div class="_GAb-_GAd"><div id="ID-overtimePanel" class="_GAo7">
+<div class="_GAb-_GAXc">
+<div id="ID-overtimePanelTitle" class="_GAcYb">Page Views</div>
+</div><div class="_GAwKb">
+<div id="ID-overtimePanel" class="_GAb-_GAXc _GAb-_GAk-_GAld-_GAy">
+<div class="_GAb-_GAd _GAb-_GAz">
+<div id="ID-secondChartTitle" class="_GAC1">Per second</div>
+<div id="ID-secondChart" class="_GAk0b">
+<svg width="300" height="235" overflow="hidden">
+<defs></defs>
+<g><g></g>
+<text font-family="Arial" font-size="10" x="5" y="229" stroke="#FFF" stroke-opacity="1" stroke-width="2" fill="#2d96ca" fill-opacity="1">-60 sec</text>
+<text font-family="Arial" font-size="10" x="5" y="229" stroke="none" fill="#2d96ca" fill-opacity="1">-60 sec</text>
+<text font-family="Arial" font-size="10" x="80" y="229" stroke="#FFF" stroke-opacity="1" stroke-width="2" fill="#2d96ca" fill-opacity="1">-45 sec</text>
+<text font-family="Arial" font-size="10" x="80" y="229" stroke="none" fill="#2d96ca" fill-opacity="1">-45 sec</text>
+<text font-family="Arial" font-size="10" x="155" y="229" stroke="#FFF" stroke-opacity="1" stroke-width="2" fill="#2d96ca" fill-opacity="1">-30 sec</text>
+<text font-family="Arial" font-size="10" x="155" y="229" stroke="none" fill="#2d96ca" fill-opacity="1">-30 sec</text>
+<text font-family="Arial" font-size="10" x="230" y="229" stroke="#FFF" stroke-opacity="1" stroke-width="2" fill="#2d96ca" fill-opacity="1">-15 sec</text>
+<text font-family="Arial" font-size="10" x="230" y="229" stroke="none" fill="#2d96ca" fill-opacity="1">-15 sec</text>
+<rect x="0" y="0" width="300" height="1" stroke="none" fill="gray" fill-opacity="0.2"></rect>
+<text font-family="Arial" font-size="10" x="5" y="14" stroke="#FFF" stroke-opacity="1" stroke-width="2" fill="#979797" fill-opacity="1">2</text>
+<text font-family="Arial" font-size="10" x="5" y="14" stroke="none" fill="#979797" fill-opacity="1">2</text>
+<rect x="0" y="59" width="300" height="1" stroke="none" fill="gray" fill-opacity="0.2"></rect>
+<text font-family="Arial" font-size="10" x="5" y="73" stroke="#FFF" stroke-opacity="1" stroke-width="2" fill="#979797" fill-opacity="1">1.5</text>
+<text font-family="Arial" font-size="10" x="5" y="73" stroke="none" fill="#979797" fill-opacity="1">1.5</text>
+<rect x="0" y="118" width="300" height="1" stroke="none" fill="gray" fill-opacity="0.2"></rect>
+<text font-family="Arial" font-size="10" x="5" y="132" stroke="#FFF" stroke-opacity="1" stroke-width="2" fill="#979797" fill-opacity="1">1</text>
+<text font-family="Arial" font-size="10" x="5" y="132" stroke="none" fill="#979797" fill-opacity="1">1</text>
+<rect x="0" y="176" width="300" height="1" stroke="none" fill="gray" fill-opacity="0.2"></rect>
+<text font-family="Arial" font-size="10" x="5" y="190" stroke="#FFF" stroke-opacity="1" stroke-width="2" fill="#979797" fill-opacity="1">0.5</text>
+<text font-family="Arial" font-size="10" x="5" y="190" stroke="none" fill="#979797" fill-opacity="1">0.5</text>
+<rect x="0" y="235" width="300" height="1" stroke="none" fill="gray" fill-opacity="0.2"></rect>
+<text font-family="Arial" font-size="10" x="5" y="249" stroke="#FFF" stroke-opacity="1" stroke-width="2" fill="#979797" fill-opacity="1">0</text>
+<text font-family="Arial" font-size="10" x="5" y="249" stroke="none" fill="#979797" fill-opacity="1">0</text></g></svg>
+</div></div><div id="ID-minuteChartContainer" class="_GAb-_GAd"><div class="_GAb-_GAXc _GAb-_GAk-_GAnh-_GAy">
+<div class="_GAb-_GAd _GAb-_GAz"><div id="ID-sliderButton" class="_GANN ACTION-slider TARGET-"></div></div><div class="_GAb-_GAd">
+<div class="_GAC1">Per minute</div><div id="ID-minuteChart" class="_GAYhb"><div style="position: relative;">
+<div dir="ltr" style="position: relative; width: 410px; height: 235px;">
+<div aria-label="A chart." style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;">
+<svg width="410" height="235" aria-label="A chart." style="overflow: hidden;"><defs id="defs"><clipPath id="_ABSTRACT_RENDERER_ID_1374">
+<rect x="0" y="0" width="410" height="235"></rect></clipPath></defs><rect x="0" y="0" width="410" height="235" stroke="none" stroke-width="0" fill="#ffffff">
+</rect><g><rect x="0" y="0" width="410" height="235" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect>
+<g clip-path="url(https://analytics.google.com/analytics/web/?authuser=0#_ABSTRACT_RENDERER_ID_1374)"><g>
+<rect x="0" y="234" width="410" height="1" stroke="none" stroke-width="0" fill="#e7e7e7"></rect>
+<rect x="0" y="176" width="410" height="1" stroke="none" stroke-width="0" fill="#e7e7e7"></rect>
+<rect x="0" y="117" width="410" height="1" stroke="none" stroke-width="0" fill="#e7e7e7"></rect>
+<rect x="0" y="59" width="410" height="1" stroke="none" stroke-width="0" fill="#e7e7e7"></rect>
+<rect x="0" y="0" width="410" height="1" stroke="none" stroke-width="0" fill="#e7e7e7"></rect></g><g><g>
+<rect x="395" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M409,234.5L395,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="382" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M395,234.5L382,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="368" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M382,234.5L368,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="354" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M368,234.5L354,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="341" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M354,234.5L341,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="327" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M341,234.5L327,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="314" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M327,234.5L314,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="300" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M314,234.5L300,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="286" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M300,234.5L286,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="273" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M286,234.5L273,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="259" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M273,234.5L259,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="245" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M259,234.5L245,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="232" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M245,234.5L232,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="218" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M232,234.5L218,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="205" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M218,234.5L205,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="191" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M205,234.5L191,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="177" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M191,234.5L177,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="164" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M177,234.5L164,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="150" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7">
+</rect><path d="M164,234.5L150,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="136" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M150,234.5L136,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="123" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M136,234.5L123,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="109" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M123,234.5L109,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="95" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M109,234.5L95,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="82" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M95,234.5L82,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="68" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M82,234.5L68,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="55" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M68,234.5L55,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="41" y="117.5" width="14" height="117" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M55,117.5L41,117.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="27" y="117.5" width="14" height="117" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M41,117.5L27,117.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="14" y="234.5" width="13" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M27,234.5L14,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g><g>
+<rect x="0" y="234.5" width="14" height="0" stroke="none" stroke-width="0" fill-opacity="0.1" fill="#058dc7"></rect>
+<path d="M14,234.5L0,234.5" stroke="#058dc7" stroke-width="4" fill-opacity="1" fill="none"></path></g></g></g><g></g><g><g><g>
+<text text-anchor="middle" x="61.85000000000002" y="227.5" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#2d96ca" aria-hidden="true">-26 min</text>
+<text text-anchor="middle" x="61.85000000000002" y="227.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#2d96ca">-26 min</text>
+</g></g><g><g>
+<text text-anchor="middle" x="130.01666666666665" y="227.5" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#2d96ca" aria-hidden="true">-21 min</text><text text-anchor="middle" x="130.01666666666665" y="227.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#2d96ca">-21 min</text></g></g><g><g><text text-anchor="middle" x="198.18333333333334" y="227.5" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#2d96ca" aria-hidden="true">-16 min</text><text text-anchor="middle" x="198.18333333333334" y="227.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#2d96ca">-16 min</text></g></g><g><g><text text-anchor="middle" x="266.35" y="227.5" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#2d96ca" aria-hidden="true">-11 min</text><text text-anchor="middle" x="266.35" y="227.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#2d96ca">-11 min</text></g></g><g><g><text text-anchor="middle" x="334.51666666666665" y="227.5" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#2d96ca" aria-hidden="true">-6 min</text><text text-anchor="middle" x="334.51666666666665" y="227.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#2d96ca">-6 min</text></g></g><g><g><text text-anchor="middle" x="402.68333333333334" y="227.5" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#2d96ca" aria-hidden="true">…</text><text text-anchor="middle" x="402.68333333333334" y="227.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#2d96ca">…</text></g><g><text text-anchor="middle" x="402.68333333333334" y="214.5" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#2d96ca" aria-hidden="true">-1</text><text text-anchor="middle" x="402.68333333333334" y="214.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#2d96ca">-1</text></g><rect x="397.68333333333334" y="206" width="10" height="23" stroke="none" stroke-width="0" fill-opacity="0" fill="#ffffff"></rect></g><g><g><text text-anchor="start" x="3" y="187.5" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#979797" aria-hidden="true">0.5</text><text text-anchor="start" x="3" y="187.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#979797">0.5</text></g></g><g><g><text text-anchor="start" x="3" y="129" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#979797" aria-hidden="true">1.0</text><text text-anchor="start" x="3" y="129" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#979797">1.0</text></g></g><g><g><text text-anchor="start" x="3" y="70.5" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#979797" aria-hidden="true">1.5</text><text text-anchor="start" x="3" y="70.5" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#979797">1.5</text></g></g><g><g><text text-anchor="start" x="3" y="12" font-family="Arial" font-size="10" stroke="#ffffff" stroke-width="3" fill="#979797" aria-hidden="true">2.0</text><text text-anchor="start" x="3" y="12" font-family="Arial" font-size="10" stroke="none" stroke-width="0" fill="#979797">2.0</text></g></g></g></g><g></g></svg><div aria-label="A tabular representation of the data in the chart." style="position: absolute; left: -10000px; top: auto; width: 1px; height: 1px; overflow: hidden;"><table><thead><tr><th></th><th>Page Views</th></tr></thead><tbody><tr><td>-1 min</td><td>0</td></tr><tr><td>-2 min</td><td>0</td></tr><tr><td>-3 min</td><td>0</td></tr><tr><td>-4 min</td><td>0</td></tr><tr><td>-5 min</td><td>0</td></tr><tr><td>-6 min</td><td>0</td></tr><tr><td>-7 min</td><td>0</td></tr><tr><td>-8 min</td><td>0</td></tr><tr><td>-9 min</td><td>0</td></tr><tr><td>-10 min</td><td>0</td></tr><tr><td>-11 min</td><td>0</td></tr><tr><td>-12 min</td><td>0</td></tr><tr><td>-13 min</td><td>0</td></tr><tr><td>-14 min</td><td>0</td></tr><tr><td>-15 min</td><td>0</td></tr><tr><td>-16 min</td><td>0</td></tr><tr><td>-17 min</td><td>0</td></tr><tr><td>-18 min</td><td>0</td></tr><tr><td>-19 min</td><td>0</td></tr><tr><td>-20 min</td><td>0</td></tr><tr><td>-21 min</td><td>0</td></tr><tr><td>-22 min</td><td>0</td></tr><tr><td>-23 min</td><td>0</td></tr><tr><td>-24 min</td><td>0</td></tr><tr><td>-25 min</td><td>0</td></tr><tr><td>-26 min</td><td>0</td></tr><tr><td>-27 min</td><td>1</td></tr><tr><td>-28 min</td><td>1</td></tr><tr><td>-29 min</td><td>0</td></tr><tr><td>-30 min</td><td>0</td></tr></tbody></table></div></div></div><div aria-hidden="true" style="display: none; position: absolute; top: 245px; left: 420px; white-space: nowrap; font-family: Arial; font-size: 11px; font-weight: bold;">-19 min</div><div></div></div></div></div></div></div></div></div></div></div></div></div>
+</apex:component>

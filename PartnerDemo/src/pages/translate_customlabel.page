@@ -1,0 +1,9 @@
+<apex:page >
+<h1>Example for Custom labels:::::</h1>
+<apex:outputLabel value="{!$Label.testing}"/>
+<apex:outputLabel value="{!$Label.testing1}"/>
+<apex:outputLabel value="{!$Label.testing3}"/>
+  <h1>{!$Label.testing}</h1>
+
+
+</apex:page>

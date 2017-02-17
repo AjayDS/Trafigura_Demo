@@ -1,0 +1,44 @@
+<apex:component controller="eCommerceHomePage" id="productsSection">
+      <!--<div id="tab-default-1" class="slds-tabs--default__content slds-hide" role="tabpanel" aria-labelledby="tab-default-1__item" >    
+                    <div class="slds-tabs--default__content slds-show" aria-labelledby="tab-default-1__item">-->                    
+                     ###################################                    
+                        {!productsMap}@@@@@@@@@@
+                        <apex:repeat value="{!productsMap}" var="prod" id="products">   
+                        {!productsMap}------------                      
+                            <div class="col-md-3 product-men">
+                                                        <div class="men-pro-item simpleCart_shelfItem">
+                                                            <div class="simpleCart_shelfItem men-thumb-item">
+                                                               <!-- <img src="{!URLFOR($Resource.community,'/community/images/a1.png')}" alt="" class="pro-image-front"/>-->
+                                                                <!--<img src="{!URLFOR($Resource.community,'/community/images/a1.png')}" alt="" class="pro-image-back"/>-->
+                                                                <img src="{!productsMap[prod].Image_URL__c}" alt="image" thumb="{!productsMap[prod]}"  class="item_thumb pro-image-front"/>
+                                                                <img src="{!productsMap[prod].Image_URL__c}" alt="image" thumb="{!productsMap[prod]}" class="item_thumb pro-image-back"/>
+                                                                    <div class="men-cart-pro">
+                                                                        <div class="inner-men-cart-pro">
+                                                                            <a href="../apex/eCommerce_Select_Product_Information?sessionId={!loggedInUserName}&pCode={!prod}&qty=" target="_top" class="link-product-add-cart">Quick View</a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <span class="product-new-top">New</span>
+                                                                    
+                                                            </div>
+                                                            <div class="item-info-product ">
+                                                                <h4><a class="item_name" href="../apex/eCommerce_Select_Product_Information?sessionId={!loggedInUserName}&pCode={!prod}&qty=" target="_top">{!productsMap[prod].Name}</a></h4>
+                                                                <div class="info-product-price">
+                                                                   <!-- <span class="item_price">{!Prod.Price__c}</span>
+                                                                    <del>{!prod.Price__c}</del>--> 
+                                                                    
+                                                                    <apex:repeat var="p" value="{!productsMap[prod].PriceBookEntries}">
+                                                                     <span class="item_price"><apex:outputText value="{!p.unitPrice}"/></span>
+                                                                    </apex:repeat> 
+                                                                </div>
+                                                                <p class="slds-text-heading--label slds-truncate" title="Quant">Qty </p>                                                            
+                                                                <input size="2" class="item_quantity" style="width:40px;" id="quantity" type="number" value="{!qty}" min="0" max="5" onchange="refreshPage(this)">                                                                              
+                                                                </input> <br /><br />                                                                                               
+                                                                <a href="#" style="background-color:lightgrey;" class="item_add single-item hvr-outline-out button2">Add to cart</a>                                                                                                                                                                                            
+                                                            </div>
+                                                        </div>
+                            </div>
+                        </apex:repeat>
+                        <div class="clearfix"></div>
+                   <!-- </div>                  
+           </div>-->
+</apex:Component>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>false</plural>
+        <value>Account Setting</value>
+    </caseValues>
+    <caseValues>
+        <caseType>Nominative</caseType>
+        <plural>true</plural>
+        <value>Account Settings</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account --></label>
+        <name>Account__c</name>
+        <relationshipLabel><!-- Account Settings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Brands --></label>
+        <name>Brands__c</name>
+        <picklistValues>
+            <masterLabel>AKG</masterLabel>
+            <translation><!-- AKG --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Harman Kardon</masterLabel>
+            <translation><!-- Harman Kardon --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Infinity</masterLabel>
+            <translation><!-- Infinity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>JBL</masterLabel>
+            <translation><!-- JBL --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Products</masterLabel>
+            <translation><!-- New Products --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Categories --></label>
+        <name>Categories__c</name>
+        <picklistValues>
+            <masterLabel>Computer Speakers</masterLabel>
+            <translation><!-- Computer Speakers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Home Theater</masterLabel>
+            <translation><!-- Home Theater --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Sounds Bar</masterLabel>
+            <translation><!-- Sounds Bar --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Subwoofers</masterLabel>
+            <translation><!-- Subwoofers --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wireless Speakers</masterLabel>
+            <translation><!-- Wireless Speakers --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Category Limit --></label>
+        <name>Category_Limit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Copyright Text --></label>
+        <name>Copyright_Text__c</name>
+    </fields>
+    <fields>
+        <label><!-- Footer Links --></label>
+        <name>Footer_Links__c</name>
+    </fields>
+    <fields>
+        <label><!-- Image URL --></label>
+        <name>Image_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Language --></label>
+        <name>Language__c</name>
+        <picklistValues>
+            <masterLabel>English</masterLabel>
+            <translation><!-- English --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>France</masterLabel>
+            <translation><!-- France --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Japanese</masterLabel>
+            <translation><!-- Japanese --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- No of Items Per Page --></label>
+        <name>No_of_Items_Per_Page__c</name>
+    </fields>
+    <fields>
+        <label><!-- Price Book --></label>
+        <name>Price_Book__c</name>
+        <relationshipLabel><!-- Account Settings --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Social Media --></label>
+        <name>Social_Media__c</name>
+        <picklistValues>
+            <masterLabel>dribbble</masterLabel>
+            <translation><!-- dribbble --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>facebook</masterLabel>
+            <translation><!-- facebook --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>google-plus</masterLabel>
+            <translation><!-- google-plus --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>linkedin</masterLabel>
+            <translation><!-- linkedin --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>twitter</masterLabel>
+            <translation><!-- twitter --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Tax Rate (%) --></label>
+        <name>Tax_Rate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Theme --></label>
+        <name>Theme__c</name>
+        <picklistValues>
+            <masterLabel>Blue</masterLabel>
+            <translation><!-- Blue --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Green</masterLabel>
+            <translation><!-- Green --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Top Email --></label>
+        <name>Top_Email__c</name>
+    </fields>
+    <fields>
+        <label><!-- Top Phone --></label>
+        <name>Top_Phone__c</name>
+    </fields>
+    <fields>
+        <label><!-- User Icon Options --></label>
+        <name>User_Icon_Options__c</name>
+    </fields>
+    <fields>
+        <label><!-- is Active --></label>
+        <name>is_Active__c</name>
+    </fields>
+    <gender>Neuter</gender>
+    <layouts>
+        <layout>Account Setting Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Footer Settings --></label>
+            <section>Footer Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Header Settings --></label>
+            <section>Header Settings</section>
+        </sections>
+        <sections>
+            <label><!-- Tab Settings --></label>
+            <section>Tab Settings</section>
+        </sections>
+    </layouts>
+</CustomObjectTranslation>

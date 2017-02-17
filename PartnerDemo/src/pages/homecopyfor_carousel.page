@@ -1,0 +1,122 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false" controller="portal_Home">
+    <apex:composition template="portal_masterPage">
+        <apex:define name="header"/>
+        <apex:define name="mainContent">
+            <c:portal_topAdvcmp ></c:portal_topAdvcmp>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <c:portal_leftsideBarComp ></c:portal_leftsideBarComp>
+                        </div>
+                        <div class="col-sm-9 padding-right">
+                            <!--features_items-->
+                            <div class="features_items">
+                                <h2 class="title text-center">Top Sales Items</h2>
+                                <apex:repeat value="{!topSales}" var="topProduct" >
+                                    <c:portal_productCmp img="{!topProduct.Product2.Image__c}" price="{!topProduct.UnitPrice}" Name="{!topProduct.Product2.Name}"></c:portal_productCmp>                                  
+                                </apex:repeat>
+                            </div>
+                            
+                            <!--features_items-->
+                            <!--category-tab-->
+                            <div class="category-tab">
+                                    <div id="category-tab-item-carousel" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                <div class="col-sm-12">
+                                    <ul class="nav nav-tabs">
+                                     
+                                        <li class="active"><a href="#{!activeBrand}" data-toggle="tab">{!activeBrand}</a></li>
+                                        <apex:repeat value="{!productBrands}" var="brand" >
+                                            <li><a href="#{!brand}" data-toggle="tab">{!brand}</a></li>                                         
+                                        </apex:repeat>
+                                    </ul>
+                                </div></div></div>
+                                <div class="tab-content">  
+                         
+                                
+                                     <div class="tab-pane fade active in" id="{!activeBrand}" >
+                                        <apex:repeat value="{!activeBrandList}" var="ac" >
+                                            <apex:repeat value="{!activeBrandList[ac]}" var="acBrands" >
+                                                <div class="col-sm-3">                                                    
+                                                       <c:portal_smProductCmp img="{!acBrands.Product2.Image__c}" price="{!acBrands.UnitPrice}" Name="{!acBrands.Product2.name}"></c:portal_smProductCmp>                                                                                                         
+                                                </div>                                                                            
+                                            </apex:repeat>
+                                        </apex:repeat>
+                                     </div>
+                                    <apex:repeat value="{!productBrands}" var="brand" > 
+                                        <div class="tab-pane fade" id="{!brand}" >                                              
+                                            <apex:repeat value="{!brandList[brand]}" var="acBrands" >                                           
+                                                    <div class="col-sm-3">
+                                                        <c:portal_smProductCmp img="{!acBrands.Product2.Image__c}" price="{!acBrands.UnitPrice}" Name="{!acBrands.Product2.name}"></c:portal_smProductCmp>
+                                                    </div>                                                                                      
+                                            </apex:repeat>                                          
+                                        </div>  
+                                    </apex:repeat>
+                                                                        
+                                </div>
+                            </div>
+                            
+                            <!--/category-tab-->
+                            
+                             <!--recommended_items-->
+                            <div class="recommended_items">
+                                <h2 class="title text-center">recommended items</h2>
+                                
+                                <div id="recommended-item-carousel" class="carousel slide" data-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <div class="item active">                                               
+                                            <apex:repeat value="{!activeRecommendtn}" var="activePro">
+                                                <div class="col-sm-3">
+                                                    <div class="product-image-wrapper">
+                                                        <div class="single-products">
+                                                            <div class="productinfo text-center">
+                                                                <img src="{!activePro.Product2.Image__c}" alt="active product" />
+                                                                <h2>${!activePro.UnitPrice}</h2>
+                                                                <p>{!activePro.Product2.Name}</p>
+                                                                <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                            </div>
+                                                            
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </apex:repeat>
+                                            
+                                        </div>
+                                        <div class="item">  
+                                            <apex:repeat value="{!recommendedProducts}" var="otherPro">
+                                                <div class="col-sm-3">
+                                                        <div class="product-image-wrapper">
+                                                            <div class="single-products">
+                                                                <div class="productinfo text-center">
+                                                                    <img src="{!otherPro.Product2.Image__c}" alt="active product" />
+                                                                    <h2>${!otherPro.UnitPrice}</h2>
+                                                                    <p>{!otherPro.product2.Name}</p>
+                                                                    <a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
+                                                                </div>
+                                                                
+                                                            </div>
+                                                        </div>
+                                                </div>
+                                            </apex:repeat>
+                                        </div>
+                                    </div>
+                                    <a class="left recommended-item-control" href="#recommended-item-carousel" data-slide="prev">
+                                        <i class="fa fa-angle-left"></i>
+                                    </a>
+                                    <a class="right recommended-item-control" href="#recommended-item-carousel" data-slide="next">
+                                        <i class="fa fa-angle-right"></i>
+                                    </a>            
+                                </div>
+                            </div>
+                            <!--/recommended_items-->
+                            
+                        </div>
+                        
+                    </div>
+                </div>
+            </section>
+        </apex:define>
+        <apex:define name="footer"/>
+    </apex:composition>
+</apex:page>

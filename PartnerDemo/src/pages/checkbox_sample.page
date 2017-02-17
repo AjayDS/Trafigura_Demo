@@ -1,0 +1,26 @@
+<apex:page controller="chooseColor">
+<apex:form id="Form1" >
+<script type="text/javascript">       
+ function ToggleInput(theId)           
+  {                
+     var e = document.getElementById(theId);
+     alert(e.value);            
+  }       
+  function ToggleInput2(Idd)
+  {
+      var e = document.getElementById(theId);              
+        alert(e.value);            
+  }
+  </script>   
+     <apex:selectList id="chooseColor" value="{!string1}" onchange="ToggleInput('{!$Component.chooseColor}');">
+    <apex:selectOption itemValue="red" itemLabel="Red"/>  
+    <apex:selectOption itemValue="white" itemLabel="White"/>
+    <apex:selectOption itemValue="blue" itemLabel="Blue"/>           
+</apex:selectList>
+<apex:selectCheckboxes id="chooseColor1" value="{!string1}" onchange="ToggleInput2('{!$Component.chooseColor1}');">  
+    <apex:selectOption itemValue="red" itemLabel="Red" id="ID1" title="1"/>
+    <apex:selectOption itemValue="white" itemLabel="White" id="ID2" title="2"/>
+    <apex:selectOption itemValue="blue" itemLabel="Blue" title="3"/>            
+</apex:selectCheckboxes>   
+</apex:form>
+</apex:page>

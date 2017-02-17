@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>invoice_for_Order</letterhead>
+    <name>Order Invoice Template</name>
+    <style>freeForm</style>
+    <subject>Thank you!</subject>
+    <textOnly>Your OrderId:{!01I36000001MeJW.Name}
+ProductId   : {!01I36000001MeJW.00N3600000EW8UB}
+Quantity    : {!01I36000001MeJW.00N3600000EWNxH}
+Total Price : {!01I36000001MeJW.00N3600000DxmWP}
+
+
+
+
+
+
+Thank You!
+Harman Connected Services</textOnly>
+    <type>html</type>
+</EmailTemplate>

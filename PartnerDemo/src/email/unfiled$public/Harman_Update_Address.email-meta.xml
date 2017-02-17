@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>Product_Orders</letterhead>
+    <name>Harman Update Address</name>
+    <style>freeForm</style>
+    <subject>Update the status</subject>
+    <textOnly>Hi {!User.Name}
+
+Your address is changed .Please conform if u want to change it.
+The updated address is:
+
+{!01I36000001ppMS.OwnerEmail}
+{!Contact.Phone}
+{!01I36000001ppMS.00N3600000GNEWE}</textOnly>
+    <type>html</type>
+</EmailTemplate>

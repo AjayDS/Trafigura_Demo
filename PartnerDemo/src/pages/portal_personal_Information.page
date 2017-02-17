@@ -1,0 +1,10 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+<apex:composition template="portal_masterPage">
+    <apex:define name="header"/>
+        <apex:define name="mainContent">
+         
+        <c:Portal_Profile />
+                         
+    </apex:define>
+</apex:composition>  
+</apex:page>

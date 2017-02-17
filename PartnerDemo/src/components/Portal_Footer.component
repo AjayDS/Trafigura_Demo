@@ -1,0 +1,65 @@
+<apex:component controller="eCommerceHomePage">
+                <!--FOOTER-->
+                <div class="row m_t_20">
+                    <div class="newsmain portal_background_color">
+                        <div class="col-md-5 col-sm-6 col-xs-12">
+                            <div class="newsleft">
+                                <h3>SIGN UP FOR NEWSLETTER !</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-6 col-xs-12">
+                            <form class="newsright">
+                                <input onblur="if (this.value == '') {this.value = 'Email';}" onfocus="this.value = '';" type="text" value="Email" />
+                                <input class="portal_foreground_color" type="submit" value="Submit" />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <!--FOOTER-->
+                <div class="row m_t_20">
+                    <div class="col-md-2 col-sm-2 sign-gd">
+                        <div class="iconsfooter">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            <i class="fa fa-google" aria-hidden="true"></i>
+                            <i class="fa fa-pinterest-p" aria-hidden="true"></i>
+                            <i class="fa fa-youtube" aria-hidden="true"></i>
+                            <!--<i class="fa fa-twitter" aria-hidden="true"></i><i class="fa fa-twitter" aria-hidden="true"></i>-->
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-2 col-sm-2 sign-gd">
+                        <h4>
+                            <b class="portal_background_color">{!$Label.Footer_Link_Header}</b>
+                        </h4>
+                        <ul>
+                            <apex:repeat value="{!tabMenus}" var="tabM" id="tab"> 
+                             <apex:repeat value="{!tabMenus[tabM]}" var="tabSubMen" id="tabsm">
+                                <li>
+                                   <apex:outputLink styleclass="portal_background_color" value="{!mapLabels['HomePage_URL'].Value__c}" style="text-decoration:none;" rendered="{!tabSubMen=='Home'}">{!tabSubMen}</apex:outputLink>
+                                   <apex:outputLink styleclass="portal_background_color" value="{!mapLabels['Product_Detail_Page'].Value__c}?accId={!AccId}&pfn={!tabSubMen}" style="text-decoration:none;" rendered="{!tabSubMen!='Home'}">{!tabSubMen}</apex:outputLink>
+                                </li>    
+                            </apex:repeat>
+                            </apex:repeat>
+                        </ul>
+                    </div>  
+                    <div class="col-md-2 col-sm-2 sign-gd" style="margin-left:120px;float:center;">
+                        <h4>
+                            <b class="portal_background_color">{!linkHeader}</b>
+                        </h4>
+                        <ul>
+                            <apex:repeat value="{!footerLink}" var="link" id="footer"> 
+                                <li>
+                                   <a class="portal_background_color" href="{!mapLabels['Product_Detail_Page'].Value__c}" style="text-decoration:none;">{!link}</a>
+                                </li>    
+                            </apex:repeat>
+                        </ul>
+                    </div>                      
+                    <div class="col-md-2 col-sm-2 footrimg sign-gd" style="float:right;">
+                        <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/mestro.jpg')}" alt="image 7" />
+                        <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/mastercard_logo_5.gif')}" alt="image 7" />
+                        <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/Visa_Inc._logo.svg.png')}" alt="image 7" />
+                        <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/cod.png')}" alt="image 7" />
+                    </div>
+                </div>
+</apex:component>

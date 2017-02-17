@@ -1,0 +1,45 @@
+<apex:component controller="eCommerceHomePage">
+    <!-- Carousel Start -->                
+        <div class="row">
+            <div class="col-sm-12 col-xs-12 col-md-12">
+                <!-- Carousel -->
+                <div id="homeCarousel" class="carousel slide">
+                    <!-- Menu -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#homeCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#homeCarousel" data-slide-to="1"></li>
+                        <li data-target="#homeCarousel" data-slide-to="2"></li>
+                        <!-- <li data-target="#homeCarousel" data-slide-to="3"></li>-->
+                    </ol>
+                    <!-- Items  -->
+                    
+                        <div class="carousel-inner" role="listbox">
+                            <!-- ITEM 1 START -->
+                            <div class="item active first_carousal">
+                                <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images1.jpg')}" alt="image 1" />
+                            </div>
+
+                            <!-- ITEM 1 END -->
+                            <!-- ITEM 2 START -->
+                            <div class="item first_carousal">
+                                <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images2.jpg')}" alt="image 2" />
+                            </div>
+                            <!-- ITEM 2 END -->
+                            <!-- ITEM 3 START -->
+                            <div class="item first_carousal">
+                                <img src="{!URLFOR($Resource.Portal_HomeBannerImages,'/Images/images3.jpg')}" alt="image 3" />
+                            </div>
+                            <!-- ITEM 3 END -->
+                        </div>
+    
+                    <!-- Controls -->
+                    <a class="left carousel-control" href="#homeCarousel" data-slide="prev">
+                        <span class="icon-prev"></span>
+                    </a>
+                    <a class="right carousel-control" href="#homeCarousel" data-slide="next">
+                        <span class="icon-next"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+</apex:component>

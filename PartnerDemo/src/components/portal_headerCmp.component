@@ -1,0 +1,87 @@
+<apex:component controller="Portal_headerCls" >
+    
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/bootstrap.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/font-awesome.min.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/prettyPhoto.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/price-range.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/animate.css')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/'+Classname+'')}"/>
+<apex:stylesheet value="{!URLFOR($Resource.portal, '/sfdcportal/css/responsive.css')}"/>
+<apex:includeScript value="{!URLFOR($Resource.community, '/community/js/simpleCart.min.js')}"/>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+<script src="/soap/ajax/32.0/connection.js" type="text/javascript"></script>
+<script src="/soap/ajax/32.0/apex.js" type="text/javascript"></script>
+     <c:portal_loginpopup />
+     <header id="header"><!--header-->
+        <div class="header_top"><!--header_top-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-6 ">
+                        <div class="contactinfo">
+                            <ul class="nav nav-pills">
+                                                                                         
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6">
+                        <div class="social-icons pull-right">
+                            <ul class="nav navbar-nav">
+                                <apex:repeat value="{!socialMedia}" var="media" >
+                                    <li><a href="{!mapLabels['Facebook_Page_URL'].Value__c}"><i class="fa fa-{!media}"></i></a></li>                                   
+                                </apex:repeat>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header_top-->
+        
+        <div class="header-middle"><!--header-middle-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="logo pull-left">
+                            <a href="index.html">
+                             <img src="{!partnerLogo}" alt="partner Logo" />
+                            </a>
+                        </div>                      
+                    </div>
+                    <div class="col-sm-8">
+                        <div class="shop-menu pull-right">
+                            <ul class="nav navbar-nav collapse navbar-collapse">
+                                <li class="dropdown">
+                                    <apex:outputLink styleClass="active" value="Account" style="text-decoration:none;"><a href="#"><i class="fa fa-user"></i><i class="none"></i>Account</a></apex:outputLink>                                  
+                                       <ul role="menu" class="sub-menu">
+                                           <li><apex:outputLink styleClass="active" value="View Profile">View Profile</apex:outputLink></li>   
+                                           <li><apex:outputLink styleClass="active" value="View Order">View Order</apex:outputLink></li>                                                                                      
+                                       </ul>
+                                 </li>                              
+                                <!--<li><a href="{!mapLabels['Domain_URL'].Value__c}{!mapLabels['Checkout_Page_URL'].Value__c}"><i class="fa fa-shopping-cart"></i> Cart(<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)</a></li>-->
+                                <li><a href="#" onClick="validateCart();"><i class="fa fa-shopping-cart"></i> Cart(<span id="simpleCart_quantity" class="simpleCart_quantity"></span>)</a></li>
+                                <apex:outputpanel rendered="{!loggedinUser=='Guest User'}"><li><a data-toggle="modal" data-target="#loginbox" title="Login" href="#"><i class="fa fa-lock"></i> Login</a></li> </apex:outputpanel>
+                                <apex:outputpanel rendered="{!loggedinUser!='Guest User'}"><li><a href="{!mapLabels['Domain_URL'].Value__c}{!mapLabels['Logout_URL'].Value__c}" title="Logout" class="use1" data-toggle="modal"><i class="fa fa-unlock"></i> {!loggedinUser} </a></li> </apex:outputpanel>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--/header-middle-->        
+         <c:Portal_topMenuComp />
+    </header>
+    <script>
+    $(document).ready(function(){
+         $(".nav-pills:first").append('{!topcontent}');
+     });
+     
+     function validateCart(){
+        if(simpleCart.quantity()==0){
+            alert('There are no items in this cart. ');        
+        }else if(simpleCart.quantity()>0){        
+            window.location.href='{!mapLabels['Domain_URL'].Value__c}{!mapLabels['Checkout_Page_URL'].Value__c}';
+        }
+        
+     }
+    </script>
+</apex:component>

@@ -1,0 +1,56 @@
+<apex:page >
+<html>
+    <body>
+        Medium:<input type='hidden' name='Medium__c' id='00N3600000QFlkE' value='qwasdasd' /> <br />
+        Source:<input type='hidden' name='Source__c' id='00N3600000QFlkJ' value='aqeqwe' /><br />
+        Name:<input type='hidden' name='Campaign__c' id='00N3600000QFlkO' value='gdfdfg' /><br />
+        Term:<input type='hidden' name='Term__c' id='00N3600000QFlkY' value='xcvxv' /><br />
+        Content:<input type='hidden' name='Content__c' id='00N3600000QFlkT' value='gdsdfsdf' /><br />
+    </body>
+</html>
+<script type="text/javascript">
+
+var z = _uGC(document.cookie, '__utmz=', ';');
+var source = _uGC(z, 'utmcsr=', '|');
+var medium = _uGC(z, 'utmcmd=', '|');
+var term = _uGC(z, 'utmctr=', '|');
+var content = _uGC(z, 'utmcct=', '|');
+var campaign = _uGC(z, 'utmccn=', '|');
+var gclid = _uGC(z, 'utmgclid=', '|');
+if (gclid !="-") {
+ source = 'google';
+ medium = 'cpc';
+}
+
+var csegment = _uGC(document.cookie, '__utmv=', ';');
+if (csegment != '-') {
+ var csegmentex = /[1-9]*?\.(.*)/;
+ csegment = csegment.match(csegmentex);
+ csegment = csegment[1];
+
+} else {
+ csegment = '';
+}
+
+function _uGC(l,n,s)
+{
+if (!l || l=="" || !n || n=="" || !s || s=="") return "-";
+var i,i2,i3,c="-";
+i=l.indexOf(n);
+i3=n.indexOf("=")+1;
+if (i > -1) {
+i2=l.indexOf(s,i); if (i2 < 0){ i2=l.length; }
+c=l.substring((i+i3),i2);
+}
+return c;
+}
+
+document.getElementById("Medium__c").value =medium; /* Campaign_Medium */
+document.getElementById("Source__c").value =source; /* Campaign_Source */
+document.getElementById("Campaign__c").value =campaign; /* Campaign_CampaignName */
+document.getElementById("Term__c").value =term; /* Campaign_Term */
+document.getElementById("Content__c").value =content; /* Campaign_Content */
+
+</script>
+
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:component controller="portal_leftsideBarComp">
+  <!--brands_products-->
+     
+   <div class="brands_products">
+        <apex:outputpanel rendered="{!brandSize>0}"><h2>Brands</h2></apex:outputpanel>
+        <div class="brands-name">
+            <ul class="nav nav-pills nav-stacked">
+             <apex:repeat value="{!brandsWithCount}" var="brand">
+                <li><apex:outputLink styleClass="active" value="{!mapLabels['Portal_product'].Value__c}?accId={!AccId}&pbrand={!brand}"><span class="pull-right">({!brandsWithCount[brand]})</span>{!brand}</apex:outputLink></li>               
+               </apex:repeat>
+            </ul>
+        </div>
+    </div>
+       
+<!--/brands_products-->
+</apex:component>

@@ -1,0 +1,44 @@
+<apex:component controller="eCommerceHomePage">
+<!-- footer -->
+<div class="footer">
+<div class="row newsltr portal_background_color">
+<div class="col-md-5 col-sm-6 col-xs-12 newsleft ">
+ <h3>{!$label.SIGN_UP_FOR_NEWSLETTER}</h3>
+</div>
+<div class="col-md-7 col-sm-6 col-xs-12 newsright">
+ <form>
+                    <input type="text" value="{!$label.Email}" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}" required=""/>
+                    <input class="portal_foregorund_color" type="submit" value="{!$label.Submit}"/>
+                </form>
+</div>
+</div>
+<div class="row" style="padding-top:40px">
+<div class="col-md-4 col-sm-12 footer-left">
+<h4 class="portal_foreground_color">{!$label.Satisfaction_Guaranteed}</h4>
+            <p class="portal_foreground_color">{!$label.Purchase_Guaranty}</p>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 sign-gd">
+ <h4 class="portal_foreground_color">{!$label.Information}</h4>
+                    <ul>
+                        <li><a class="portal_foreground_color" href="index.html">{!$label.Home}</a></li>
+                        <li><a  class="portal_foreground_color" href="mens.html">{!$label.Headphone}</a></li>
+                        <li><a class="portal_foreground_color" href="womens.html">{!$label.Home_Audio}</a></li>
+                        <li><a  class="portal_foreground_color" href="electronics.html">{!$label.Car_Audio}</a></li>
+                        <li><a  class="portal_foreground_color" href="codes.html">{!$label.Factory_Recertified}</a></li>
+         
+                    </ul>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-12 sign-gd-two">
+<h4 class="portal_foreground_color">{!$label.Contact_Us}</h4>
+                    <ul>
+                        <li class="portal_foreground_color"><i class="glyphicon glyphicon-envelope portal_foreground_color" aria-hidden="true"></i>{!$Label.Email}: <a class="portal_foreground_color" href="mailto:info@example.com">{!$label.Email_Address}</a></li>
+                        <li class="portal_foreground_color"><i class="glyphicon glyphicon-earphone portal_foreground_color" aria-hidden="true"></i>{!$Label.Phone}: {!$label.Phone_Number}</li>
+                    </ul>
+</div>
+</div>
+<div class="row">
+ <p class="copy-right portal_foreground_color">{!$label.Copywrite} </p>
+</div>
+</div>
+<!-- //footer -->
+</apex:component>

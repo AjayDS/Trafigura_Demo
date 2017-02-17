@@ -1,0 +1,84 @@
+<apex:page controller="ContactsController">
+<apex:includeScript value="{!URLFOR($Resource.jquery214)}" />
+<apex:stylesheet value="{!URLFOR($Resource.table)}"/>
+<apex:remoteObjects >
+    <apex:remoteObjectModel jsShortHand="con" name="Product2" fields="Id,Name,Image_URL__c,Price__c,Stock__c" 
+        retrieve="{!$RemoteAction.ContactsController.retrieveContacts}"/>
+</apex:remoteObjects>    
+<script>
+    var $j = jQuery.noConflict();
+    var offsetVal = 0;
+    var limitVal = 5;
+    var totalContacts = limitVal;
+    var rowCount = 1;
+    
+    var scrollListener = function() {
+        $j(window).one("scroll", function() { 
+            if ($j(window).scrollTop() >= $j(document).height() - $j(window).height() - 100) {
+                if (offsetVal < totalContacts) {
+                    loadRecords();
+                }
+            }
+            setTimeout(scrollListener, 200);
+        });
+    };
+    
+    $j(document).ready(function() {
+        loadRecords();
+        scrollListener();
+    });
+    
+    function loadRecords() {
+        var criteria = {
+            limit: limitVal,
+            orderby: [ {Name: "ASC"} ],
+        };
+            
+        // offsetVal must be at least 1
+        if (offsetVal >= 1) {
+            criteria.offset = offsetVal;
+        }
+            
+        var con = new SObjectModel.con();
+            
+        con.retrieve(criteria, function(err, records, event) {
+            if (err) {
+                alert(err);
+            } else {
+                offsetVal += records.length;
+                totalContacts = event.result.totalContacts;
+                records.forEach(function(record) {
+                    addTableRow(record);
+                });
+            }
+        });
+    }
+    
+    function addTableRow(record) {
+        var cssClass = "";
+        if ( (rowCount % 2) == 0 ) {
+            cssClass = "alt";
+        }
+        
+        $j("#contacts tbody:last").append(
+            "<tr class='" + cssClass + "'>" + 
+            "<td><img src='" + record.get("Image_URL__c") + "' /></td>" +
+            "<td><a href='/" + record.get("Id") + "' target='_blank'>" + record.get("Name") + "</a></td>" +
+            "<td>" + record.get("Price__c") + "</td>" + 
+            "<td>" + record.get("Stock__c") + "</td>" +             
+            "</tr>"
+        );
+        rowCount++;        
+    }
+</script>
+<div class="datagrid">
+    <table id="contacts">
+        <thead>
+            <tr>
+                <th>Image</th> <th>Name</th> <th>Price</th> <th>Stock</th>
+            </tr>
+        </thead>
+        <tbody> </tbody>
+    </table>
+</div>
+</apex:page>
